@@ -1,0 +1,78 @@
+echo $USER_part3.log
+mkdir -p D1/D2/D3
+ls
+
+2026-01  2026-05  2026-09  D1                                report_part1.txt
+2026-02  2026-06  2026-10  eltex-pg1-v1_part3.log            temp.txt
+2026-03  2026-07  2026-11  eltex-pg1-v1_part.log
+2026-04  2026-08  2026-12  practice2_eltex-pg1-v1_part1.log
+touch ./D1/D2/file.txt
+cat ./D1/D2/file.txt
+echo 'Novikov' >> './D1/D2/file.txt'
+cat ./D1/D2/file.txt
+
+Novikov
+ln /home/eltex-pg1-v1/D1/D2/file.txt /home/eltex-pg1-v1/D1/D2/D3/file_hard
+ln -s /home/eltex-pg1-v1/D1/D2/file.txt /home/eltex-pg1-v1/D1/D2/D3/file_sym
+ls -l ./D1/D2/D3/file_sym
+
+lrwxrwxrwx 1 eltex-pg1-v1 eltex-pg1-v1 33 Mar 13 14:04 ./D1/D2/D3/file_sym -> /home/eltex-pg1-v1/D1/D2/file.txt
+ls -l ./D1/D2/D3/file_hard
+
+-rw-r--r-- 2 eltex-pg1-v1 eltex-pg1-v1 8 Mar 13 14:03 ./D1/D2/D3/file_hard
+mv ./D1/D2/file.txt ./D1/
+ls ./D1
+
+D2  file.txt
+cat ./D1/D2/D3/file_sym
+
+cat: ./D1/D2/D3/file_sym: No such file or directory
+cat ./D1/D2/D3/file_hard
+
+Novikov
+ls -l ./D1/D2/D3/file_sym
+
+lrwxrwxrwx 1 eltex-pg1-v1 eltex-pg1-v1 33 Mar 13 14:04 ./D1/D2/D3/file_sym -> /home/eltex-pg1-v1/D1/D2/file.txt
+rm -r ./D1/D2
+ls ./D1
+
+file.txt
+find / -type f -size +20M -exec du -sh {} + > 'eltex-pg1-v1_part3_gt50M.log' 2>/dev/null
+
+cat eltex-pg1-v1_part3_gt50M.log
+
+31M/usr/bin/x86_64-linux-gnu-lto-dump-12
+31M/usr/lib/gcc/x86_64-linux-gnu/12/lto1
+32M/usr/lib/gcc/x86_64-linux-gnu/12/cc1
+30M/usr/lib/x86_64-linux-gnu/libicudata.so.72.1
+0/proc/kcore
+205M/home/eltex-pg2-v10/eltex-pg2-v10_part.log
+33M/boot/initrd.img-6.1.0-43-amd64
+33M/boot/initrd.img-6.1.0-40-amd64
+43M/var/log/journal/8247b53b6ae84ae0ad9bb1c96113fd29/system@4f44ef78d53d4cd0a5555898b8d0015b-0000000000021f7c-00064c3f482d4944.journal
+39M/var/cache/apt/srcpkgcache.bin
+39M/var/cache/apt/pkgcache.bin
+48M/var/lib/apt/lists/deb.debian.org_debian_dists_bookworm_main_binary-amd64_Packages
+49M/var/lib/apt/lists/deb.debian.org_debian_dists_bookworm_main_source_Sources
+32M/var/lib/apt/lists/deb.debian.org_debian_dists_bookworm_main_i18n_Translation-en
+find ~ -type f -mtime -1
+
+/home/eltex-pg1-v1/.ssh/id_rsa.pub
+/home/eltex-pg1-v1/.ssh/known_hosts
+/home/eltex-pg1-v1/.ssh/id_rsa
+/home/eltex-pg1-v1/.ssh/known_hosts.old
+/home/eltex-pg1-v1/D1/file.txt
+/home/eltex-pg1-v1/temp.txt
+/home/eltex-pg1-v1/practice2_eltex-pg1-v1_part1.log
+/home/eltex-pg1-v1/.bash_history
+/home/eltex-pg1-v1/eltex-pg1-v1_part3_gt50M.log
+which find
+
+/usr/bin/find
+file $(which find)
+
+/usr/bin/find: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=5545a6c7162d325fbe5ffabcbfe4e5521b66ce70, for GNU/Linux 3.2.0, stripped
+file /boot/initrd.img*
+
+/boot/initrd.img-6.1.0-40-amd64: ASCII cpio archive (SVR4 with no CRC)
+/boot/initrd.img-6.1.0-43-amd64: ASCII cpio archive (SVR4 with no CRC)
