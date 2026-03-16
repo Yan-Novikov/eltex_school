@@ -1,0 +1,1825 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.03.16 15:52:05 =~=~=~=~=~=~=~=~=~=~=~=
+login as: eltex-pg1-v1
+eltex-pg1-v1@217.71.138.1's password: 
+Linux eltex-2026-spring 6.1.0-40-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.153-1 (2025-09-20) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sat Mar 14 11:11:42 2026 from 5.137.16.98
+eltex-pg1-v1@eltex-2026-spring-15:52> ssh root @@172.16.9.175
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-55-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Mar 16 08:53:10 AM UTC 2026
+
+  System load:  0.01               Processes:              110
+  Usage of /:   41.7% of 14.66GB   Users logged in:        0
+  Memory usage: 11%                IPv4 address for ens18: 172.16.9.175
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+87 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+1 additional security update can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+*** System restart required ***
+ 
+14.03.2026 04:50:15
+Last login: Sat Mar 14 04:13:05 2026 from 172.16.8.4
+root@eltex-practice2-pg1-v1:~# journalctl -b --since "0 seconds after boot" --until "20 seconds after boot"
+Failed to parse timestamp: 0 seconds after boot
+root@eltex-practice2-pg1-v1:~# journalctl -b | head -n 1
+Mar 12 08:27:33 localhost kernel: Linux version 6.8.0-55-generic (buildd@lcy02-amd64-095) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #57-Ubuntu SMP PREEMPT_DYNAMIC Wed Feb 12 23:42:21 UTC 2025 (Ubuntu 6.8.0-55.57-generic 6.8.12)
+root@eltex-practice2-pg1-v1:~# START=$(journalctl -b -o short-iso | head -n 1 | awk '{print $1}')
+root@eltex-practice2-pg1-v1:~# END=$(date -d "$START + 20 seconds" +"%Y-%m-%d %H:%M:%S")
+root@eltex-practice2-pg1-v1:~# journalctl -b --until "$END"
+Mar 12 08:27:33 localhost kernel: Linux version 6.8.0-55-generic (buildd@lcy02->
+Mar 12 08:27:33 localhost kernel: Command line: BOOT_IMAGE=/vmlinuz-6.8.0-55-ge>
+Mar 12 08:27:33 localhost kernel: KERNEL supported cpus:
+Mar 12 08:27:33 localhost kernel:   Intel GenuineIntel
+Mar 12 08:27:33 localhost kernel:   AMD AuthenticAMD
+Mar 12 08:27:33 localhost kernel:   Hygon HygonGenuine
+Mar 12 08:27:33 localhost kernel:   Centaur CentaurHauls
+Mar 12 08:27:33 localhost kernel:   zhaoxin   Shanghai  
+Mar 12 08:27:33 localhost kernel: BIOS-provided physical RAM map:
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x0000000000000000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x000000000009fc00-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x00000000000f0000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x0000000000100000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x00000000bffda000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x00000000feffc000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x00000000fffc0000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x0000000100000000-0x00000001>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x000000fd00000000-0x000000ff>
+Mar 12 08:27:33 localhost kernel: NX (Execute Disable) protection: active
+Mar 12 08:27:33 localhost kernel: APIC: Static calls initialized
+Mar 12 08:27:33 localhost kernel: SMBIOS 2.8 present.
+Mar 12 08:27:33 localhost kernel: DMI: QEMU Standard PC (i440FX + PIIX, 1996), >
+Mar 12 08:27:33 localhost kernel: Hypervisor detected: KVM
+lines 1-23 ESCESCOOCCversion 6.8.0-55-generic (buildd@lcy02-amd64-095) (x86_64-linux-gnu-gcc-13 (Ubu>
+d line: BOOT_IMAGE=/vmlinuz-6.8.0-55-generic root=/dev/mapper/ubuntu--vg-ubuntu>
+ supported cpus:
+l GenuineIntel
+AuthenticAMD
+n HygonGenuine
+aur CentaurHauls
+xin   Shanghai  
+rovided physical RAM map:
+820: [mem 0x0000000000000000-0x000000000009fbff] usable
+820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+820: [mem 0x0000000000100000-0x00000000bffd9fff] usable
+820: [mem 0x00000000bffda000-0x00000000bfffffff] reserved
+820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+820: [mem 0x0000000100000000-0x000000013fffffff] usable
+820: [mem 0x000000fd00000000-0x000000ffffffffff] reserved
+ecute Disable) protection: active
+Static calls initialized
+ 2.8 present.
+EMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.17.0-0-gb52ca86e094d-prebuilt>
+isor detected: KVM
+lines 1-23 ESCESCOOCCmd64-095) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU l>
+eric root=/dev/mapper/ubuntu--vg-ubuntu--lv ro
+
+
+
+
+
+
+
+009fbff] usable
+009ffff] reserved
+00fffff] reserved
+ffd9fff] usable
+fffffff] reserved
+effffff] reserved
+fffffff] reserved
+fffffff] usable
+fffffff] reserved
+
+
+
+IOS rel-1.17.0-0-gb52ca86e094d-prebuilt.qemu.org 04/01/2014
+
+lines 1-23 ESCESCOODDversion 6.8.0-55-generic (buildd@lcy02-amd64-095) (x86_64-linux-gnu-gcc-13 (Ubu>
+d line: BOOT_IMAGE=/vmlinuz-6.8.0-55-generic root=/dev/mapper/ubuntu--vg-ubuntu>
+ supported cpus:
+l GenuineIntel
+AuthenticAMD
+n HygonGenuine
+aur CentaurHauls
+xin   Shanghai  
+rovided physical RAM map:
+820: [mem 0x0000000000000000-0x000000000009fbff] usable
+820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+820: [mem 0x0000000000100000-0x00000000bffd9fff] usable
+820: [mem 0x00000000bffda000-0x00000000bfffffff] reserved
+820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+820: [mem 0x0000000100000000-0x000000013fffffff] usable
+820: [mem 0x000000fd00000000-0x000000ffffffffff] reserved
+ecute Disable) protection: active
+Static calls initialized
+ 2.8 present.
+EMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.17.0-0-gb52ca86e094d-prebuilt>
+isor detected: KVM
+lines 1-23 ESCESCOODDMar 12 08:27:33 localhost kernel: Linux version 6.8.0-55-generic (buildd@lcy02->
+Mar 12 08:27:33 localhost kernel: Command line: BOOT_IMAGE=/vmlinuz-6.8.0-55-ge>
+Mar 12 08:27:33 localhost kernel: KERNEL supported cpus:
+Mar 12 08:27:33 localhost kernel:   Intel GenuineIntel
+Mar 12 08:27:33 localhost kernel:   AMD AuthenticAMD
+Mar 12 08:27:33 localhost kernel:   Hygon HygonGenuine
+Mar 12 08:27:33 localhost kernel:   Centaur CentaurHauls
+Mar 12 08:27:33 localhost kernel:   zhaoxin   Shanghai  
+Mar 12 08:27:33 localhost kernel: BIOS-provided physical RAM map:
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x0000000000000000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x000000000009fc00-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x00000000000f0000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x0000000000100000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x00000000bffda000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x00000000feffc000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x00000000fffc0000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x0000000100000000-0x00000001>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x000000fd00000000-0x000000ff>
+Mar 12 08:27:33 localhost kernel: NX (Execute Disable) protection: active
+Mar 12 08:27:33 localhost kernel: APIC: Static calls initialized
+Mar 12 08:27:33 localhost kernel: SMBIOS 2.8 present.
+Mar 12 08:27:33 localhost kernel: DMI: QEMU Standard PC (i440FX + PIIX, 1996), >
+Mar 12 08:27:33 localhost kernel: Hypervisor detected: KVM
+lines 1-23 ESCESCOODDMar 12 08:27:33 localhost kernel: Linux version 6.8.0-55-generic (buildd@lcy02->
+Mar 12 08:27:33 localhost kernel: Command line: BOOT_IMAGE=/vmlinuz-6.8.0-55-ge>
+Mar 12 08:27:33 localhost kernel: KERNEL supported cpus:
+Mar 12 08:27:33 localhost kernel:   Intel GenuineIntel
+Mar 12 08:27:33 localhost kernel:   AMD AuthenticAMD
+Mar 12 08:27:33 localhost kernel:   Hygon HygonGenuine
+Mar 12 08:27:33 localhost kernel:   Centaur CentaurHauls
+Mar 12 08:27:33 localhost kernel:   zhaoxin   Shanghai  
+Mar 12 08:27:33 localhost kernel: BIOS-provided physical RAM map:
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x0000000000000000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x000000000009fc00-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x00000000000f0000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x0000000000100000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x00000000bffda000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x00000000feffc000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x00000000fffc0000-0x00000000>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x0000000100000000-0x00000001>
+Mar 12 08:27:33 localhost kernel: BIOS-e820: [mem 0x000000fd00000000-0x000000ff>
+Mar 12 08:27:33 localhost kernel: NX (Execute Disable) protection: active
+Mar 12 08:27:33 localhost kernel: APIC: Static calls initialized
+Mar 12 08:27:33 localhost kernel: SMBIOS 2.8 present.
+Mar 12 08:27:33 localhost kernel: DMI: QEMU Standard PC (i440FX + PIIX, 1996), >
+Mar 12 08:27:33 localhost kernel: Hypervisor detected: KVM
+lines 1-23 ESCESCOOBBMar 12 08:27:33 localhost kernel: kvm-clock: Using msrs 4b564d01 and 4b564d00
+lines 2-24 ESCESCOOBBMar 12 08:27:33 localhost kernel: kvm-clock: using sched offset of 117959790462>
+lines 3-25 ESCESCOOBBMar 12 08:27:33 localhost kernel: clocksource: kvm-clock: mask: 0xfffffffffffff>
+lines 4-26 ESCESCOOBBMar 12 08:27:33 localhost kernel: tsc: Detected 3400.000 MHz processor
+lines 5-27 ESCESCOOBBMar 12 08:27:33 localhost kernel: e820: update [mem 0x00000000-0x00000fff] usab>
+lines 6-28 ESCESCOOBBMar 12 08:27:33 localhost kernel: e820: remove [mem 0x000a0000-0x000fffff] usab>
+lines 7-29 ESCESCOOBBMar 12 08:27:33 localhost kernel: AGP: No AGP bridge found
+lines 8-30 ESCESCOOBBMar 12 08:27:33 localhost kernel: last_pfn = 0x140000 max_arch_pfn = 0x400000000
+lines 9-31 ESCESCOOBBMar 12 08:27:33 localhost kernel: MTRR map: 4 entries (3 fixed + 1 variable; ma>
+lines 10-32 ESCESCOOBBMar 12 08:27:33 localhost kernel: x86/PAT: Configuration [0-7]: WB  WC  UC- UC >
+lines 11-33 ESCESCOOBBMar 12 08:27:33 localhost kernel: last_pfn = 0xbffda max_arch_pfn = 0x400000000
+lines 12-34 ESCESCOOBBMar 12 08:27:33 localhost kernel: found SMP MP-table at [mem 0x000f5490-0x000f5>
+lines 13-35 ESCESCOOBBMar 12 08:27:33 localhost kernel: RAMDISK: [mem 0x2fccd000-0x33e5dfff]
+lines 14-36 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Early table checksum verification disab>
+lines 15-37 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: RSDP 0x00000000000F5290 000014 (v00 BOC>
+lines 16-38 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: RSDT 0x00000000BFFE3B5F 000034 (v01 BOC>
+lines 17-39 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: FACP 0x00000000BFFE3979 000074 (v01 BOC>
+lines 18-40 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: DSDT 0x00000000BFFDF040 004939 (v01 BOC>
+lines 19-41 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: FACS 0x00000000BFFDF000 000040
+lines 20-42 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: APIC 0x00000000BFFE39ED 000080 (v03 BOC>
+lines 21-43 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: SSDT 0x00000000BFFE3A6D 0000CA (v01 BOC>
+lines 22-44 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: WAET 0x00000000BFFE3B37 000028 (v01 BOC>
+lines 23-45 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Reserving FACP table memory at [mem 0xb>
+lines 24-46 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Reserving DSDT table memory at [mem 0xb>
+lines 25-47 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Reserving FACS table memory at [mem 0xb>
+lines 26-48 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Reserving APIC table memory at [mem 0xb>
+lines 27-49 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Reserving SSDT table memory at [mem 0xb>
+lines 28-50 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Reserving WAET table memory at [mem 0xb>
+lines 29-51 ESCESCOOBBMar 12 08:27:33 localhost kernel: No NUMA configuration found
+lines 30-52 ESCESCOOBBMar 12 08:27:33 localhost kernel: Faking a node at [mem 0x0000000000000000-0x00>
+lines 31-53 ESCESCOOBBMar 12 08:27:33 localhost kernel: NODE_DATA(0) allocated [mem 0x13ffd2000-0x13f>
+lines 32-54 ESCESCOOBBMar 12 08:27:33 localhost kernel: Zone ranges:
+lines 33-55 ESCESCOOBBMar 12 08:27:33 localhost kernel:   DMA      [mem 0x0000000000001000-0x00000000>
+lines 34-56 ESCESCOOBBMar 12 08:27:33 localhost kernel:   DMA32    [mem 0x0000000001000000-0x00000000>
+lines 35-57 ESCESCOOBBMar 12 08:27:33 localhost kernel:   Normal   [mem 0x0000000100000000-0x00000001>
+lines 36-58 ESCESCOOBBMar 12 08:27:33 localhost kernel:   Device   empty
+lines 37-59 ESCESCOOBBMar 12 08:27:33 localhost kernel: Movable zone start for each node
+lines 38-60 ESCESCOOBBMar 12 08:27:33 localhost kernel: Early memory node ranges
+lines 39-61 ESCESCOOBBMar 12 08:27:33 localhost kernel:   node   0: [mem 0x0000000000001000-0x0000000>
+lines 40-62 ESCESCOOBBMar 12 08:27:33 localhost kernel:   node   0: [mem 0x0000000000100000-0x0000000>
+lines 41-63 ESCESCOOBBMar 12 08:27:33 localhost kernel:   node   0: [mem 0x0000000100000000-0x0000000>
+lines 42-64 ESCESCOOBBMar 12 08:27:33 localhost kernel: Initmem setup node 0 [mem 0x0000000000001000->
+lines 43-65 ESCESCOOBBMar 12 08:27:33 localhost kernel: On node 0, zone DMA: 1 pages in unavailable r>
+lines 44-66 ESCESCOOBBMar 12 08:27:33 localhost kernel: On node 0, zone DMA: 97 pages in unavailable >
+lines 45-67 ESCESCOOBBMar 12 08:27:33 localhost kernel: On node 0, zone Normal: 38 pages in unavailab>
+lines 46-68 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: PM-Timer IO Port: 0x608
+lines 47-69 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0>
+lines 48-70 ESCESCOOBBMar 12 08:27:33 localhost kernel: IOAPIC[0]: apic_id 0, version 17, address 0xf>
+lines 49-71 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq>
+lines 50-72 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq>
+lines 51-73 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq>
+lines 52-74 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_ir>
+lines 53-75 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_ir>
+lines 54-76 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Using ACPI (MADT) for SMP configuration>
+lines 55-77 ESCESCOOBBMar 12 08:27:33 localhost kernel: smpboot: Allowing 2 CPUs, 0 hotplug CPUs
+lines 56-78 ESCESCOOBBMar 12 08:27:33 localhost kernel: kvm-guest: APIC: eoi() replaced with kvm_gues>
+lines 57-79 ESCESCOOBBMar 12 08:27:33 localhost kernel: PM: hibernation: Registered nosave memory: [m>
+lines 58-80 ESCESCOOBBMar 12 08:27:33 localhost kernel: PM: hibernation: Registered nosave memory: [m>
+lines 59-81 ESCESCOOBBMar 12 08:27:33 localhost kernel: PM: hibernation: Registered nosave memory: [m>
+lines 60-82 ESCESCOOBBMar 12 08:27:33 localhost kernel: PM: hibernation: Registered nosave memory: [m>
+lines 61-83 ESCESCOOBBMar 12 08:27:33 localhost kernel: PM: hibernation: Registered nosave memory: [m>
+lines 62-84 ESCESCOOBBMar 12 08:27:33 localhost kernel: PM: hibernation: Registered nosave memory: [m>
+lines 63-85 ESCESCOOBBMar 12 08:27:33 localhost kernel: PM: hibernation: Registered nosave memory: [m>
+lines 64-86 ESCESCOOBBMar 12 08:27:33 localhost kernel: PM: hibernation: Registered nosave memory: [m>
+lines 65-87 ESCESCOOBBMar 12 08:27:33 localhost kernel: PM: hibernation: Registered nosave memory: [m>
+lines 66-88 ESCESCOOBBMar 12 08:27:33 localhost kernel: [mem 0xc0000000-0xfeffbfff] available for PCI>
+lines 67-89 ESCESCOOBBMar 12 08:27:33 localhost kernel: Booting paravirtualized kernel on KVM
+lines 68-90 ESCESCOOBBMar 12 08:27:33 localhost kernel: clocksource: refined-jiffies: mask: 0xfffffff>
+lines 69-91 ESCESCOOBBMar 12 08:27:33 localhost kernel: setup_percpu: NR_CPUS:8192 nr_cpumask_bits:2 >
+lines 70-92 ESCESCOOBBMar 12 08:27:33 localhost kernel: percpu: Embedded 86 pages/cpu s229376 r8192 d>
+lines 71-93 ESCESCOOBBMar 12 08:27:33 localhost kernel: pcpu-alloc: s229376 r8192 d114688 u1048576 al>
+lines 72-94 ESCESCOOBBMar 12 08:27:33 localhost kernel: pcpu-alloc: [0] 0 1 
+lines 73-95 ESCESCOOBBMar 12 08:27:33 localhost kernel: kvm-guest: PV spinlocks enabled
+lines 74-96 ESCESCOOBBMar 12 08:27:33 localhost kernel: PV qspinlock hash table entries: 256 (order: >
+lines 75-97 ESCESCOOBBMar 12 08:27:33 localhost kernel: Kernel command line: BOOT_IMAGE=/vmlinuz-6.8.>
+lines 76-98 ESCESCOOBBMar 12 08:27:33 localhost kernel: Unknown kernel command line parameters "BOOT_>
+lines 77-99 ESCESCOOBBMar 12 08:27:33 localhost kernel: Dentry cache hash table entries: 524288 (orde>
+lines 78-100 ESCESCOOBBMar 12 08:27:33 localhost kernel: Inode-cache hash table entries: 262144 (order>
+lines 79-101 ESCESCOOBBMar 12 08:27:33 localhost kernel: Fallback order for Node 0: 0 
+lines 80-102 ESCESCOOBBMar 12 08:27:33 localhost kernel: Built 1 zonelists, mobility grouping on.  Tot>
+lines 81-103 ESCESCOOBBMar 12 08:27:33 localhost kernel: Policy zone: Normal
+lines 82-104 ESCESCOOBBMar 12 08:27:33 localhost kernel: mem auto-init: stack:all(zero), heap alloc:on>
+lines 83-105 ESCESCOOBBMar 12 08:27:33 localhost kernel: AGP: Checking aperture...
+lines 84-106 ESCESCOOBBMar 12 08:27:33 localhost kernel: AGP: No AGP bridge found
+lines 85-107 ESCESCOOBBMar 12 08:27:33 localhost kernel: software IO TLB: area num 2.
+lines 86-108 ESCESCOOBBMar 12 08:27:33 localhost kernel: Memory: 3933488K/4193760K available (22528K k>
+lines 87-109 ESCESCOOBBMar 12 08:27:33 localhost kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CP>
+lines 88-110 ESCESCOOBBMar 12 08:27:33 localhost kernel: ftrace: allocating 58006 entries in 227 pages
+lines 89-111 ESCESCOOBBMar 12 08:27:33 localhost kernel: ftrace: allocated 227 pages with 5 groups
+lines 90-112 ESCESCOOBBMar 12 08:27:33 localhost kernel: Dynamic Preempt: voluntary
+lines 91-113 ESCESCOOBBMar 12 08:27:33 localhost kernel: rcu: Preemptible hierarchical RCU implementat>
+lines 92-114 ESCESCOOBBMar 12 08:27:33 localhost kernel: rcu:         RCU restricting CPUs from NR_CPU>
+lines 93-115 ESCESCOOBBMar 12 08:27:33 localhost kernel:         Trampoline variant of Tasks RCU enabl>
+lines 94-116 ESCESCOOBBMar 12 08:27:33 localhost kernel:         Rude variant of Tasks RCU enabled.
+lines 95-117 ESCESCOOBBMar 12 08:27:33 localhost kernel:         Tracing variant of Tasks RCU enabled.
+lines 96-118 ESCESCOOBBMar 12 08:27:33 localhost kernel: rcu: RCU calculated value of scheduler-enlist>
+lines 97-119 ESCESCOOBBMar 12 08:27:33 localhost kernel: rcu: Adjusting geometry for rcu_fanout_leaf=1>
+lines 98-120 ESCESCOOBBMar 12 08:27:33 localhost kernel: NR_IRQS: 524544, nr_irqs: 440, preallocated i>
+lines 99-121 ESCESCOOBBMar 12 08:27:33 localhost kernel: rcu: srcu_init: Setting srcu_struct sizes bas>
+lines 100-122 ESCESCOOBBMar 12 08:27:33 localhost kernel: Console: colour dummy device 80x25
+lines 101-123 ESCESCOOBBMar 12 08:27:33 localhost kernel: printk: legacy console [tty0] enabled
+lines 102-124 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Core revision 20230628
+lines 103-125 ESCESCOOBBMar 12 08:27:33 localhost kernel: APIC: Switch to symmetric I/O mode setup
+lines 104-126 ESCESCOOBBMar 12 08:27:33 localhost kernel: x2apic enabled
+lines 105-127 ESCESCOOBBMar 12 08:27:33 localhost kernel: APIC: Switched APIC routing to: physical x2ap>
+lines 106-128 ESCESCOOBBMar 12 08:27:33 localhost kernel: ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 >
+lines 107-129 ESCESCOOBBMar 12 08:27:33 localhost kernel: tsc: Marking TSC unstable due to TSCs unsynch>
+lines 108-130 ESCESCOOBBMar 12 08:27:33 localhost kernel: Calibrating delay loop (skipped) preset value>
+lines 109-131 ESCESCOOBBMar 12 08:27:33 localhost kernel: process: using AMD E400 aware idle routine
+lines 110-132 ESCESCOOBBMar 12 08:27:33 localhost kernel: Last level iTLB entries: 4KB 512, 2MB 255, 4M>
+lines 111-133 ESCESCOOBBMar 12 08:27:33 localhost kernel: Last level dTLB entries: 4KB 512, 2MB 255, 4M>
+lines 112-134 ESCESCOOBBMar 12 08:27:33 localhost kernel: Spectre V1 : Mitigation: usercopy/swapgs barr>
+lines 113-135 ESCESCOOBBMar 12 08:27:33 localhost kernel: Spectre V2 : Mitigation: Retpolines
+lines 114-136 ESCESCOOBBMar 12 08:27:33 localhost kernel: Spectre V2 : Spectre v2 / SpectreRSB mitigati>
+lines 115-137 ESCESCOOBBMar 12 08:27:33 localhost kernel: Spectre V2 : Spectre v2 / SpectreRSB : Fillin>
+lines 116-138 ESCESCOOBBMar 12 08:27:33 localhost kernel: x86/fpu: x87 FPU will use FXSAVE
+lines 117-139 ESCESCOOBBMar 12 08:27:33 localhost kernel: Freeing SMP alternatives memory: 48K
+lines 118-140 ESCESCOOBBMar 12 08:27:33 localhost kernel: pid_max: default: 32768 minimum: 301
+lines 119-141 ESCESCOOBBMar 12 08:27:33 localhost kernel: LSM: initializing lsm=lockdown,capability,lan>
+lines 120-142 ESCESCOOBBMar 12 08:27:33 localhost kernel: landlock: Up and running.
+lines 121-143 ESCESCOOBBMar 12 08:27:33 localhost kernel: Yama: becoming mindful.
+lines 122-144 ESCESCOOBBMar 12 08:27:33 localhost kernel: AppArmor: AppArmor initialized
+lines 123-145 ESCESCOOBBMar 12 08:27:33 localhost kernel: Mount-cache hash table entries: 8192 (order: >
+lines 124-146 ESCESCOOBBMar 12 08:27:33 localhost kernel: Mountpoint-cache hash table entries: 8192 (or>
+lines 125-147 ESCESCOOBBMar 12 08:27:33 localhost kernel: smpboot: CPU0: AMD QEMU Virtual CPU version 2>
+lines 126-148 ESCESCOOBBMar 12 08:27:33 localhost kernel: RCU Tasks: Setting shift to 1 and lim to 1 rc>
+lines 127-149 ESCESCOOBBMar 12 08:27:33 localhost kernel: RCU Tasks Rude: Setting shift to 1 and lim to>
+lines 128-150 ESCESCOOBBMar 12 08:27:33 localhost kernel: RCU Tasks Trace: Setting shift to 1 and lim t>
+lines 129-151 ESCESCOOBBMar 12 08:27:33 localhost kernel: Performance Events: AMD PMU driver.
+lines 130-152 ESCESCOOBBMar 12 08:27:33 localhost kernel: ... version:                0
+lines 131-153 ESCESCOOBBMar 12 08:27:33 localhost kernel: ... bit width:              48
+lines 132-154 ESCESCOOBBMar 12 08:27:33 localhost kernel: ... generic registers:      4
+lines 133-155 ESCESCOOBBMar 12 08:27:33 localhost kernel: ... value mask:             0000ffffffffffff
+lines 134-156 ESCESCOOBBMar 12 08:27:33 localhost kernel: ... max period:             00007fffffffffff
+lines 135-157 ESCESCOOBBMar 12 08:27:33 localhost kernel: ... fixed-purpose events:   0
+lines 136-158 ESCESCOOBBMar 12 08:27:33 localhost kernel: ... event mask:             000000000000000f
+lines 137-159 ESCESCOOBBMar 12 08:27:33 localhost kernel: signal: max sigframe size: 1440
+lines 138-160 ESCESCOOBBMar 12 08:27:33 localhost kernel: rcu: Hierarchical SRCU implementation.
+lines 139-161 ESCESCOOBBMar 12 08:27:33 localhost kernel: rcu:         Max phase no-delay instances is >
+lines 140-162 ESCESCOOBBMar 12 08:27:33 localhost kernel: smp: Bringing up secondary CPUs ...
+lines 141-163 ESCESCOOBBMar 12 08:27:33 localhost kernel: smpboot: x86: Booting SMP configuration:
+lines 142-164 ESCESCOOBBMar 12 08:27:33 localhost kernel: .... node  #0, CPUs:      #1
+lines 143-165 ESCESCOOBBMar 12 08:27:33 localhost kernel: smp: Brought up 1 node, 2 CPUs
+lines 144-166 ESCESCOOBBMar 12 08:27:33 localhost kernel: smpboot: Max logical packages: 1
+lines 145-167 ESCESCOOBBMar 12 08:27:33 localhost kernel: smpboot: Total of 2 processors activated (136>
+lines 146-168 ESCESCOOBBMar 12 08:27:33 localhost kernel: devtmpfs: initialized
+lines 147-169 ESCESCOOBBMar 12 08:27:33 localhost kernel: x86/mm: Memory block size: 128MB
+lines 148-170 ESCESCOOBBMar 12 08:27:33 localhost kernel: clocksource: jiffies: mask: 0xffffffff max_cy>
+lines 149-171 ESCESCOOBBMar 12 08:27:33 localhost kernel: futex hash table entries: 512 (order: 3, 3276>
+lines 150-172 ESCESCOOBBMar 12 08:27:33 localhost kernel: pinctrl core: initialized pinctrl subsystem
+lines 151-173 ESCESCOOBBMar 12 08:27:33 localhost kernel: PM: RTC time: 08:27:12, date: 2026-03-12
+lines 152-174 ESCESCOOBBMar 12 08:27:33 localhost kernel: NET: Registered PF_NETLINK/PF_ROUTE protocol >
+lines 153-175 ESCESCOOBBMar 12 08:27:33 localhost kernel: DMA: preallocated 512 KiB GFP_KERNEL pool for>
+lines 154-176 ESCESCOOBBMar 12 08:27:33 localhost kernel: DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA >
+lines 155-177 ESCESCOOBBMar 12 08:27:33 localhost kernel: DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA3>
+lines 156-178 ESCESCOOBBMar 12 08:27:33 localhost kernel: audit: initializing netlink subsys (disabled)
+lines 157-179 ESCESCOOBBMar 12 08:27:33 localhost kernel: audit: type=2000 audit(1773304032.806:1): sta>
+lines 158-180 ESCESCOOBBMar 12 08:27:33 localhost kernel: thermal_sys: Registered thermal governor 'fai>
+lines 159-181 ESCESCOOBBMar 12 08:27:33 localhost kernel: thermal_sys: Registered thermal governor 'ban>
+lines 160-182 ESCESCOOBBMar 12 08:27:33 localhost kernel: thermal_sys: Registered thermal governor 'ste>
+lines 161-183 ESCESCOOBBMar 12 08:27:33 localhost kernel: thermal_sys: Registered thermal governor 'use>
+lines 162-184 ESCESCOOBBMar 12 08:27:33 localhost kernel: thermal_sys: Registered thermal governor 'pow>
+lines 163-185 ESCESCOOBBMar 12 08:27:33 localhost kernel: EISA bus registered
+lines 164-186 ESCESCOOBBMar 12 08:27:33 localhost kernel: cpuidle: using governor ladder
+lines 165-187 ESCESCOOBBMar 12 08:27:33 localhost kernel: cpuidle: using governor menu
+lines 166-188 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: ACPI Hot Plug PCI Controller Driver >
+lines 167-189 ESCESCOOBBMar 12 08:27:33 localhost kernel: PCI: Using configuration type 1 for base acce>
+lines 168-190 ESCESCOOBBMar 12 08:27:33 localhost kernel: kprobes: kprobe jump-optimization is enabled.>
+lines 169-191 ESCESCOOBBMar 12 08:27:33 localhost kernel: HugeTLB: registered 2.00 MiB page size, pre-a>
+lines 170-192 ESCESCOOBBMar 12 08:27:33 localhost kernel: HugeTLB: 28 KiB vmemmap can be freed for a 2.>
+lines 171-193 ESCESCOOBBMar 12 08:27:33 localhost kernel: fbcon: Taking over console
+lines 172-194 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Added _OSI(Module Device)
+lines 173-195 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Added _OSI(Processor Device)
+lines 174-196 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Added _OSI(3.0 _SCP Extensions)
+lines 175-197 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Added _OSI(Processor Aggregator Device)
+lines 176-198 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: 2 ACPI AML tables successfully acquired>
+lines 177-199 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: _OSC evaluation for CPUs failed, trying>
+lines 178-200 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Interpreter enabled
+lines 179-201 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: PM: (supports S0 S5)
+lines 180-202 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Using IOAPIC for interrupt routing
+lines 181-203 ESCESCOOBBMar 12 08:27:33 localhost kernel: PCI: Using host bridge windows from ACPI; if >
+lines 182-204 ESCESCOOBBMar 12 08:27:33 localhost kernel: PCI: Using E820 reservations for host bridge >
+lines 183-205 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: Enabled 3 GPEs in block 00 to 0F
+lines 184-206 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bu>
+lines 185-207 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpi PNP0A03:00: _OSC: OS supports [ASPM Cloc>
+lines 186-208 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpi PNP0A03:00: _OSC: not requesting OS cont>
+lines 187-209 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpi PNP0A03:00: fail to add MMCONFIG informa>
+lines 188-210 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [3] registered
+lines 189-211 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [8] registered
+lines 190-212 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [18] registered
+lines 191-213 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [4] registered
+lines 192-214 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [6] registered
+lines 193-215 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [7] registered
+lines 194-216 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [9] registered
+lines 195-217 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [10] registered
+lines 196-218 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [11] registered
+lines 197-219 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [12] registered
+lines 198-220 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [13] registered
+lines 199-221 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [14] registered
+lines 200-222 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [15] registered
+lines 201-223 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [16] registered
+lines 202-224 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [17] registered
+lines 203-225 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [19] registered
+lines 204-226 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [20] registered
+lines 205-227 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [21] registered
+lines 206-228 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [22] registered
+lines 207-229 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [23] registered
+lines 208-230 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [24] registered
+lines 209-231 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [25] registered
+lines 210-232 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [26] registered
+lines 211-233 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [27] registered
+lines 212-234 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [28] registered
+lines 213-235 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [29] registered
+lines 214-236 ESCESCOOBBMar 12 08:27:33 localhost kernel: PCI host bridge to bus 0000:00
+lines 215-237 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:00: root bus resource [io  0x000>
+lines 216-238 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:00: root bus resource [io  0x0d0>
+lines 217-239 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:00: root bus resource [mem 0x000>
+lines 218-240 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:00: root bus resource [mem 0xc00>
+lines 219-241 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:00: root bus resource [mem 0xc00>
+lines 220-242 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+lines 221-243 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:00.0: [8086:1237] type 00 class 0>
+lines 222-244 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:01.0: [8086:7000] type 00 class 0>
+lines 223-245 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:01.1: [8086:7010] type 00 class 0>
+lines 224-246 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:01.1: BAR 4 [io  0xf0e0-0xf0ef]
+lines 225-247 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:01.1: BAR 0 [io  0x01f0-0x01f7]: >
+lines 226-248 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:01.1: BAR 1 [io  0x03f6]: legacy >
+lines 227-249 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:01.1: BAR 2 [io  0x0170-0x0177]: >
+lines 228-250 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:01.1: BAR 3 [io  0x0376]: legacy >
+lines 229-251 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:01.2: [8086:7020] type 00 class 0>
+lines 230-252 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:01.2: BAR 4 [io  0xf0c0-0xf0df]
+lines 231-253 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:01.3: [8086:7113] type 00 class 0>
+lines 232-254 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:01.3: quirk: [io  0x0600-0x063f] >
+lines 233-255 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:01.3: quirk: [io  0x0700-0x070f] >
+lines 234-256 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:02.0: [1234:1111] type 00 class 0>
+lines 235-257 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:02.0: BAR 0 [mem 0xfd000000-0xfdf>
+lines 236-258 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:02.0: BAR 2 [mem 0xfea50000-0xfea>
+lines 237-259 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:02.0: ROM [mem 0xfea40000-0xfea4f>
+lines 238-260 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:02.0: Video device with shadowed >
+lines 239-261 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:03.0: [1af4:1002] type 00 class 0>
+lines 240-262 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:03.0: BAR 0 [io  0xf000-0xf03f]
+lines 241-263 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:03.0: BAR 1 [mem 0xfea51000-0xfea>
+lines 242-264 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:03.0: BAR 4 [mem 0xc0a0000000-0xc>
+lines 243-265 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:05.0: [1b36:0001] type 01 class 0>
+lines 244-266 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:05.0: BAR 0 [mem 0xc000000000-0xc>
+lines 245-267 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:05.0: PCI bridge to [bus 01]
+lines 246-268 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:05.0:   bridge window [io  0xe000>
+lines 247-269 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:05.0:   bridge window [mem 0xfe80>
+lines 248-270 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:05.0:   bridge window [mem 0xc080>
+lines 249-271 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:08.0: [1af4:1003] type 00 class 0>
+lines 250-272 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:08.0: BAR 0 [io  0xf040-0xf07f]
+lines 251-273 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:08.0: BAR 1 [mem 0xfea52000-0xfea>
+lines 252-274 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:08.0: BAR 4 [mem 0xc0a0004000-0xc>
+lines 253-275 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:12.0: [1af4:1000] type 00 class 0>
+lines 254-276 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:12.0: BAR 0 [io  0xf080-0xf0bf]
+lines 255-277 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:12.0: BAR 1 [mem 0xfea53000-0xfea>
+lines 256-278 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:12.0: BAR 4 [mem 0xc0a0008000-0xc>
+lines 257-279 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:12.0: ROM [mem 0xfea00000-0xfea3f>
+lines 258-280 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1e.0: [1b36:0001] type 01 class 0>
+lines 259-281 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1e.0: BAR 0 [mem 0xc000001000-0xc>
+lines 260-282 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1e.0: PCI bridge to [bus 02]
+lines 261-283 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1e.0:   bridge window [io  0xd000>
+lines 262-284 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1e.0:   bridge window [mem 0xfe60>
+lines 263-285 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1e.0:   bridge window [mem 0xc060>
+lines 264-286 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1f.0: [1b36:0001] type 01 class 0>
+lines 265-287 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1f.0: BAR 0 [mem 0xc000002000-0xc>
+lines 266-288 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1f.0: PCI bridge to [bus 03]
+lines 267-289 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1f.0:   bridge window [io  0xc000>
+lines 268-290 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1f.0:   bridge window [mem 0xfe40>
+lines 269-291 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1f.0:   bridge window [mem 0xc040>
+lines 270-292 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:01: extended config space not ac>
+lines 271-293 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [1-2] registered
+lines 272-294 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [0] registered
+lines 273-295 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [2] registered
+lines 274-296 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [3-2] registered
+lines 275-297 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [4-2] registered
+lines 276-298 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [5] registered
+lines 277-299 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [6-2] registered
+lines 278-300 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [7-2] registered
+lines 279-301 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [8-2] registered
+lines 280-302 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [9-2] registered
+lines 281-303 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [10-2] registered
+lines 282-304 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [11-2] registered
+lines 283-305 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [12-2] registered
+lines 284-306 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [13-2] registered
+lines 285-307 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [14-2] registered
+lines 286-308 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [15-2] registered
+lines 287-309 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [16-2] registered
+lines 288-310 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [17-2] registered
+lines 289-311 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [18-2] registered
+lines 290-312 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [19-2] registered
+lines 291-313 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [20-2] registered
+lines 292-314 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [21-2] registered
+lines 293-315 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [22-2] registered
+lines 294-316 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [23-2] registered
+lines 295-317 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [24-2] registered
+lines 296-318 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [25-2] registered
+lines 297-319 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [26-2] registered
+lines 298-320 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [27-2] registered
+lines 299-321 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [28-2] registered
+lines 300-322 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [29-2] registered
+lines 301-323 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [30] registered
+lines 302-324 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [31] registered
+lines 303-325 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:01:01.0: [1af4:1004] type 00 class 0>
+lines 304-326 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:01:01.0: BAR 0 [io  0xe000-0xe03f]
+lines 305-327 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:01:01.0: BAR 1 [mem 0xfe800000-0xfe8>
+lines 306-328 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:01:01.0: BAR 4 [mem 0xc080000000-0xc>
+lines 307-329 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:05.0: PCI bridge to [bus 01]
+lines 308-330 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:02: extended config space not ac>
+lines 309-331 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [0-2] registered
+lines 310-332 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [1-3] registered
+lines 311-333 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [2-2] registered
+lines 312-334 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [3-3] registered
+lines 313-335 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [4-3] registered
+lines 314-336 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [5-2] registered
+lines 315-337 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [6-3] registered
+lines 316-338 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [7-3] registered
+lines 317-339 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [8-3] registered
+lines 318-340 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [9-3] registered
+lines 319-341 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [10-3] registered
+lines 320-342 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [11-3] registered
+lines 321-343 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [12-3] registered
+lines 322-344 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [13-3] registered
+lines 323-345 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [14-3] registered
+lines 324-346 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [15-3] registered
+lines 325-347 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [16-3] registered
+lines 326-348 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [17-3] registered
+lines 327-349 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [18-3] registered
+lines 328-350 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [19-3] registered
+lines 329-351 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [20-3] registered
+lines 330-352 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [21-3] registered
+lines 331-353 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [22-3] registered
+lines 332-354 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [23-3] registered
+lines 333-355 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [24-3] registered
+lines 334-356 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [25-3] registered
+lines 335-357 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [26-3] registered
+lines 336-358 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [27-3] registered
+lines 337-359 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [28-3] registered
+lines 338-360 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [29-3] registered
+lines 339-361 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [30-2] registered
+lines 340-362 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [31-2] registered
+lines 341-363 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1e.0: PCI bridge to [bus 02]
+lines 342-364 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:03: extended config space not ac>
+lines 343-365 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [0-3] registered
+lines 344-366 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [1-4] registered
+lines 345-367 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [2-3] registered
+lines 346-368 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [3-4] registered
+lines 347-369 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [4-4] registered
+lines 348-370 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [5-3] registered
+lines 349-371 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [6-4] registered
+lines 350-372 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [7-4] registered
+lines 351-373 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [8-4] registered
+lines 352-374 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [9-4] registered
+lines 353-375 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [10-4] registered
+lines 354-376 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [11-4] registered
+lines 355-377 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [12-4] registered
+lines 356-378 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [13-4] registered
+lines 357-379 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [14-4] registered
+lines 358-380 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [15-4] registered
+lines 359-381 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [16-4] registered
+lines 360-382 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [17-4] registered
+lines 361-383 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [18-4] registered
+lines 362-384 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [19-4] registered
+lines 363-385 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [20-4] registered
+lines 364-386 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [21-4] registered
+lines 365-387 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [22-4] registered
+lines 366-388 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [23-4] registered
+lines 367-389 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [24-4] registered
+lines 368-390 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [25-4] registered
+lines 369-391 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [26-4] registered
+lines 370-392 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [27-4] registered
+lines 371-393 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [28-4] registered
+lines 372-394 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [29-4] registered
+lines 373-395 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [30-3] registered
+lines 374-396 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpiphp: Slot [31-3] registered
+lines 375-397 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1f.0: PCI bridge to [bus 03]
+lines 376-398 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: PCI: Interrupt link LNKA configured for>
+lines 377-399 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: PCI: Interrupt link LNKB configured for>
+lines 378-400 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: PCI: Interrupt link LNKC configured for>
+lines 379-401 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: PCI: Interrupt link LNKD configured for>
+lines 380-402 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: PCI: Interrupt link LNKS configured for>
+lines 381-403 ESCESCOOBBMar 12 08:27:33 localhost kernel: iommu: Default domain type: Translated
+lines 382-404 ESCESCOOBBMar 12 08:27:33 localhost kernel: iommu: DMA domain TLB invalidation policy: la>
+lines 383-405 ESCESCOOBBMar 12 08:27:33 localhost kernel: SCSI subsystem initialized
+lines 384-406 ESCESCOOBBMar 12 08:27:33 localhost kernel: libata version 3.00 loaded.
+lines 385-407 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: bus type USB registered
+lines 386-408 ESCESCOOBBMar 12 08:27:33 localhost kernel: usbcore: registered new interface driver usbfs
+lines 387-409 ESCESCOOBBMar 12 08:27:33 localhost kernel: usbcore: registered new interface driver hub
+lines 388-410 ESCESCOOBBMar 12 08:27:33 localhost kernel: usbcore: registered new device driver usb
+lines 389-411 ESCESCOOBBMar 12 08:27:33 localhost kernel: pps_core: LinuxPPS API ver. 1 registered
+lines 390-412 ESCESCOOBBMar 12 08:27:33 localhost kernel: pps_core: Software ver. 5.3.6 - Copyright 200>
+lines 391-413 ESCESCOOBBMar 12 08:27:33 localhost kernel: PTP clock support registered
+lines 392-414 ESCESCOOBBMar 12 08:27:33 localhost kernel: EDAC MC: Ver: 3.0.0
+lines 393-415 ESCESCOOBBMar 12 08:27:33 localhost kernel: NetLabel: Initializing
+lines 394-416 ESCESCOOBBMar 12 08:27:33 localhost kernel: NetLabel:  domain hash size = 128
+lines 395-417 ESCESCOOBBMar 12 08:27:33 localhost kernel: NetLabel:  protocols = UNLABELED CIPSOv4 CALI>
+lines 396-418 ESCESCOOBBMar 12 08:27:33 localhost kernel: NetLabel:  unlabeled traffic allowed by defau>
+lines 397-419 ESCESCOOBBMar 12 08:27:33 localhost kernel: mctp: management component transport protocol>
+lines 398-420 ESCESCOOBBMar 12 08:27:33 localhost kernel: NET: Registered PF_MCTP protocol family
+lines 399-421 ESCESCOOBBMar 12 08:27:33 localhost kernel: PCI: Using ACPI for IRQ routing
+lines 400-422 ESCESCOOBBMar 12 08:27:33 localhost kernel: PCI: pci_cache_line_size set to 64 bytes
+lines 401-423 ESCESCOOBBMar 12 08:27:33 localhost kernel: e820: reserve RAM buffer [mem 0x0009fc00-0x00>
+lines 402-424 ESCESCOOBBMar 12 08:27:33 localhost kernel: e820: reserve RAM buffer [mem 0xbffda000-0xbf>
+lines 403-425 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:02.0: vgaarb: setting as boot VGA>
+lines 404-426 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:02.0: vgaarb: bridge control poss>
+lines 405-427 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:02.0: vgaarb: VGA device added: d>
+lines 406-428 ESCESCOOBBMar 12 08:27:33 localhost kernel: vgaarb: loaded
+lines 407-429 ESCESCOOBBMar 12 08:27:33 localhost kernel: clocksource: Switched to clocksource kvm-clock
+lines 408-430 ESCESCOOBBMar 12 08:27:33 localhost kernel: VFS: Disk quotas dquot_6.6.0
+lines 409-431 ESCESCOOBBMar 12 08:27:33 localhost kernel: VFS: Dquot-cache hash table entries: 512 (ord>
+lines 410-432 ESCESCOOBBMar 12 08:27:33 localhost kernel: AppArmor: AppArmor Filesystem Enabled
+lines 411-433 ESCESCOOBBMar 12 08:27:33 localhost kernel: pnp: PnP ACPI init
+lines 412-434 ESCESCOOBBMar 12 08:27:33 localhost kernel: pnp 00:02: [dma 2]
+lines 413-435 ESCESCOOBBMar 12 08:27:33 localhost kernel: pnp: PnP ACPI: found 4 devices
+lines 414-436 ESCESCOOBBMar 12 08:27:33 localhost kernel: clocksource: acpi_pm: mask: 0xffffff max_cycl>
+lines 415-437 ESCESCOOBBMar 12 08:27:33 localhost kernel: NET: Registered PF_INET protocol family
+lines 416-438 ESCESCOOBBMar 12 08:27:33 localhost kernel: IP idents hash table entries: 65536 (order: 7>
+lines 417-439 ESCESCOOBBMar 12 08:27:33 localhost kernel: tcp_listen_portaddr_hash hash table entries: >
+lines 418-440 ESCESCOOBBMar 12 08:27:33 localhost kernel: Table-perturb hash table entries: 65536 (orde>
+lines 419-441 ESCESCOOBBMar 12 08:27:33 localhost kernel: TCP established hash table entries: 32768 (or>
+lines 420-442 ESCESCOOBBMar 12 08:27:33 localhost kernel: TCP bind hash table entries: 32768 (order: 8,>
+lines 421-443 ESCESCOOBBMar 12 08:27:33 localhost kernel: TCP: Hash tables configured (established 3276>
+lines 422-444 ESCESCOOBBMar 12 08:27:33 localhost kernel: MPTCP token hash table entries: 4096 (order: >
+lines 423-445 ESCESCOOBBMar 12 08:27:33 localhost kernel: UDP hash table entries: 2048 (order: 4, 65536>
+lines 424-446 ESCESCOOBBMar 12 08:27:33 localhost kernel: UDP-Lite hash table entries: 2048 (order: 4, >
+lines 425-447 ESCESCOOBBMar 12 08:27:33 localhost kernel: NET: Registered PF_UNIX/PF_LOCAL protocol fam>
+lines 426-448 ESCESCOOBBMar 12 08:27:33 localhost kernel: NET: Registered PF_XDP protocol family
+lines 427-449 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:05.0: PCI bridge to [bus 01]
+lines 428-450 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:05.0:   bridge window [io  0xe000>
+lines 429-451 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:05.0:   bridge window [mem 0xfe80>
+lines 430-452 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:05.0:   bridge window [mem 0xc080>
+lines 431-453 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1e.0: PCI bridge to [bus 02]
+lines 432-454 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1e.0:   bridge window [io  0xd000>
+lines 433-455 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1e.0:   bridge window [mem 0xfe60>
+lines 434-456 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1e.0:   bridge window [mem 0xc060>
+lines 435-457 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1f.0: PCI bridge to [bus 03]
+lines 436-458 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1f.0:   bridge window [io  0xc000>
+lines 437-459 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1f.0:   bridge window [mem 0xfe40>
+lines 438-460 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:1f.0:   bridge window [mem 0xc040>
+lines 439-461 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:00: resource 4 [io  0x0000-0x0cf>
+lines 440-462 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:00: resource 5 [io  0x0d00-0xfff>
+lines 441-463 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:00: resource 6 [mem 0x000a0000-0>
+lines 442-464 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:00: resource 7 [mem 0xc0000000-0>
+lines 443-465 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:00: resource 8 [mem 0xc000000000>
+lines 444-466 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:01: resource 0 [io  0xe000-0xeff>
+lines 445-467 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:01: resource 1 [mem 0xfe800000-0>
+lines 446-468 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:01: resource 2 [mem 0xc080000000>
+lines 447-469 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:02: resource 0 [io  0xd000-0xdff>
+lines 448-470 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:02: resource 1 [mem 0xfe600000-0>
+lines 449-471 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:02: resource 2 [mem 0xc060000000>
+lines 450-472 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:03: resource 0 [io  0xc000-0xcff>
+lines 451-473 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:03: resource 1 [mem 0xfe400000-0>
+lines 452-474 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci_bus 0000:03: resource 2 [mem 0xc040000000>
+lines 453-475 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:01.0: PIIX3: Enabling Passive Rel>
+lines 454-476 ESCESCOOBBMar 12 08:27:33 localhost kernel: pci 0000:00:00.0: Limiting direct PCI/PCI tra>
+lines 455-477 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: \_SB_.LNKD: Enabled at IRQ 11
+lines 456-478 ESCESCOOBBMar 12 08:27:33 localhost kernel: PCI: CLS 0 bytes, default 64
+lines 457-479 ESCESCOOBBMar 12 08:27:33 localhost kernel: PCI-DMA: Using software bounce buffering for >
+lines 458-480 ESCESCOOBBMar 12 08:27:33 localhost kernel: software IO TLB: mapped [mem 0x00000000bbfda0>
+lines 459-481 ESCESCOOBBMar 12 08:27:33 localhost kernel: Trying to unpack rootfs image as initramfs...
+lines 460-482 ESCESCOOBBMar 12 08:27:33 localhost kernel: Initialise system trusted keyrings
+lines 461-483 ESCESCOOBBMar 12 08:27:33 localhost kernel: Key type blacklist registered
+lines 462-484 ESCESCOOBBMar 12 08:27:33 localhost kernel: workingset: timestamp_bits=36 max_order=20 bu>
+lines 463-485 ESCESCOOBBMar 12 08:27:33 localhost kernel: zbud: loaded
+lines 464-486 ESCESCOOBBMar 12 08:27:33 localhost kernel: squashfs: version 4.0 (2009/01/31) Phillip Lo>
+lines 465-487 ESCESCOOBBMar 12 08:27:33 localhost kernel: fuse: init (API version 7.39)
+lines 466-488 ESCESCOOBBMar 12 08:27:33 localhost kernel: integrity: Platform Keyring initialized
+lines 467-489 ESCESCOOBBMar 12 08:27:33 localhost kernel: integrity: Machine keyring initialized
+lines 468-490 ESCESCOOBBMar 12 08:27:33 localhost kernel: Key type asymmetric registered
+lines 469-491 ESCESCOOBBMar 12 08:27:33 localhost kernel: Asymmetric key parser 'x509' registered
+lines 470-492 ESCESCOOBBMar 12 08:27:33 localhost kernel: Block layer SCSI generic (bsg) driver version>
+lines 471-493 ESCESCOOBBMar 12 08:27:33 localhost kernel: io scheduler mq-deadline registered
+lines 472-494 ESCESCOOBBMar 12 08:27:33 localhost kernel: shpchp 0000:00:05.0: Requesting control of SH>
+lines 473-495 ESCESCOOBBMar 12 08:27:33 localhost kernel: shpchp 0000:00:05.0: Requesting control of SH>
+lines 474-496 ESCESCOOBBMar 12 08:27:33 localhost kernel: shpchp 0000:00:05.0: Cannot get control of SH>
+lines 475-497 ESCESCOOBBMar 12 08:27:33 localhost kernel: shpchp 0000:00:1e.0: Requesting control of SH>
+lines 476-498 ESCESCOOBBMar 12 08:27:33 localhost kernel: shpchp 0000:00:1e.0: Requesting control of SH>
+lines 477-499 ESCESCOOBBMar 12 08:27:33 localhost kernel: shpchp 0000:00:1e.0: Cannot get control of SH>
+lines 478-500 ESCESCOOBBMar 12 08:27:33 localhost kernel: shpchp 0000:00:1f.0: Requesting control of SH>
+lines 479-501 ESCESCOOBBMar 12 08:27:33 localhost kernel: shpchp 0000:00:1f.0: Requesting control of SH>
+lines 480-502 ESCESCOOBBMar 12 08:27:33 localhost kernel: shpchp 0000:00:1f.0: Cannot get control of SH>
+lines 481-503 ESCESCOOBBMar 12 08:27:33 localhost kernel: shpchp: Standard Hot Plug PCI Controller Driv>
+lines 482-504 ESCESCOOBBMar 12 08:27:33 localhost kernel: input: Power Button as /devices/LNXSYSTM:00/L>
+lines 483-505 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: button: Power Button [PWRF]
+lines 484-506 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: \_SB_.LNKC: Enabled at IRQ 10
+lines 485-507 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: \_SB_.LNKB: Enabled at IRQ 10
+lines 486-508 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: \_SB_.LNKA: Enabled at IRQ 11
+lines 487-509 ESCESCOOBBMar 12 08:27:33 localhost kernel: Free page reporting enabled
+lines 488-510 ESCESCOOBBMar 12 08:27:33 localhost kernel: Serial: 8250/16550 driver, 32 ports, IRQ shar>
+lines 489-511 ESCESCOOBBMar 12 08:27:33 localhost kernel: Linux agpgart interface v0.103
+lines 490-512 ESCESCOOBBMar 12 08:27:33 localhost kernel: loop: module loaded
+lines 491-513 ESCESCOOBBMar 12 08:27:33 localhost kernel: virtio_scsi virtio3: 2/0/0 default/read/poll >
+lines 492-514 ESCESCOOBBMar 12 08:27:33 localhost kernel: scsi host0: Virtio SCSI HBA
+lines 493-515 ESCESCOOBBMar 12 08:27:33 localhost kernel: ata_piix 0000:00:01.1: version 2.13
+lines 494-516 ESCESCOOBBMar 12 08:27:33 localhost kernel: scsi 0:0:0:0: Direct-Access     QEMU     QEMU>
+lines 495-517 ESCESCOOBBMar 12 08:27:33 localhost kernel: scsi host1: ata_piix
+lines 496-518 ESCESCOOBBMar 12 08:27:33 localhost kernel: scsi host2: ata_piix
+lines 497-519 ESCESCOOBBMar 12 08:27:33 localhost kernel: ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmd>
+lines 498-520 ESCESCOOBBMar 12 08:27:33 localhost kernel: ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmd>
+lines 499-521 ESCESCOOBBMar 12 08:27:33 localhost kernel: ACPI: bus type drm_connector registered
+lines 500-522 ESCESCOOBBMar 12 08:27:33 localhost kernel: tun: Universal TUN/TAP device driver, 1.6
+lines 501-523 ESCESCOOBBMar 12 08:27:33 localhost kernel: PPP generic driver version 2.4.2
+lines 502-524 ESCESCOOBBMar 12 08:27:33 localhost kernel: uhci_hcd 0000:00:01.2: UHCI Host Controller
+lines 503-525 ESCESCOOBBMar 12 08:27:33 localhost kernel: uhci_hcd 0000:00:01.2: new USB bus registered>
+lines 504-526 ESCESCOOBBMar 12 08:27:33 localhost kernel: uhci_hcd 0000:00:01.2: detected 2 ports
+lines 505-527 ESCESCOOBBMar 12 08:27:33 localhost kernel: uhci_hcd 0000:00:01.2: irq 11, io port 0x0000>
+lines 506-528 ESCESCOOBBMar 12 08:27:33 localhost kernel: usb usb1: New USB device found, idVendor=1d6b>
+lines 507-529 ESCESCOOBBMar 12 08:27:33 localhost kernel: usb usb1: New USB device strings: Mfr=3, Prod>
+lines 508-530 ESCESCOOBBMar 12 08:27:33 localhost kernel: usb usb1: Product: UHCI Host Controller
+lines 509-531 ESCESCOOBBMar 12 08:27:33 localhost kernel: usb usb1: Manufacturer: Linux 6.8.0-55-generi>
+lines 510-532 ESCESCOOBBMar 12 08:27:33 localhost kernel: usb usb1: SerialNumber: 0000:00:01.2
+lines 511-533 ESCESCOOBBMar 12 08:27:33 localhost kernel: hub 1-0:1.0: USB hub found
+lines 512-534 ESCESCOOBBMar 12 08:27:33 localhost kernel: hub 1-0:1.0: 2 ports detected
+lines 513-535 ESCESCOOBBMar 12 08:27:33 localhost kernel: i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0>
+lines 514-536 ESCESCOOBBMar 12 08:27:33 localhost kernel: serio: i8042 KBD port at 0x60,0x64 irq 1
+lines 515-537 ESCESCOOBBMar 12 08:27:33 localhost kernel: serio: i8042 AUX port at 0x60,0x64 irq 12
+lines 516-538 ESCESCOOBBMar 12 08:27:33 localhost kernel: mousedev: PS/2 mouse device common for all mi>
+lines 517-539 ESCESCOOBBMar 12 08:27:33 localhost kernel: rtc_cmos 00:03: RTC can wake from S4
+lines 518-540 ESCESCOOBBMar 12 08:27:33 localhost kernel: input: AT Translated Set 2 keyboard as /devic>
+lines 519-541 ESCESCOOBBMar 12 08:27:33 localhost kernel: rtc_cmos 00:03: registered as rtc0
+lines 520-542 ESCESCOOBBMar 12 08:27:33 localhost kernel: rtc_cmos 00:03: setting system clock to 2026->
+lines 521-543 ESCESCOOBBMar 12 08:27:33 localhost kernel: rtc_cmos 00:03: alarms up to one day, y3k, 24>
+lines 522-544 ESCESCOOBBMar 12 08:27:33 localhost kernel: i2c_dev: i2c /dev entries driver
+lines 523-545 ESCESCOOBBMar 12 08:27:33 localhost kernel: device-mapper: core: CONFIG_IMA_DISABLE_HTABL>
+lines 524-546 ESCESCOOBBMar 12 08:27:33 localhost kernel: device-mapper: uevent: version 1.0.3
+lines 525-547 ESCESCOOBBMar 12 08:27:33 localhost kernel: device-mapper: ioctl: 4.48.0-ioctl (2023-03-0>
+lines 526-548 ESCESCOOBBMar 12 08:27:33 localhost kernel: platform eisa.0: Probing EISA bus 0
+lines 527-549 ESCESCOOBBMar 12 08:27:33 localhost kernel: platform eisa.0: EISA: Cannot allocate resour>
+lines 528-550 ESCESCOOBBMar 12 08:27:33 localhost kernel: platform eisa.0: Cannot allocate resource for>
+lines 529-551 ESCESCOOBBMar 12 08:27:33 localhost kernel: platform eisa.0: Cannot allocate resource for>
+lines 530-552 ESCESCOOBBMar 12 08:27:33 localhost kernel: platform eisa.0: Cannot allocate resource for>
+lines 531-553 ESCESCOOBBMar 12 08:27:33 localhost kernel: platform eisa.0: Cannot allocate resource for>
+lines 532-554 ESCESCOOBBMar 12 08:27:33 localhost kernel: platform eisa.0: Cannot allocate resource for>
+lines 533-555 ESCESCOOBBMar 12 08:27:33 localhost kernel: platform eisa.0: Cannot allocate resource for>
+lines 534-556 ESCESCOOBBMar 12 08:27:33 localhost kernel: platform eisa.0: Cannot allocate resource for>
+lines 535-557 ESCESCOOBBMar 12 08:27:33 localhost kernel: platform eisa.0: Cannot allocate resource for>
+lines 536-558 ESCESCOOBBMar 12 08:27:33 localhost kernel: platform eisa.0: EISA: Detected 0 cards
+lines 537-559 ESCESCOOBBMar 12 08:27:33 localhost kernel: amd_pstate: the _CPC object is not present in>
+lines 538-560 ESCESCOOBBMar 12 08:27:33 localhost kernel: ledtrig-cpu: registered to indicate activity >
+lines 539-561 ESCESCOOBBMar 12 08:27:33 localhost kernel: [drm] Initialized simpledrm 1.0.0 20200625 fo>
+lines 540-562 ESCESCOOBBMar 12 08:27:33 localhost kernel: sd 0:0:0:0: Power-on or device reset occurred
+lines 541-563 ESCESCOOBBMar 12 08:27:33 localhost kernel: sd 0:0:0:0: [sda] 67108864 512-byte logical b>
+lines 542-564 ESCESCOOBBMar 12 08:27:33 localhost kernel: sd 0:0:0:0: [sda] Write Protect is off
+lines 543-565 ESCESCOOBBMar 12 08:27:33 localhost kernel: sd 0:0:0:0: [sda] Mode Sense: 63 00 10 08
+lines 544-566 ESCESCOOBBMar 12 08:27:33 localhost kernel: sd 0:0:0:0: [sda] Write cache: enabled, read >
+lines 545-567 ESCESCOOBBMar 12 08:27:33 localhost kernel: Console: switching to colour frame buffer dev>
+lines 546-568 ESCESCOOBBMar 12 08:27:33 localhost kernel: sd 0:0:0:0: Attached scsi generic sg0 type 0
+lines 547-569 ESCESCOOBBMar 12 08:27:33 localhost kernel: simple-framebuffer simple-framebuffer.0: [drm>
+lines 548-570 ESCESCOOBBMar 12 08:27:33 localhost kernel: drop_monitor: Initializing network drop monit>
+lines 549-571 ESCESCOOBBMar 12 08:27:33 localhost kernel: NET: Registered PF_INET6 protocol family
+lines 550-572 ESCESCOOBBMar 12 08:27:33 localhost kernel:  sda: sda1 sda2 sda3
+lines 551-573 ESCESCOOBBMar 12 08:27:33 localhost kernel: sd 0:0:0:0: [sda] Attached SCSI disk
+lines 552-574 ESCESCOOBBMar 12 08:27:33 localhost kernel: ata2: found unknown device (class 0)
+lines 553-575 ESCESCOOBBMar 12 08:27:33 localhost kernel: ata2.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/>
+lines 554-576 ESCESCOOBBMar 12 08:27:33 localhost kernel: scsi 2:0:0:0: CD-ROM            QEMU     QEMU>
+lines 555-577 ESCESCOOBBMar 12 08:27:33 localhost kernel: sr 2:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/r>
+lines 556-578 ESCESCOOBBMar 12 08:27:33 localhost kernel: cdrom: Uniform CD-ROM driver Revision: 3.20
+lines 557-579 ESCESCOOBBMar 12 08:27:33 localhost kernel: sr 2:0:0:0: Attached scsi CD-ROM sr0
+lines 558-580 ESCESCOOBBMar 12 08:27:33 localhost kernel: sr 2:0:0:0: Attached scsi generic sg1 type 5
+lines 559-581 ESCESCOOBBMar 12 08:27:33 localhost kernel: Freeing initrd memory: 67140K
+lines 560-582 ESCESCOOBBMar 12 08:27:33 localhost kernel: Segment Routing with IPv6
+lines 561-583 ESCESCOOBBMar 12 08:27:33 localhost kernel: In-situ OAM (IOAM) with IPv6
+lines 562-584 ESCESCOOBBMar 12 08:27:33 localhost kernel: NET: Registered PF_PACKET protocol family
+lines 563-585 ESCESCOOBBMar 12 08:27:33 localhost kernel: Key type dns_resolver registered
+lines 564-586 ESCESCOOBBMar 12 08:27:33 localhost kernel: IPI shorthand broadcast: enabled
+lines 565-587 ESCESCOOBBMar 12 08:27:33 localhost kernel: sched_clock: Marking stable (1150007180, 1714>
+lines 566-588 ESCESCOOBBMar 12 08:27:33 localhost kernel: registered taskstats version 1
+lines 567-589 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loading compiled-in X.509 certificates
+lines 568-590 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loaded X.509 cert 'Build time autogenerated k>
+lines 569-591 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Live Patch >
+lines 570-592 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Kernel Modu>
+lines 571-593 ESCESCOOBBMar 12 08:27:33 localhost kernel: blacklist: Loading compiled-in revocation X.5>
+lines 572-594 ESCESCOOBBMar 12 08:27:33 localhost kernel: usb 1-1: new full-speed USB device number 2 u>
+lines 573-595 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot>
+lines 574-596 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot>
+lines 575-597 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot>
+lines 576-598 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot>
+lines 577-599 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot>
+lines 578-600 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot>
+lines 579-601 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot>
+lines 580-602 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot>
+lines 581-603 ESCESCOOBBMar 12 08:27:33 localhost kernel: Key type .fscrypt registered
+lines 582-604 ESCESCOOBBMar 12 08:27:33 localhost kernel: Key type fscrypt-provisioning registered
+lines 583-605 ESCESCOOBBMar 12 08:27:33 localhost kernel: cryptd: max_cpu_qlen set to 1000
+lines 584-606 ESCESCOOBBMar 12 08:27:33 localhost kernel: SSE version of gcm_enc/dec engaged.
+lines 585-607 ESCESCOOBBMar 12 08:27:33 localhost kernel: Key type encrypted registered
+lines 586-608 ESCESCOOBBMar 12 08:27:33 localhost kernel: AppArmor: AppArmor sha256 policy hashing enab>
+lines 587-609 ESCESCOOBBMar 12 08:27:33 localhost kernel: ima: No TPM chip found, activating TPM-bypass!
+lines 588-610 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loading compiled-in module X.509 certificates
+lines 589-611 ESCESCOOBBMar 12 08:27:33 localhost kernel: Loaded X.509 cert 'Build time autogenerated k>
+lines 590-612 ESCESCOOBBMar 12 08:27:33 localhost kernel: ima: Allocated hash algorithm: sha256
+lines 591-613 ESCESCOOBBMar 12 08:27:33 localhost kernel: ima: No architecture policies found
+lines 592-614 ESCESCOOBBMar 12 08:27:33 localhost kernel: evm: Initialising EVM extended attributes:
+lines 593-615 ESCESCOOBBMar 12 08:27:33 localhost kernel: evm: security.selinux
+lines 594-616 ESCESCOOBBMar 12 08:27:33 localhost kernel: evm: security.SMACK64
+lines 595-617 ESCESCOOBBMar 12 08:27:33 localhost kernel: evm: security.SMACK64EXEC
+lines 596-618 ESCESCOOBBMar 12 08:27:33 localhost kernel: evm: security.SMACK64TRANSMUTE
+lines 597-619 ESCESCOOBBMar 12 08:27:33 localhost kernel: evm: security.SMACK64MMAP
+lines 598-620 ESCESCOOBBMar 12 08:27:33 localhost kernel: evm: security.apparmor
+lines 599-621 ESCESCOOBBMar 12 08:27:33 localhost kernel: evm: security.ima
+lines 600-622 ESCESCOOBBMar 12 08:27:33 localhost kernel: evm: security.capability
+lines 601-623 ESCESCOOBBMar 12 08:27:33 localhost kernel: evm: HMAC attrs: 0x1
+lines 602-624 ESCESCOOBBMar 12 08:27:33 localhost kernel: PM:   Magic number: 2:655:472
+lines 603-625 ESCESCOOBBMar 12 08:27:33 localhost kernel: acpi LNXSYSTM:00: hash matches
+lines 604-626 ESCESCOOBBMar 12 08:27:33 localhost kernel: powernow_k8: Power state transitions not supp>
+lines 605-627 ESCESCOOBBMar 12 08:27:33 localhost kernel: powernow_k8: Power state transitions not supp>
+lines 606-628 ESCESCOOBBMar 12 08:27:33 localhost kernel: RAS: Correctable Errors collector initialized.
+lines 607-629 ESCESCOOBBMar 12 08:27:33 localhost kernel: clk: Disabling unused clocks
+lines 608-630 ESCESCOOBBMar 12 08:27:33 localhost kernel: Freeing unused decrypted memory: 2028K
+lines 609-631 ESCESCOOBBMar 12 08:27:33 localhost kernel: Freeing unused kernel image (initmem) memory:>
+lines 610-632 ESCESCOOBBMar 12 08:27:33 localhost kernel: Write protecting the kernel read-only data: 3>
+lines 611-633 ESCESCOOBBMar 12 08:27:33 localhost kernel: Freeing unused kernel image (rodata/data gap)>
+lines 612-634 ESCESCOOBBMar 12 08:27:33 localhost kernel: usb 1-1: New USB device found, idVendor=0627,>
+lines 613-635 ESCESCOOBBMar 12 08:27:33 localhost kernel: usb 1-1: New USB device strings: Mfr=1, Produ>
+lines 614-636 ESCESCOOBBMar 12 08:27:33 localhost kernel: usb 1-1: Product: QEMU USB Tablet
+lines 615-637 ESCESCOOBBMar 12 08:27:33 localhost kernel: usb 1-1: Manufacturer: QEMU
+lines 616-638 ESCESCOOBBMar 12 08:27:33 localhost kernel: usb 1-1: SerialNumber: 28754-0000:00:01.2-1
+lines 617-639 ESCESCOOBBMar 12 08:27:33 localhost kernel: x86/mm: Checked W+X mappings: passed, no W+X >
+lines 618-640 ESCESCOOBBMar 12 08:27:33 localhost kernel: Run /init as init process
+lines 619-641 ESCESCOOBBMar 12 08:27:33 localhost kernel:   with arguments:
+lines 620-642 ESCESCOOBBMar 12 08:27:33 localhost kernel:     /init
+lines 621-643 ESCESCOOBBMar 12 08:27:33 localhost kernel:   with environment:
+lines 622-644 ESCESCOOBBMar 12 08:27:33 localhost kernel:     HOME=/
+lines 623-645 ESCESCOOBBMar 12 08:27:33 localhost kernel:     TERM=linux
+lines 624-646 ESCESCOOBBMar 12 08:27:33 localhost kernel:     BOOT_IMAGE=/vmlinuz-6.8.0-55-generic
+lines 625-647 ESCESCOOBBMar 12 08:27:33 localhost kernel: virtio_net virtio2 ens18: renamed from eth0
+lines 626-648 ESCESCOOBBMar 12 08:27:33 localhost kernel: FDC 0 is a S82078B
+lines 627-649 ESCESCOOBBMar 12 08:27:33 localhost kernel: hid: raw HID events driver (C) Jiri Kosina
+lines 628-650 ESCESCOOBBMar 12 08:27:33 localhost kernel: usbcore: registered new interface driver usbh>
+lines 629-651 ESCESCOOBBMar 12 08:27:33 localhost kernel: usbhid: USB HID core driver
+lines 630-652 ESCESCOOBBMar 12 08:27:33 localhost kernel: input: VirtualPS/2 VMware VMMouse as /devices>
+lines 631-653 ESCESCOOBBMar 12 08:27:33 localhost kernel: input: VirtualPS/2 VMware VMMouse as /devices>
+lines 632-654 ESCESCOOBBMar 12 08:27:33 localhost kernel: Console: switching to colour dummy device 80x>
+lines 633-655 ESCESCOOBBMar 12 08:27:33 localhost kernel: bochs-drm 0000:00:02.0: vgaarb: deactivate vg>
+lines 634-656 ESCESCOOBBMar 12 08:27:33 localhost kernel: [drm] Found bochs VGA, ID 0xb0c5.
+lines 635-657 ESCESCOOBBMar 12 08:27:33 localhost kernel: [drm] Framebuffer size 16384 kB @ 0xfd000000,>
+lines 636-658 ESCESCOOBBMar 12 08:27:33 localhost kernel: input: QEMU QEMU USB Tablet as /devices/pci00>
+lines 637-659 ESCESCOOBBMar 12 08:27:33 localhost kernel: hid-generic 0003:0627:0001.0001: input,hidraw>
+lines 638-660 ESCESCOOBBMar 12 08:27:33 localhost kernel: [drm] Found EDID data blob.
+lines 639-661 ESCESCOOBBMar 12 08:27:33 localhost kernel: [drm] Initialized bochs-drm 1.0.0 20130925 fo>
+lines 640-662 ESCESCOOBBMar 12 08:27:33 localhost kernel: fbcon: bochs-drmdrmfb (fb0) is primary device
+lines 641-663 ESCESCOOBBMar 12 08:27:33 localhost kernel: Console: switching to colour frame buffer dev>
+lines 642-664 ESCESCOOBBMar 12 08:27:33 localhost kernel: bochs-drm 0000:00:02.0: [drm] fb0: bochs-drmd>
+lines 643-665 ESCESCOOBBMar 12 08:27:33 localhost kernel: random: crng init done
+lines 644-666 ESCESCOOBBMar 12 08:27:33 localhost kernel: raid6: sse2x4   gen() 16691 MB/s
+lines 645-667 ESCESCOOBBMar 12 08:27:33 localhost kernel: raid6: sse2x2   gen()  4792 MB/s
+lines 646-668 ESCESCOOBBMar 12 08:27:33 localhost kernel: raid6: sse2x1   gen()  1212 MB/s
+lines 647-669 ESCESCOOBBMar 12 08:27:33 localhost kernel: raid6: using algorithm sse2x4 gen() 16691 MB/s
+lines 648-670 ESCESCOOBBMar 12 08:27:33 localhost kernel: raid6: .... xor() 3257 MB/s, rmw enabled
+lines 649-671 ESCESCOOBBMar 12 08:27:33 localhost kernel: raid6: using ssse3x2 recovery algorithm
+lines 650-672 ESCESCOOBBMar 12 08:27:33 localhost kernel: xor: measuring software checksum speed
+lines 651-673 ESCESCOOBBMar 12 08:27:33 localhost kernel:    prefetch64-sse  : 21878 MB/sec
+lines 652-674 ESCESCOOBBMar 12 08:27:33 localhost kernel:    generic_sse     : 19677 MB/sec
+lines 653-675 ESCESCOOBBMar 12 08:27:33 localhost kernel: xor: using function: prefetch64-sse (21878 MB>
+lines 654-676 ESCESCOOBBMar 12 08:27:33 localhost kernel: async_tx: api initialized (async)
+lines 655-677 ESCESCOOBBMar 12 08:27:33 localhost kernel: Btrfs loaded, zoned=yes, fsverity=yes
+lines 656-678 ESCESCOOBBMar 12 08:27:33 localhost kernel: workqueue: drm_fb_helper_damage_work hogged C>
+lines 657-679 ESCESCOOBBMar 12 08:27:33 localhost kernel: EXT4-fs (dm-0): mounted filesystem 78dfc1ab-0>
+lines 658-680 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Inserted module 'autofs4'
+lines 659-681 ESCESCOOBBMar 12 08:27:33 localhost kernel: workqueue: drm_fb_helper_damage_work hogged C>
+lines 660-682 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: systemd 255.4-1ubuntu8.5 running in syste>
+lines 661-683 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Detected virtualization kvm.
+lines 662-684 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Detected architecture x86-64.
+lines 663-685 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: No hostname configured, using default hos>
+lines 664-686 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Hostname set to <localhost>.
+lines 665-687 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Queued start job for default target graph>
+lines 666-688 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Created slice system-modprobe.slice - Sli>
+lines 667-689 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Created slice system-systemd\x2dfsck.slic>
+lines 668-690 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Created slice user.slice - User and Sessi>
+lines 669-691 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Started systemd-ask-password-wall.path - >
+lines 670-692 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Set up automount proc-sys-fs-binfmt_misc.>
+lines 671-693 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Expecting device dev-disk-by\x2duuid-c3f8>
+lines 672-694 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Reached target integritysetup.target - Lo>
+lines 673-695 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Reached target slices.target - Slice Unit>
+lines 674-696 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Reached target snapd.mounts-pre.target - >
+lines 675-697 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Reached target snapd.mounts.target - Moun>
+lines 676-698 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Reached target veritysetup.target - Local>
+lines 677-699 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Listening on dm-event.socket - Device-map>
+lines 678-700 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Listening on lvm2-lvmpolld.socket - LVM2 >
+lines 679-701 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Listening on multipathd.socket - multipat>
+lines 680-702 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Listening on syslog.socket - Syslog Socke>
+lines 681-703 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Listening on systemd-fsckd.socket - fsck >
+lines 682-704 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Listening on systemd-initctl.socket - ini>
+lines 683-705 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Listening on systemd-journald-dev-log.soc>
+lines 684-706 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Listening on systemd-journald.socket - Jo>
+lines 685-707 ESCESCOOBBMar 12 08:27:33 localhost systemd[1]: Listening on systemd-networkd.socket - Ne>
+lines 686-708
+root@eltex-practice2-pg1-v1:~# gdate
+Mon Mar 16 09:06:03 UTC 2026
+root@eltex-practice2-pg1-v1:~# find /var/log -name "auth.log" -exec awk '{print $5, substr($0, index($0,$6))}' {} \; | sed 's/\[[0-0a-zA-Z]*\]//g' | sort -k1,1
+listening on 0.0.0.0 port 22.
+listening on :: port 22.
+publickey for root from 172.16.8.4 port 57666 ssh2: RSA SHA256:WNv5w+Wp2GcjAT8/TRBBv+OVcFyg/eaKGBXzHqZWXfE
+session 697]: New session 697 of user root.
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session closed for user root
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+session opened for user root(uid=0) by root(uid=0)
+root@eltex-practice2-pg1-v1:~# find /var/log -name "auth.log" -exec awk '{print $5}' {} \; | sed -E 's/\[[0-9]+\]:?//g; s/://g' | sort | uniq -c | sort -rn
+    483 session
+      2 listening
+      1 publickey
+root@eltex-practice2-pg1-v1:~# grep "/usr/sbin/nologin" /etc/passwd | cut -d: -f1,3 | while FW=: read user uid; do echo "$uid, $user, $(id -Gn $user | tr ' ' ',')"; done | sort -rn
+id: 'daemon:1': no such user
+id: 'bin:2': no such user
+id: 'sys:3': no such user
+id: 'games:5': no such user
+id: 'man:6': no such user
+id: 'lp:7': no such user
+id: 'mail:8': no such user
+id: 'news:9': no such user
+id: 'uucp:10': no such user
+id: 'proxy:13': no such user
+id: 'www-data:33': no such user
+id: 'backup:34': no such user
+id: 'list:38': no such user
+id: 'irc:39': no such user
+id: '_apt:42': no such user
+id: 'nobody:65534': no such user
+id: 'systemd-network:998': no such user
+id: 'systemd-timesync:997': no such user
+id: 'messagebus:101': no such user
+id: 'systemd-resolve:992': no such user
+id: 'polkitd:991': no such user
+id: 'syslog:103': no such user
+id: 'uuidd:104': no such user
+id: 'tcpdump:105': no such user
+id: 'landscape:107': no such user
+id: 'fwupd-refresh:989': no such user
+id: 'usbmux:108': no such user
+id: 'sshd:109': no such user
+id: 'user3:1003': no such user
+, www-data:33, 
+, uuidd:104, 
+, uucp:10, 
+, user3:1003, 
+, usbmux:108, 
+, tcpdump:105, 
+, systemd-timesync:997, 
+, systemd-resolve:992, 
+, systemd-network:998, 
+, syslog:103, 
+, sys:3, 
+, sshd:109, 
+, proxy:13, 
+, polkitd:991, 
+, nobody:65534, 
+, news:9, 
+, messagebus:101, 
+, man:6, 
+, mail:8, 
+, lp:7, 
+, list:38, 
+, landscape:107, 
+, irc:39, 
+, games:5, 
+, fwupd-refresh:989, 
+, daemon:1, 
+, bin:2, 
+, backup:34, 
+, _apt:42, 
+root@eltex-practice2-pg1-v1:~# awk -F: '$7 == "/usr/sbin/nologin" {"id -Gn " $1 " | tr \" \" \",\"" | getline gr; print $3 ", " $1 ", " gr; close("id")}' /etc/passwd | sort -t, -k1,1rn
+65534, nobody, nogroup
+1003, user3, user3,users,mod1pr2
+998, systemd-network, systemd-network
+997, systemd-timesync, systemd-timesync
+992, systemd-resolve, systemd-resolve
+991, polkitd, polkitd
+989, fwupd-refresh, fwupd-refresh
+109, sshd, nogroup
+108, usbmux, plugdev
+107, landscape, landscape
+105, tcpdump, tcpdump
+104, uuidd, uuidd
+103, syslog, syslog,adm
+101, messagebus, messagebus
+42, _apt, nogroup
+39, irc, irc
+38, list, list
+34, backup, backup
+33, www-data, www-data
+13, proxy, proxy
+10, uucp, uucp
+9, news, news
+8, mail, mail
+7, lp, lp
+6, man, man
+5, games, games
+3, sys, sys
+2, bin, bin
+1, daemon, daemon
+root@eltex-practice2-pg1-v1:~# dmesg | grep 'kernel'
+[    0.112528] Booting paravirtualized kernel on KVM
+[    0.115252] Unknown kernel command line parameters "BOOT_IMAGE=/vmlinuz-6.8.0-55-generic", will be passed to user space.
+[    0.351557] Memory: 3933488K/4193760K available (22528K kernel code, 4443K rwdata, 14344K rodata, 4988K init, 4716K bss, 260012K reserved, 0K cma-reserved)
+[    1.163475] Loaded X.509 cert 'Build time autogenerated kernel key: e0bedf6fa049a1e09bd65ebab3904f14cdd5bc68'
+[    1.303861] Loaded X.509 cert 'Build time autogenerated kernel key: e0bedf6fa049a1e09bd65ebab3904f14cdd5bc68'
+[    1.346596] Freeing unused kernel image (initmem) memory: 4988K
+[    1.349068] Write protecting the kernel read-only data: 38912k
+[    1.351246] Freeing unused kernel image (rodata/data gap) memory: 2040K
+[   20.052375] systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+[   20.144910] systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+[   20.155894] systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+[   20.590475] systemd[1]: Mounted sys-kernel-debug.mount - Kernel Debug File System.
+[   20.595457] systemd[1]: Mounted sys-kernel-tracing.mount - Kernel Trace File System.
+[   20.758838] systemd[1]: Mounting sys-kernel-config.mount - Kernel Configuration File System...
+root@eltex-practice2-pg1-v1:~# wc -l /var/log/kern.log
+22 /var/log/kern.log
+root@eltex-practice2-pg1-v1:~# grep -E '^(Commandline|Start-Date|End-Date):' /var/log/apt/history.log | paste -d ';' - - -
+Start-Date: 2025-02-16  20:51:22;Commandline: apt-get install --reinstall apt;End-Date: 2025-02-16  20:51:24
+Start-Date: 2025-02-16  20:51:26;Commandline: apt-get install --reinstall base-files;End-Date: 2025-02-16  20:51:28
+Start-Date: 2025-02-16  20:51:31;Commandline: apt-get install --reinstall base-passwd;End-Date: 2025-02-16  20:51:32
+Start-Date: 2025-02-16  20:51:35;Commandline: apt-get install --reinstall bash;End-Date: 2025-02-16  20:51:37
+Start-Date: 2025-02-16  20:51:39;Commandline: apt-get install --reinstall bsdutils;End-Date: 2025-02-16  20:51:41
+Start-Date: 2025-02-16  20:51:44;Commandline: apt-get install --reinstall coreutils;End-Date: 2025-02-16  20:51:45
+Start-Date: 2025-02-16  20:51:48;Commandline: apt-get install --reinstall dash;End-Date: 2025-02-16  20:51:49
+Start-Date: 2025-02-16  20:51:52;Commandline: apt-get install --reinstall debconf;End-Date: 2025-02-16  20:51:53
+Start-Date: 2025-02-16  20:51:56;Commandline: apt-get install --reinstall debianutils;End-Date: 2025-02-16  20:51:58
+Start-Date: 2025-02-16  20:52:00;Commandline: apt-get install --reinstall diffutils;End-Date: 2025-02-16  20:52:02
+Start-Date: 2025-02-16  20:52:04;Commandline: apt-get install --reinstall dpkg;End-Date: 2025-02-16  20:52:06
+Start-Date: 2025-02-16  20:52:09;Commandline: apt-get install --reinstall e2fsprogs;End-Date: 2025-02-16  20:52:10
+Start-Date: 2025-02-16  20:52:13;Commandline: apt-get install --reinstall findutils;End-Date: 2025-02-16  20:52:14
+Start-Date: 2025-02-16  20:52:17;Commandline: apt-get install --reinstall gcc-14-base:amd64;End-Date: 2025-02-16  20:52:18
+Start-Date: 2025-02-16  20:52:21;Commandline: apt-get install --reinstall gpgv;End-Date: 2025-02-16  20:52:23
+Start-Date: 2025-02-16  20:52:25;Commandline: apt-get install --reinstall grep;End-Date: 2025-02-16  20:52:27
+Start-Date: 2025-02-16  20:52:29;Commandline: apt-get install --reinstall gzip;End-Date: 2025-02-16  20:52:31
+Start-Date: 2025-02-16  20:52:34;Commandline: apt-get install --reinstall hostname;End-Date: 2025-02-16  20:52:35
+Start-Date: 2025-02-16  20:52:38;Commandline: apt-get install --reinstall init-system-helpers;End-Date: 2025-02-16  20:52:39
+Start-Date: 2025-02-16  20:52:42;Commandline: apt-get install --reinstall libacl1:amd64;End-Date: 2025-02-16  20:52:43
+Start-Date: 2025-02-16  20:52:46;Commandline: apt-get install --reinstall libapt-pkg6.0t64:amd64;End-Date: 2025-02-16  20:52:47
+Start-Date: 2025-02-16  20:52:50;Commandline: apt-get install --reinstall libassuan0:amd64;End-Date: 2025-02-16  20:52:51
+Start-Date: 2025-02-16  20:52:54;Commandline: apt-get install --reinstall libattr1:amd64;End-Date: 2025-02-16  20:52:56
+Start-Date: 2025-02-16  20:52:58;Commandline: apt-get install --reinstall libaudit-common;End-Date: 2025-02-16  20:53:00
+Start-Date: 2025-02-16  20:53:02;Commandline: apt-get install --reinstall libaudit1:amd64;End-Date: 2025-02-16  20:53:04
+Start-Date: 2025-02-16  20:53:06;Commandline: apt-get install --reinstall libblkid1:amd64;End-Date: 2025-02-16  20:53:08
+Start-Date: 2025-02-16  20:53:11;Commandline: apt-get install --reinstall libbz2-1.0:amd64;End-Date: 2025-02-16  20:53:12
+Start-Date: 2025-02-16  20:53:15;Commandline: apt-get install --reinstall libc-bin;End-Date: 2025-02-16  20:53:17
+Start-Date: 2025-02-16  20:53:19;Commandline: apt-get install --reinstall libc6:amd64;End-Date: 2025-02-16  20:53:22
+Start-Date: 2025-02-16  20:53:25;Commandline: apt-get install --reinstall libcap-ng0:amd64;End-Date: 2025-02-16  20:53:26
+Start-Date: 2025-02-16  20:53:29;Commandline: apt-get install --reinstall libcap2:amd64;End-Date: 2025-02-16  20:53:30
+Start-Date: 2025-02-16  20:53:33;Commandline: apt-get install --reinstall libcom-err2:amd64;End-Date: 2025-02-16  20:53:34
+Start-Date: 2025-02-16  20:53:37;Commandline: apt-get install --reinstall libcrypt1:amd64;End-Date: 2025-02-16  20:53:38
+Start-Date: 2025-02-16  20:53:41;Commandline: apt-get install --reinstall libdebconfclient0:amd64;End-Date: 2025-02-16  20:53:42
+Start-Date: 2025-02-16  20:53:45;Commandline: apt-get install --reinstall libext2fs2t64:amd64;End-Date: 2025-02-16  20:53:46
+Start-Date: 2025-02-16  20:53:49;Commandline: apt-get install --reinstall libffi8:amd64;End-Date: 2025-02-16  20:53:50
+Start-Date: 2025-02-16  20:53:53;Commandline: apt-get install --reinstall libgcc-s1:amd64;End-Date: 2025-02-16  20:53:54
+Start-Date: 2025-02-16  20:53:57;Commandline: apt-get install --reinstall libgcrypt20:amd64;End-Date: 2025-02-16  20:53:59
+Start-Date: 2025-02-16  20:54:01;Commandline: apt-get install --reinstall libgmp10:amd64;End-Date: 2025-02-16  20:54:03
+Start-Date: 2025-02-16  20:54:05;Commandline: apt-get install --reinstall libgnutls30t64:amd64;End-Date: 2025-02-16  20:54:07
+Start-Date: 2025-02-16  20:54:10;Commandline: apt-get install --reinstall libgpg-error0:amd64;End-Date: 2025-02-16  20:54:11
+Start-Date: 2025-02-16  20:54:14;Commandline: apt-get install --reinstall libhogweed6t64:amd64;End-Date: 2025-02-16  20:54:15
+Start-Date: 2025-02-16  20:54:18;Commandline: apt-get install --reinstall libidn2-0:amd64;End-Date: 2025-02-16  20:54:19
+Start-Date: 2025-02-16  20:54:22;Commandline: apt-get install --reinstall liblz4-1:amd64;End-Date: 2025-02-16  20:54:23
+Start-Date: 2025-02-16  20:54:26;Commandline: apt-get install --reinstall liblzma5:amd64;End-Date: 2025-02-16  20:54:27
+Start-Date: 2025-02-16  20:54:30;Commandline: apt-get install --reinstall libmd0:amd64;End-Date: 2025-02-16  20:54:32
+Start-Date: 2025-02-16  20:54:34;Commandline: apt-get install --reinstall libmount1:amd64;End-Date: 2025-02-16  20:54:36
+Start-Date: 2025-02-16  20:54:38;Commandline: apt-get install --reinstall libncursesw6:amd64;End-Date: 2025-02-16  20:54:39
+Start-Date: 2025-02-16  20:54:42;Commandline: apt-get install --reinstall libnettle8t64:amd64;End-Date: 2025-02-16  20:54:43
+Start-Date: 2025-02-16  20:54:46;Commandline: apt-get install --reinstall libnpth0t64:amd64;End-Date: 2025-02-16  20:54:48
+Start-Date: 2025-02-16  20:54:50;Commandline: apt-get install --reinstall libp11-kit0:amd64;End-Date: 2025-02-16  20:54:52
+Start-Date: 2025-02-16  20:54:54;Commandline: apt-get install --reinstall libpam-modules:amd64;End-Date: 2025-02-16  20:54:56
+Start-Date: 2025-02-16  20:54:58;Commandline: apt-get install --reinstall libpam-modules-bin;End-Date: 2025-02-16  20:55:00
+Start-Date: 2025-02-16  20:55:03;Commandline: apt-get install --reinstall libpam-runtime;End-Date: 2025-02-16  20:55:04
+Start-Date: 2025-02-16  20:55:07;Commandline: apt-get install --reinstall libpam0g:amd64;End-Date: 2025-02-16  20:55:08
+Start-Date: 2025-02-16  20:55:11;Commandline: apt-get install --reinstall libpcre2-8-0:amd64;End-Date: 2025-02-16  20:55:12
+Start-Date: 2025-02-16  20:55:15;Commandline: apt-get install --reinstall libproc2-0:amd64;End-Date: 2025-02-16  20:55:16
+Start-Date: 2025-02-16  20:55:19;Commandline: apt-get install --reinstall libseccomp2:amd64;End-Date: 2025-02-16  20:55:20
+Start-Date: 2025-02-16  20:55:23;Commandline: apt-get install --reinstall libselinux1:amd64;End-Date: 2025-02-16  20:55:24
+Start-Date: 2025-02-16  20:55:27;Commandline: apt-get install --reinstall libsemanage-common;End-Date: 2025-02-16  20:55:28
+Start-Date: 2025-02-16  20:55:31;Commandline: apt-get install --reinstall libsemanage2:amd64;End-Date: 2025-02-16  20:55:32
+Start-Date: 2025-02-16  20:55:35;Commandline: apt-get install --reinstall libsepol2:amd64;End-Date: 2025-02-16  20:55:36
+Start-Date: 2025-02-16  20:55:38;Commandline: apt-get install --reinstall libsmartcols1:amd64;End-Date: 2025-02-16  20:55:40
+Start-Date: 2025-02-16  20:55:42;Commandline: apt-get install --reinstall libss2:amd64;End-Date: 2025-02-16  20:55:44
+Start-Date: 2025-02-16  20:55:46;Commandline: apt-get install --reinstall libssl3t64:amd64;End-Date: 2025-02-16  20:55:48
+Start-Date: 2025-02-16  20:55:51;Commandline: apt-get install --reinstall libstdc++6:amd64;End-Date: 2025-02-16  20:55:52
+Start-Date: 2025-02-16  20:55:55;Commandline: apt-get install --reinstall libsystemd0:amd64;End-Date: 2025-02-16  20:55:56
+Start-Date: 2025-02-16  20:55:59;Commandline: apt-get install --reinstall libtasn1-6:amd64;End-Date: 2025-02-16  20:56:00
+Start-Date: 2025-02-16  20:56:03;Commandline: apt-get install --reinstall libtinfo6:amd64;End-Date: 2025-02-16  20:56:04
+Start-Date: 2025-02-16  20:56:07;Commandline: apt-get install --reinstall libudev1:amd64;End-Date: 2025-02-16  20:56:08
+Start-Date: 2025-02-16  20:56:11;Commandline: apt-get install --reinstall libunistring5:amd64;End-Date: 2025-02-16  20:56:13
+Start-Date: 2025-02-16  20:56:15;Commandline: apt-get install --reinstall libuuid1:amd64;End-Date: 2025-02-16  20:56:17
+Start-Date: 2025-02-16  20:56:19;Commandline: apt-get install --reinstall libxxhash0:amd64;End-Date: 2025-02-16  20:56:21
+Start-Date: 2025-02-16  20:56:23;Commandline: apt-get install --reinstall libzstd1:amd64;End-Date: 2025-02-16  20:56:25
+Start-Date: 2025-02-16  20:56:28;Commandline: apt-get install --reinstall login;End-Date: 2025-02-16  20:56:29
+Start-Date: 2025-02-16  20:56:32;Commandline: apt-get install --reinstall logsave;End-Date: 2025-02-16  20:56:33
+Start-Date: 2025-02-16  20:56:36;Commandline: apt-get install --reinstall mawk;End-Date: 2025-02-16  20:56:37
+Start-Date: 2025-02-16  20:56:39;Commandline: apt-get install --reinstall mount;End-Date: 2025-02-16  20:56:41
+Start-Date: 2025-02-16  20:56:43;Commandline: apt-get install --reinstall ncurses-base;End-Date: 2025-02-16  20:56:45
+Start-Date: 2025-02-16  20:56:47;Commandline: apt-get install --reinstall ncurses-bin;End-Date: 2025-02-16  20:56:49
+Start-Date: 2025-02-16  20:56:52;Commandline: apt-get install --reinstall passwd;End-Date: 2025-02-16  20:56:53
+Start-Date: 2025-02-16  20:56:55;Commandline: apt-get install --reinstall perl-base;End-Date: 2025-02-16  20:56:57
+Start-Date: 2025-02-16  20:57:00;Commandline: apt-get install --reinstall procps;End-Date: 2025-02-16  20:57:01
+Start-Date: 2025-02-16  20:57:04;Commandline: apt-get install --reinstall sed;End-Date: 2025-02-16  20:57:05
+Start-Date: 2025-02-16  20:57:08;Commandline: apt-get install --reinstall sensible-utils;End-Date: 2025-02-16  20:57:09
+Start-Date: 2025-02-16  20:57:12;Commandline: apt-get install --reinstall sysvinit-utils;End-Date: 2025-02-16  20:57:13
+Start-Date: 2025-02-16  20:57:16;Commandline: apt-get install --reinstall tar;End-Date: 2025-02-16  20:57:17
+Start-Date: 2025-02-16  20:57:20;Commandline: apt-get install --reinstall ubuntu-keyring;End-Date: 2025-02-16  20:57:21
+Start-Date: 2025-02-16  20:57:24;Commandline: apt-get install --reinstall util-linux;End-Date: 2025-02-16  20:57:26
+Start-Date: 2025-02-16  20:57:28;Commandline: apt-get install --reinstall zlib1g:amd64;End-Date: 2025-02-16  20:57:30
+Start-Date: 2025-02-16  20:57:34;Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes --force-yes upgrade;End-Date: 2025-02-16  20:57:38
+Start-Date: 2025-02-16  20:57:39;Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes --force-yes dist-upgrade;End-Date: 2025-02-16  20:57:39
+Start-Date: 2025-02-16  20:57:42;Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes install adduser apparmor apport apport-core-dump-handler apt base-passwd bcache-tools btrfs-progs busybox-initramfs ca-certificates cloud-guest-utils cloud-init coreutils cpio cryptsetup cryptsetup-bin curl dbus dbus-bin dbus-daemon dbus-session-bus-common dbus-system-bus-common dbus-user-session debconf dhcpcd-base distro-info-data dmeventd dmsetup dpkg dracut-install e2fsprogs ethtool fdisk fuse3 gawk gcc-14-base gettext-base gir1.2-girepository-2.0 gir1.2-glib-2.0 gpgv init-system-helpers initramfs-tools initramfs-tools-bin initramfs-tools-core iproute2 klibc-utils kmod kpartx libacl1 libaio1t64 libapparmor1 libapt-pkg6.0t64 libargon2-1 libassuan0 libattr1 libaudit-common libaudit1 libblkid1 libbpf1 libbrotli1 libbsd0 libbz2-1.0 libc6 libcap-ng0 libcap2 libcap2-bin libcbor0.10 libcom-err2 libcrypt1 libcryptsetup12 libcurl4t64 libdb5.3t64 libdbus-1-3 libdebconfclient0 libdevmapper-event1.02.1 libdevmapper1.02.1 libdrm-common libdrm2 libedit2 libelf1t64 libexpat1 libext2fs2t64 libfdisk1 libffi8 libfido2-1 libfuse3-3 libgcc-s1 libgcrypt20 libgdbm-compat4t64 libgdbm6t64 libgirepository-1.0-1 libglib2.0-0t64 libgmp10 libgnutls30t64 libgpg-error0 libgssapi-krb5-2 libhogweed6t64 libicu74 libidn2-0 libinih1 libintl-perl libisns0t64 libjson-c5 libk5crypto3 libkeyutils1 libklibc libkmod2 libkrb5-3 libkrb5support0 libldap2 liblvm2cmd2.03 liblz4-1 liblzma5 liblzo2-2 libmd0 libmnl0 libmodule-find-perl libmodule-scandeps-perl libmount1 libmpfr6 libncursesw6 libnetplan1 libnettle8t64 libnghttp2-14 libnpth0t64 libopeniscsiusr libp11-kit0 libpam-modules libpam-modules-bin libpam-runtime libpam-systemd libpam0g libpci3 libpcre2-8-0 libperl5.38t64 libpopt0 libproc-processtable-perl libproc2-0 libpsl5t64 libpython3-stdlib libpython3.12-minimal libpython3.12-stdlib libreadline8t64 libreiserfscore0t64 librtmp1 libsasl2-2 libsasl2-modules-db libseccomp2 libselinux1 libsemanage-common libsemanage2 libsepol2 libsgutils2-1.46-2 libsigsegv2 libsmartcols1 libsort-naturally-perl libsqlite3-0 libss2 libssh-4 libssl3t64 libstdc++6 libsystemd-shared libsystemd0 libtasn1-6 libterm-readkey-perl libtinfo6 libtirpc-common libtirpc3t64 libudev1 libunistring5 liburcu8t64 libusb-1.0-0 libuuid1 libxtables12 libxxhash0 libyaml-0-2 libzstd1 linux-base logsave lsb-base lsb-release lvm2 mdadm media-types mount multipath-tools needrestart netbase netplan-generator netplan.io open-iscsi openssh-client openssl passwd pci.ids pciutils perl perl-base perl-modules-5.38 pollinate procps python-apt-common python3 python3-apport python3-apt python3-attr python3-blinker python3-certifi python3-cffi-backend python3-chardet python3-click python3-colorama python3-configobj python3-cryptography python3-dbus python3-debconf python3-distro python3-distro-info python3-distupgrade python3-gi python3-httplib2 python3-idna python3-jinja2 python3-json-pointer python3-jsonpatch python3-jsonschema python3-jwt python3-launchpadlib python3-lazr.restfulclient python3-lazr.uri python3-markupsafe python3-minimal python3-netplan python3-oauthlib python3-pkg-resources python3-problem-report python3-pyparsing python3-pyrsistent python3-requests python3-serial python3-six python3-update-manager python3-urllib3 python3-wadllib python3-xkit python3-yaml python3.12 python3.12-minimal readline-common sed sensible-utils sg3-utils sg3-utils-udev snapd squashfs-tools sudo systemd systemd-dev systemd-resolved systemd-sysv sysvinit-utils tar tzdata ubuntu-drivers-common ubuntu-keyring ubuntu-release-upgrader-core ubuntu-server-minimal ucf udev unattended-upgrades unminimize usbutils xfsprogs xxd xz-utils zlib1g lxd-installer;End-Date: 2025-02-16  20:58:20
+Start-Date: 2025-02-16  20:58:40;Commandline: apt-get install --reinstall -y gdisk zstd unattended-upgrades xfsprogs multipath-tools kpartx cloud-init squashfs-tools sg3-utils pollinate packagekit-tools polkitd xml-core needrestart mdadm lvm2 libterm-readkey-perl libsort-naturally-perl libproc-processtable-perl:amd64 libmodule-scandeps-perl libmodule-find-perl libldap-common libintl-xs-perl libintl-perl libglib2.0-bin gpg-wks-client gnupg keyboxd gpgsm gpg-agent pinentry-curses gpg gnupg-utils finalrd fdisk eatmydata dmeventd dirmngr gpgconf curl initramfs-tools linux-base initramfs-tools-core cryptsetup cryptsetup-bin btrfs-progs bcache-tools appstream libsasl2-2:amd64 xz-utils xauth ubuntu-release-upgrader-core plymouth openssh-client libx11-data libedit2:amd64 groff-base gettext-base fuse3 cpio apparmor xxd xdg-user-dirs ucf systemd-timesyncd systemd-resolved sudo shared-mime-info python3-pygments networkd-dispatcher netplan.io cloud-guest-utils thin-provisioning-tools software-properties-common snapd iproute2 libcap2-bin libtirpc-common libpam-systemd:amd64 coreutils ncurses-bin mawk libsemanage-common bash base-passwd tar sysvinit-utils sensible-utils sed apt init-system-helpers hostname gzip grep gpgv findutils diffutils debconf debianutils dash adduser kmod usbutils pciutils sgml-base perl libperl5.38t64:amd64 dmsetup dhcpcd-base open-iscsi udev gawk python3-chardet lsb-release dbus-daemon dbus-bin systemd-sysv systemd python3 python3.12 readline-common ethtool netplan-generator libpam-cap:amd64 libnss-systemd:amd64 console-setup keyboard-configuration xkb-data liblocale-gettext-perl kbd ca-certificates openssl libpam-modules:amd64 python3-minimal python3.12-minimal procps passwd libpam-modules-bin logsave libpam-runtime libaudit-common mount e2fsprogs util-linux perl-base bsdutils apport libc-bin base-files login dpkg;End-Date: 2025-02-16  20:59:23
+Start-Date: 2025-02-16  20:59:26;Commandline: apt-get install --reinstall -y cryptsetup-initramfs dbus dbus-session-bus-common dbus-system-bus-common distro-info-data dracut-install gcc-14-base:amd64 gnupg-l10n iso-codes libapt-pkg6.0t64:amd64 libc6:amd64 libcbor0.10:amd64 libcryptsetup12:amd64 libdb5.3t64:amd64 libdbus-1-3:amd64 libexpat1:amd64 libfuse3-3:amd64 libgcrypt20:amd64 libglib2.0-0t64:amd64 libgmp10:amd64 libgnutls30t64:amd64 libgpg-error0:amd64 libidn2-0:amd64 libjson-c5:amd64 libklibc:amd64 libkrb5-3:amd64 libksba8:amd64 libldap2:amd64 liblzma5:amd64 liblzo2-2:amd64 libmpfr6:amd64 libnettle8t64:amd64 libnghttp2-14:amd64 libopeniscsiusr libp11-kit0:amd64 libpam0g:amd64 libpcre2-8-0:amd64 libpng16-16t64:amd64 libpolkit-gobject-1-0:amd64 libpopt0:amd64 libproc2-0:amd64 libpython3-stdlib:amd64 libpython3.12-minimal:amd64 libreadline8t64:amd64 libsigsegv2:amd64 libsqlite3-0:amd64 libssh-4:amd64 libstemmer0d:amd64 libsystemd-shared:amd64 libsystemd0:amd64 libtasn1-6:amd64 libtirpc3t64:amd64 libudev1:amd64 libusb-1.0-0:amd64 libxml2:amd64 libxtables12:amd64 lsb-base ncurses-base packagekit perl-modules-5.38 publicsuffix python3-babel python3-certifi python3-colorama python3-dbus python3-gi python3-httplib2 python3-json-pointer python3-jsonpatch python3-jwt python3-launchpadlib python3-lazr.restfulclient python3-lazr.uri python3-markdown-it python3-oauthlib python3-pkg-resources python3-requests python3-rich python3-serial python3-software-properties python3-tz python3-wadllib python3-yaml systemd-dev tzdata ubuntu-drivers-common;End-Date: 2025-02-16  20:59:43
+Start-Date: 2025-02-16  20:59:50;Commandline: apt-get install -y ubuntu-minimal ubuntu-standard;End-Date: 2025-02-16  21:00:01
+Start-Date: 2025-02-16  21:00:04;Commandline: apt-get -y --fix-policy install;End-Date: 2025-02-16  21:00:04
+Start-Date: 2025-02-16  21:00:10;Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes install adduser apparmor apport apport-core-dump-handler apport-symptoms appstream apt apt-utils base-files base-passwd bash bash-completion bc bcache-tools bind9-dnsutils bind9-host bind9-libs bolt bsdextrautils bsdutils btrfs-progs busybox-initramfs busybox-static byobu ca-certificates cloud-guest-utils cloud-initramfs-copymods cloud-initramfs-dyn-netconf command-not-found console-setup console-setup-linux coreutils cpio cron cron-daemon-common cryptsetup cryptsetup-bin cryptsetup-initramfs curl dash dbus dbus-bin dbus-daemon dbus-session-bus-common dbus-system-bus-common dbus-user-session debconf debconf-i18n debianutils dhcpcd-base diffutils dirmngr distro-info distro-info-data dmeventd dmidecode dmsetup dosfstools dpkg dracut-install e2fsprogs ed eject ethtool fdisk file finalrd findutils fonts-ubuntu-console friendly-recovery ftp fuse3 fwupd fwupd-signed gawk gcc-14-base gdisk gettext-base gir1.2-girepository-2.0 gir1.2-glib-2.0 gir1.2-packagekitglib-1.0 git git-man gnupg gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpgconf gpgsm gpgv grep groff-base gzip hdparm hostname htop ibverbs-providers inetutils-telnet info init init-system-helpers initramfs-tools initramfs-tools-bin initramfs-tools-core install-info iproute2 iptables iputils-ping iputils-tracepath iso-codes jq kbd keyboard-configuration keyboxd klibc-utils kmod kpartx krb5-locales landscape-common less libacl1 libaio1t64 libapparmor1 libappstream5 libapt-pkg6.0t64 libarchive13t64 libargon2-1 libassuan0 libatasmart4 libatm1t64 libattr1 libaudit-common libaudit1 libblkid1 libblockdev-crypto3 libblockdev-fs3 libblockdev-loop3 libblockdev-mdraid3 libblockdev-nvme3 libblockdev-part3 libblockdev-swap3 libblockdev-utils3 libblockdev3 libbpf1 libbrotli1 libbsd0 libbytesize-common libbytesize1 libbz2-1.0 libc-bin libc6 libcap-ng0 libcap2 libcap2-bin libcbor0.10 libcom-err2 libcrypt1 libcryptsetup12 libcurl3t64-gnutls libcurl4t64 libdb5.3t64 libdbus-1-3 libdebconfclient0 libdevmapper-event1.02.1 libdevmapper1.02.1 libdrm-common libdrm2 libduktape207 libdw1t64 libedit2 libelf1t64 liberror-perl libestr0 libevdev2 libevent-core-2.1-7t64 libexpat1 libext2fs2t64 libfastjson4 libfdisk1 libffi8 libfido2-1 libflashrom1 libfribidi0 libftdi1-2 libfuse3-3 libfwupd2 libgcc-s1 libgcrypt20 libgdbm-compat4t64 libgdbm6t64 libgirepository-1.0-1 libglib2.0-0t64 libglib2.0-bin libglib2.0-data libgmp10 libgnutls30t64 libgpg-error0 libgpgme11t64 libgpm2 libgssapi-krb5-2 libgstreamer1.0-0 libgudev-1.0-0 libgusb2 libhogweed6t64 libibverbs1 libicu74 libidn2-0 libinih1 libintl-perl libintl-xs-perl libip4tc2 libip6tc2 libisns0t64 libjansson4 libjcat1 libjq1 libjson-c5 libjson-glib-1.0-0 libjson-glib-1.0-common libk5crypto3 libkeyutils1 libklibc libkmod2 libkrb5-3 libkrb5support0 libksba8 libldap-common libldap2 liblmdb0 liblocale-gettext-perl liblvm2cmd2.03 liblz4-1 liblzma5 liblzo2-2 libmagic-mgc libmagic1t64 libmaxminddb0 libmbim-glib4 libmbim-proxy libmbim-utils libmd0 libmm-glib0 libmnl0 libmodule-find-perl libmodule-scandeps-perl libmount1 libmpfr6 libmspack0t64 libncurses6 libncursesw6 libnetfilter-conntrack3 libnetplan1 libnettle8t64 libnewt0.52 libnfnetlink0 libnftables1 libnftnl11 libnghttp2-14 libnl-3-200 libnl-genl-3-200 libnl-route-3-200 libnpth0t64 libnspr4 libnss-systemd libnss3 libntfs-3g89t64 libnuma1 libnvme1t64 libonig5 libopeniscsiusr libp11-kit0 libpackagekit-glib2-18 libpam-cap libpam-modules libpam-modules-bin libpam-runtime libpam-systemd libpam0g libparted2t64 libpcap0.8t64 libpci3 libpcre2-8-0 libperl5.38t64 libpipeline1 libplymouth5 libpng16-16t64 libpolkit-agent-1-0 libpolkit-gobject-1-0 libpopt0 libproc-processtable-perl libproc2-0 libprotobuf-c1 libpsl5t64 libpython3-stdlib libpython3.12-minimal libpython3.12-stdlib libpython3.12t64 libqmi-glib5 libqmi-proxy libqmi-utils libqrtr-glib0 libreadline8t64 libreiserfscore0t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libseccomp2 libselinux1 libsemanage-common libsemanage2 libsensors-config libsensors5 libsepol2 libsgutils2-1.46-2 libsigsegv2 libslang2 libsmartcols1 libsodium23 libsort-naturally-perl libsqlite3-0 libss2 libssh-4 libssl3t64 libstdc++6 libstemmer0d libsystemd-shared libsystemd0 libtasn1-6 libtcl8.6 libterm-readkey-perl libtext-charwidth-perl libtext-iconv-perl libtext-wrapi18n-perl libtinfo6 libtirpc-common libtirpc3t64 libtraceevent1 libtraceevent1-plugin libtracefs1 libtss2-esys-3.0.2-0t64 libtss2-mu-4.0.1-0t64 libtss2-sys1t64 libtss2-tcti-cmd0t64 libtss2-tcti-device0t64 libtss2-tcti-mssim0t64 libtss2-tcti-swtpm0t64 libuchardet0 libudev1 libudisks2-0 libunistring5 libunwind8 liburcu8t64 libusb-1.0-0 libutempter0 libuuid1 libuv1t64 libvolume-key1 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxkbcommon0 libxml2 libxmlb2 libxmlsec1t64 libxmlsec1t64-openssl libxmuu1 libxslt1.1 libxtables12 libxxhash0 libyaml-0-2 libzstd1 linux-base locales login logrotate logsave lsb-release lshw lsof lvm2 lxd-agent-loader lxd-installer man-db manpages mawk mdadm media-types modemmanager motd-news-config mount mtr-tiny multipath-tools nano ncurses-base ncurses-bin needrestart netbase netcat-openbsd netplan-generator netplan.io networkd-dispatcher nftables ntfs-3g numactl open-iscsi open-vm-tools openssh-client openssl overlayroot packagekit packagekit-tools parted passwd pastebinit patch pci.ids pciutils perl perl-base perl-modules-5.38 pinentry-curses plymouth plymouth-theme-ubuntu-text polkitd pollinate powermgmt-base procps psmisc publicsuffix python-apt-common python3 python3-apport python3-apt python3-attr python3-automat python3-bcrypt python3-blinker python3-boto3 python3-botocore python3-certifi python3-cffi-backend python3-chardet python3-click python3-colorama python3-commandnotfound python3-configobj python3-constantly python3-cryptography python3-dateutil python3-dbus python3-debconf python3-debian python3-distro python3-distro-info python3-distupgrade python3-gdbm python3-gi python3-hamcrest python3-httplib2 python3-hyperlink python3-idna python3-incremental python3-jmespath python3-jwt python3-launchpadlib python3-lazr.restfulclient python3-lazr.uri python3-magic python3-markdown-it python3-mdurl python3-minimal python3-netifaces python3-netplan python3-newt python3-oauthlib python3-openssl python3-packaging python3-pexpect python3-pkg-resources python3-problem-report python3-ptyprocess python3-pyasn1 python3-pyasn1-modules python3-pygments python3-pyparsing python3-requests python3-rich python3-s3transfer python3-service-identity python3-setuptools python3-six python3-software-properties python3-systemd python3-twisted python3-update-manager python3-urllib3 python3-wadllib python3-yaml python3-zope.interface python3.12 python3.12-minimal readline-common rsync rsyslog run-one sbsigntool screen secureboot-db sed sensible-utils sg3-utils sg3-utils-udev sgml-base shared-mime-info snapd software-properties-common sosreport squashfs-tools strace sudo sysstat systemd systemd-dev systemd-hwe-hwdb systemd-resolved systemd-sysv systemd-timesyncd sysvinit-utils tar tcl tcl8.6 tcpdump telnet thin-provisioning-tools time tmux tnftp tpm-udev trace-cmd tzdata ubuntu-keyring ubuntu-minimal ubuntu-pro-client ubuntu-pro-client-l10n ubuntu-release-upgrader-core ubuntu-server ubuntu-standard ucf udev udisks2 ufw unattended-upgrades update-manager-core update-notifier-common usb-modeswitch usb-modeswitch-data usb.ids usbutils util-linux uuid-runtime vim vim-common vim-runtime vim-tiny wget whiptail xauth xdg-user-dirs xfsprogs xkb-data xml-core xxd xz-utils zerofree zlib1g zstd cloud-init;End-Date: 2025-02-16  21:00:28
+Start-Date: 2025-03-12  18:07:37;Commandline: apt-get --quiet --assume-yes --option=Dpkg::options::=--force-unsafe-io --option=Dpkg::Options::=--force-confold install grub-pc;End-Date: 2025-03-12  18:08:03
+Start-Date: 2025-03-12  18:08:37;Commandline: apt-get --quiet --assume-yes --option=Dpkg::options::=--force-unsafe-io --option=Dpkg::Options::=--force-confold install linux-generic;End-Date: 2025-03-12  18:11:58
+Start-Date: 2025-03-12  18:12:45;Commandline: apt-get --quiet --assume-yes --option=Dpkg::options::=--force-unsafe-io --option=Dpkg::Options::=--force-confold install openssh-server;End-Date: 2025-03-12  18:13:11
+Start-Date: 2025-03-12  18:13:21;Commandline: /usr/bin/unattended-upgrades -v;End-Date: 2025-03-12  18:14:11
+Start-Date: 2025-03-12  18:19:08;Commandline: apt dist-upgrade;End-Date: 2025-03-12  18:21:04
+Start-Date: 2025-03-12  18:21:23;Commandline: apt install vim qemu-guest-agent;End-Date: 2025-03-12  18:21:31
+Start-Date: 2026-03-13  07:00:39;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  07:06:17
+Start-Date: 2026-03-13  07:06:45;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  07:08:06
+Start-Date: 2026-03-13  07:08:14;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  07:09:26
+Start-Date: 2026-03-13  07:09:30;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  07:11:49
+Start-Date: 2026-03-13  07:11:57;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  07:23:57
+Start-Date: 2026-03-13  07:24:06;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  07:27:38
+Start-Date: 2026-03-13  07:27:49;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  07:36:34
+Start-Date: 2026-03-13  07:36:38;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  07:40:34
+Start-Date: 2026-03-13  07:40:37;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  07:46:22
+Start-Date: 2026-03-13  07:46:25;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  07:49:24
+Start-Date: 2026-03-13  07:49:28;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  07:50:37
+Start-Date: 2026-03-13  07:50:50;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  07:58:37
+Start-Date: 2026-03-13  07:58:45;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:04:57
+Start-Date: 2026-03-13  08:05:01;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:07:29
+Start-Date: 2026-03-13  08:07:41;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:10:13
+Start-Date: 2026-03-13  08:10:16;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:15:10
+Start-Date: 2026-03-13  08:15:12;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:17:15
+Start-Date: 2026-03-13  08:17:23;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:20:38
+Start-Date: 2026-03-13  08:20:42;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:22:13
+Start-Date: 2026-03-13  08:22:16;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:24:39
+Start-Date: 2026-03-13  08:24:44;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:27:07
+Start-Date: 2026-03-13  08:27:12;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:28:22
+Start-Date: 2026-03-13  08:28:25;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:31:01
+Start-Date: 2026-03-13  08:31:04;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:34:08
+Start-Date: 2026-03-13  08:34:16;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:35:31
+Start-Date: 2026-03-13  08:35:35;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:38:42
+Start-Date: 2026-03-13  08:38:45;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:42:50
+Start-Date: 2026-03-13  08:42:54;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:43:55
+Start-Date: 2026-03-13  08:44:02;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:47:11
+Start-Date: 2026-03-13  08:47:15;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:49:23
+Start-Date: 2026-03-13  08:49:27;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  08:51:41
+Start-Date: 2026-03-13  08:51:44;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:03:40
+Start-Date: 2026-03-13  09:03:46;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:04:39
+Start-Date: 2026-03-13  09:04:51;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:05:46
+Start-Date: 2026-03-13  09:05:52;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:08:38
+Start-Date: 2026-03-13  09:08:44;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:09:33
+Start-Date: 2026-03-13  09:09:38;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:12:13
+Start-Date: 2026-03-13  09:12:23;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:13:11
+Start-Date: 2026-03-13  09:13:16;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:13:57
+Start-Date: 2026-03-13  09:14:02;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:14:23
+Start-Date: 2026-03-13  09:14:26;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:15:04
+Start-Date: 2026-03-13  09:15:12;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:17:17
+Start-Date: 2026-03-13  09:17:22;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:18:29
+Start-Date: 2026-03-13  09:18:33;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:19:16
+Start-Date: 2026-03-13  09:19:29;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:20:23
+Start-Date: 2026-03-13  09:20:29;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:21:15
+Start-Date: 2026-03-13  09:21:18;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:22:28
+Start-Date: 2026-03-13  09:22:31;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:23:54
+Start-Date: 2026-03-13  09:23:59;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:26:05
+Start-Date: 2026-03-13  09:26:08;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:26:28
+Start-Date: 2026-03-13  09:26:33;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:26:51
+Start-Date: 2026-03-13  09:26:53;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:27:27
+Start-Date: 2026-03-13  09:27:29;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:27:42
+Start-Date: 2026-03-13  09:27:44;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:28:04
+Start-Date: 2026-03-13  09:28:07;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:28:34
+Start-Date: 2026-03-13  09:28:36;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:28:49
+Start-Date: 2026-03-13  09:28:55;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:30:22
+Start-Date: 2026-03-13  09:30:25;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-13  09:30:38
+Start-Date: 2026-03-14  04:42:42;Commandline: apt install bzip2;End-Date: 2026-03-14  04:42:46
+Start-Date: 2026-03-14  04:45:48;Commandline: apt install p7zip-full;End-Date: 2026-03-14  04:45:55
+Start-Date: 2026-03-14  06:39:03;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-14  06:39:09
+Start-Date: 2026-03-14  06:39:12;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-14  06:40:15
+Start-Date: 2026-03-14  06:40:19;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-14  06:40:53
+Start-Date: 2026-03-14  06:40:55;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-14  06:44:24
+Start-Date: 2026-03-14  06:44:25;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-14  06:44:49
+Start-Date: 2026-03-14  06:44:52;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-14  06:44:55
+Start-Date: 2026-03-14  06:44:57;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-14  06:45:08
+Start-Date: 2026-03-14  06:45:11;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-14  06:45:24
+Start-Date: 2026-03-14  06:45:27;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-14  06:45:44
+Start-Date: 2026-03-14  06:45:46;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-14  06:45:56
+Start-Date: 2026-03-14  06:45:58;Commandline: /usr/bin/unattended-upgrade;End-Date: 2026-03-14  06:46:04
+root@eltex-practice2-pg1-v1:~# grep -E '^(Start-Date|Commandline|End-Date):' /var/log/apt/history.log | sed 'N;N;s/\(Start-Date: .*\)\n\(Commandline: .*\)\n\(End-Date: .*\)/\2 ; \1 ; \3/'
+Commandline: apt-get install --reinstall apt ; Start-Date: 2025-02-16  20:51:22 ; End-Date: 2025-02-16  20:51:24
+Commandline: apt-get install --reinstall base-files ; Start-Date: 2025-02-16  20:51:26 ; End-Date: 2025-02-16  20:51:28
+Commandline: apt-get install --reinstall base-passwd ; Start-Date: 2025-02-16  20:51:31 ; End-Date: 2025-02-16  20:51:32
+Commandline: apt-get install --reinstall bash ; Start-Date: 2025-02-16  20:51:35 ; End-Date: 2025-02-16  20:51:37
+Commandline: apt-get install --reinstall bsdutils ; Start-Date: 2025-02-16  20:51:39 ; End-Date: 2025-02-16  20:51:41
+Commandline: apt-get install --reinstall coreutils ; Start-Date: 2025-02-16  20:51:44 ; End-Date: 2025-02-16  20:51:45
+Commandline: apt-get install --reinstall dash ; Start-Date: 2025-02-16  20:51:48 ; End-Date: 2025-02-16  20:51:49
+Commandline: apt-get install --reinstall debconf ; Start-Date: 2025-02-16  20:51:52 ; End-Date: 2025-02-16  20:51:53
+Commandline: apt-get install --reinstall debianutils ; Start-Date: 2025-02-16  20:51:56 ; End-Date: 2025-02-16  20:51:58
+Commandline: apt-get install --reinstall diffutils ; Start-Date: 2025-02-16  20:52:00 ; End-Date: 2025-02-16  20:52:02
+Commandline: apt-get install --reinstall dpkg ; Start-Date: 2025-02-16  20:52:04 ; End-Date: 2025-02-16  20:52:06
+Commandline: apt-get install --reinstall e2fsprogs ; Start-Date: 2025-02-16  20:52:09 ; End-Date: 2025-02-16  20:52:10
+Commandline: apt-get install --reinstall findutils ; Start-Date: 2025-02-16  20:52:13 ; End-Date: 2025-02-16  20:52:14
+Commandline: apt-get install --reinstall gcc-14-base:amd64 ; Start-Date: 2025-02-16  20:52:17 ; End-Date: 2025-02-16  20:52:18
+Commandline: apt-get install --reinstall gpgv ; Start-Date: 2025-02-16  20:52:21 ; End-Date: 2025-02-16  20:52:23
+Commandline: apt-get install --reinstall grep ; Start-Date: 2025-02-16  20:52:25 ; End-Date: 2025-02-16  20:52:27
+Commandline: apt-get install --reinstall gzip ; Start-Date: 2025-02-16  20:52:29 ; End-Date: 2025-02-16  20:52:31
+Commandline: apt-get install --reinstall hostname ; Start-Date: 2025-02-16  20:52:34 ; End-Date: 2025-02-16  20:52:35
+Commandline: apt-get install --reinstall init-system-helpers ; Start-Date: 2025-02-16  20:52:38 ; End-Date: 2025-02-16  20:52:39
+Commandline: apt-get install --reinstall libacl1:amd64 ; Start-Date: 2025-02-16  20:52:42 ; End-Date: 2025-02-16  20:52:43
+Commandline: apt-get install --reinstall libapt-pkg6.0t64:amd64 ; Start-Date: 2025-02-16  20:52:46 ; End-Date: 2025-02-16  20:52:47
+Commandline: apt-get install --reinstall libassuan0:amd64 ; Start-Date: 2025-02-16  20:52:50 ; End-Date: 2025-02-16  20:52:51
+Commandline: apt-get install --reinstall libattr1:amd64 ; Start-Date: 2025-02-16  20:52:54 ; End-Date: 2025-02-16  20:52:56
+Commandline: apt-get install --reinstall libaudit-common ; Start-Date: 2025-02-16  20:52:58 ; End-Date: 2025-02-16  20:53:00
+Commandline: apt-get install --reinstall libaudit1:amd64 ; Start-Date: 2025-02-16  20:53:02 ; End-Date: 2025-02-16  20:53:04
+Commandline: apt-get install --reinstall libblkid1:amd64 ; Start-Date: 2025-02-16  20:53:06 ; End-Date: 2025-02-16  20:53:08
+Commandline: apt-get install --reinstall libbz2-1.0:amd64 ; Start-Date: 2025-02-16  20:53:11 ; End-Date: 2025-02-16  20:53:12
+Commandline: apt-get install --reinstall libc-bin ; Start-Date: 2025-02-16  20:53:15 ; End-Date: 2025-02-16  20:53:17
+Commandline: apt-get install --reinstall libc6:amd64 ; Start-Date: 2025-02-16  20:53:19 ; End-Date: 2025-02-16  20:53:22
+Commandline: apt-get install --reinstall libcap-ng0:amd64 ; Start-Date: 2025-02-16  20:53:25 ; End-Date: 2025-02-16  20:53:26
+Commandline: apt-get install --reinstall libcap2:amd64 ; Start-Date: 2025-02-16  20:53:29 ; End-Date: 2025-02-16  20:53:30
+Commandline: apt-get install --reinstall libcom-err2:amd64 ; Start-Date: 2025-02-16  20:53:33 ; End-Date: 2025-02-16  20:53:34
+Commandline: apt-get install --reinstall libcrypt1:amd64 ; Start-Date: 2025-02-16  20:53:37 ; End-Date: 2025-02-16  20:53:38
+Commandline: apt-get install --reinstall libdebconfclient0:amd64 ; Start-Date: 2025-02-16  20:53:41 ; End-Date: 2025-02-16  20:53:42
+Commandline: apt-get install --reinstall libext2fs2t64:amd64 ; Start-Date: 2025-02-16  20:53:45 ; End-Date: 2025-02-16  20:53:46
+Commandline: apt-get install --reinstall libffi8:amd64 ; Start-Date: 2025-02-16  20:53:49 ; End-Date: 2025-02-16  20:53:50
+Commandline: apt-get install --reinstall libgcc-s1:amd64 ; Start-Date: 2025-02-16  20:53:53 ; End-Date: 2025-02-16  20:53:54
+Commandline: apt-get install --reinstall libgcrypt20:amd64 ; Start-Date: 2025-02-16  20:53:57 ; End-Date: 2025-02-16  20:53:59
+Commandline: apt-get install --reinstall libgmp10:amd64 ; Start-Date: 2025-02-16  20:54:01 ; End-Date: 2025-02-16  20:54:03
+Commandline: apt-get install --reinstall libgnutls30t64:amd64 ; Start-Date: 2025-02-16  20:54:05 ; End-Date: 2025-02-16  20:54:07
+Commandline: apt-get install --reinstall libgpg-error0:amd64 ; Start-Date: 2025-02-16  20:54:10 ; End-Date: 2025-02-16  20:54:11
+Commandline: apt-get install --reinstall libhogweed6t64:amd64 ; Start-Date: 2025-02-16  20:54:14 ; End-Date: 2025-02-16  20:54:15
+Commandline: apt-get install --reinstall libidn2-0:amd64 ; Start-Date: 2025-02-16  20:54:18 ; End-Date: 2025-02-16  20:54:19
+Commandline: apt-get install --reinstall liblz4-1:amd64 ; Start-Date: 2025-02-16  20:54:22 ; End-Date: 2025-02-16  20:54:23
+Commandline: apt-get install --reinstall liblzma5:amd64 ; Start-Date: 2025-02-16  20:54:26 ; End-Date: 2025-02-16  20:54:27
+Commandline: apt-get install --reinstall libmd0:amd64 ; Start-Date: 2025-02-16  20:54:30 ; End-Date: 2025-02-16  20:54:32
+Commandline: apt-get install --reinstall libmount1:amd64 ; Start-Date: 2025-02-16  20:54:34 ; End-Date: 2025-02-16  20:54:36
+Commandline: apt-get install --reinstall libncursesw6:amd64 ; Start-Date: 2025-02-16  20:54:38 ; End-Date: 2025-02-16  20:54:39
+Commandline: apt-get install --reinstall libnettle8t64:amd64 ; Start-Date: 2025-02-16  20:54:42 ; End-Date: 2025-02-16  20:54:43
+Commandline: apt-get install --reinstall libnpth0t64:amd64 ; Start-Date: 2025-02-16  20:54:46 ; End-Date: 2025-02-16  20:54:48
+Commandline: apt-get install --reinstall libp11-kit0:amd64 ; Start-Date: 2025-02-16  20:54:50 ; End-Date: 2025-02-16  20:54:52
+Commandline: apt-get install --reinstall libpam-modules:amd64 ; Start-Date: 2025-02-16  20:54:54 ; End-Date: 2025-02-16  20:54:56
+Commandline: apt-get install --reinstall libpam-modules-bin ; Start-Date: 2025-02-16  20:54:58 ; End-Date: 2025-02-16  20:55:00
+Commandline: apt-get install --reinstall libpam-runtime ; Start-Date: 2025-02-16  20:55:03 ; End-Date: 2025-02-16  20:55:04
+Commandline: apt-get install --reinstall libpam0g:amd64 ; Start-Date: 2025-02-16  20:55:07 ; End-Date: 2025-02-16  20:55:08
+Commandline: apt-get install --reinstall libpcre2-8-0:amd64 ; Start-Date: 2025-02-16  20:55:11 ; End-Date: 2025-02-16  20:55:12
+Commandline: apt-get install --reinstall libproc2-0:amd64 ; Start-Date: 2025-02-16  20:55:15 ; End-Date: 2025-02-16  20:55:16
+Commandline: apt-get install --reinstall libseccomp2:amd64 ; Start-Date: 2025-02-16  20:55:19 ; End-Date: 2025-02-16  20:55:20
+Commandline: apt-get install --reinstall libselinux1:amd64 ; Start-Date: 2025-02-16  20:55:23 ; End-Date: 2025-02-16  20:55:24
+Commandline: apt-get install --reinstall libsemanage-common ; Start-Date: 2025-02-16  20:55:27 ; End-Date: 2025-02-16  20:55:28
+Commandline: apt-get install --reinstall libsemanage2:amd64 ; Start-Date: 2025-02-16  20:55:31 ; End-Date: 2025-02-16  20:55:32
+Commandline: apt-get install --reinstall libsepol2:amd64 ; Start-Date: 2025-02-16  20:55:35 ; End-Date: 2025-02-16  20:55:36
+Commandline: apt-get install --reinstall libsmartcols1:amd64 ; Start-Date: 2025-02-16  20:55:38 ; End-Date: 2025-02-16  20:55:40
+Commandline: apt-get install --reinstall libss2:amd64 ; Start-Date: 2025-02-16  20:55:42 ; End-Date: 2025-02-16  20:55:44
+Commandline: apt-get install --reinstall libssl3t64:amd64 ; Start-Date: 2025-02-16  20:55:46 ; End-Date: 2025-02-16  20:55:48
+Commandline: apt-get install --reinstall libstdc++6:amd64 ; Start-Date: 2025-02-16  20:55:51 ; End-Date: 2025-02-16  20:55:52
+Commandline: apt-get install --reinstall libsystemd0:amd64 ; Start-Date: 2025-02-16  20:55:55 ; End-Date: 2025-02-16  20:55:56
+Commandline: apt-get install --reinstall libtasn1-6:amd64 ; Start-Date: 2025-02-16  20:55:59 ; End-Date: 2025-02-16  20:56:00
+Commandline: apt-get install --reinstall libtinfo6:amd64 ; Start-Date: 2025-02-16  20:56:03 ; End-Date: 2025-02-16  20:56:04
+Commandline: apt-get install --reinstall libudev1:amd64 ; Start-Date: 2025-02-16  20:56:07 ; End-Date: 2025-02-16  20:56:08
+Commandline: apt-get install --reinstall libunistring5:amd64 ; Start-Date: 2025-02-16  20:56:11 ; End-Date: 2025-02-16  20:56:13
+Commandline: apt-get install --reinstall libuuid1:amd64 ; Start-Date: 2025-02-16  20:56:15 ; End-Date: 2025-02-16  20:56:17
+Commandline: apt-get install --reinstall libxxhash0:amd64 ; Start-Date: 2025-02-16  20:56:19 ; End-Date: 2025-02-16  20:56:21
+Commandline: apt-get install --reinstall libzstd1:amd64 ; Start-Date: 2025-02-16  20:56:23 ; End-Date: 2025-02-16  20:56:25
+Commandline: apt-get install --reinstall login ; Start-Date: 2025-02-16  20:56:28 ; End-Date: 2025-02-16  20:56:29
+Commandline: apt-get install --reinstall logsave ; Start-Date: 2025-02-16  20:56:32 ; End-Date: 2025-02-16  20:56:33
+Commandline: apt-get install --reinstall mawk ; Start-Date: 2025-02-16  20:56:36 ; End-Date: 2025-02-16  20:56:37
+Commandline: apt-get install --reinstall mount ; Start-Date: 2025-02-16  20:56:39 ; End-Date: 2025-02-16  20:56:41
+Commandline: apt-get install --reinstall ncurses-base ; Start-Date: 2025-02-16  20:56:43 ; End-Date: 2025-02-16  20:56:45
+Commandline: apt-get install --reinstall ncurses-bin ; Start-Date: 2025-02-16  20:56:47 ; End-Date: 2025-02-16  20:56:49
+Commandline: apt-get install --reinstall passwd ; Start-Date: 2025-02-16  20:56:52 ; End-Date: 2025-02-16  20:56:53
+Commandline: apt-get install --reinstall perl-base ; Start-Date: 2025-02-16  20:56:55 ; End-Date: 2025-02-16  20:56:57
+Commandline: apt-get install --reinstall procps ; Start-Date: 2025-02-16  20:57:00 ; End-Date: 2025-02-16  20:57:01
+Commandline: apt-get install --reinstall sed ; Start-Date: 2025-02-16  20:57:04 ; End-Date: 2025-02-16  20:57:05
+Commandline: apt-get install --reinstall sensible-utils ; Start-Date: 2025-02-16  20:57:08 ; End-Date: 2025-02-16  20:57:09
+Commandline: apt-get install --reinstall sysvinit-utils ; Start-Date: 2025-02-16  20:57:12 ; End-Date: 2025-02-16  20:57:13
+Commandline: apt-get install --reinstall tar ; Start-Date: 2025-02-16  20:57:16 ; End-Date: 2025-02-16  20:57:17
+Commandline: apt-get install --reinstall ubuntu-keyring ; Start-Date: 2025-02-16  20:57:20 ; End-Date: 2025-02-16  20:57:21
+Commandline: apt-get install --reinstall util-linux ; Start-Date: 2025-02-16  20:57:24 ; End-Date: 2025-02-16  20:57:26
+Commandline: apt-get install --reinstall zlib1g:amd64 ; Start-Date: 2025-02-16  20:57:28 ; End-Date: 2025-02-16  20:57:30
+Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes --force-yes upgrade ; Start-Date: 2025-02-16  20:57:34 ; End-Date: 2025-02-16  20:57:38
+Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes --force-yes dist-upgrade ; Start-Date: 2025-02-16  20:57:39 ; End-Date: 2025-02-16  20:57:39
+Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes install adduser apparmor apport apport-core-dump-handler apt base-passwd bcache-tools btrfs-progs busybox-initramfs ca-certificates cloud-guest-utils cloud-init coreutils cpio cryptsetup cryptsetup-bin curl dbus dbus-bin dbus-daemon dbus-session-bus-common dbus-system-bus-common dbus-user-session debconf dhcpcd-base distro-info-data dmeventd dmsetup dpkg dracut-install e2fsprogs ethtool fdisk fuse3 gawk gcc-14-base gettext-base gir1.2-girepository-2.0 gir1.2-glib-2.0 gpgv init-system-helpers initramfs-tools initramfs-tools-bin initramfs-tools-core iproute2 klibc-utils kmod kpartx libacl1 libaio1t64 libapparmor1 libapt-pkg6.0t64 libargon2-1 libassuan0 libattr1 libaudit-common libaudit1 libblkid1 libbpf1 libbrotli1 libbsd0 libbz2-1.0 libc6 libcap-ng0 libcap2 libcap2-bin libcbor0.10 libcom-err2 libcrypt1 libcryptsetup12 libcurl4t64 libdb5.3t64 libdbus-1-3 libdebconfclient0 libdevmapper-event1.02.1 libdevmapper1.02.1 libdrm-common libdrm2 libedit2 libelf1t64 libexpat1 libext2fs2t64 libfdisk1 libffi8 libfido2-1 libfuse3-3 libgcc-s1 libgcrypt20 libgdbm-compat4t64 libgdbm6t64 libgirepository-1.0-1 libglib2.0-0t64 libgmp10 libgnutls30t64 libgpg-error0 libgssapi-krb5-2 libhogweed6t64 libicu74 libidn2-0 libinih1 libintl-perl libisns0t64 libjson-c5 libk5crypto3 libkeyutils1 libklibc libkmod2 libkrb5-3 libkrb5support0 libldap2 liblvm2cmd2.03 liblz4-1 liblzma5 liblzo2-2 libmd0 libmnl0 libmodule-find-perl libmodule-scandeps-perl libmount1 libmpfr6 libncursesw6 libnetplan1 libnettle8t64 libnghttp2-14 libnpth0t64 libopeniscsiusr libp11-kit0 libpam-modules libpam-modules-bin libpam-runtime libpam-systemd libpam0g libpci3 libpcre2-8-0 libperl5.38t64 libpopt0 libproc-processtable-perl libproc2-0 libpsl5t64 libpython3-stdlib libpython3.12-minimal libpython3.12-stdlib libreadline8t64 libreiserfscore0t64 librtmp1 libsasl2-2 libsasl2-modules-db libseccomp2 libselinux1 libsemanage-common libsemanage2 libsepol2 libsgutils2-1.46-2 libsigsegv2 libsmartcols1 libsort-naturally-perl libsqlite3-0 libss2 libssh-4 libssl3t64 libstdc++6 libsystemd-shared libsystemd0 libtasn1-6 libterm-readkey-perl libtinfo6 libtirpc-common libtirpc3t64 libudev1 libunistring5 liburcu8t64 libusb-1.0-0 libuuid1 libxtables12 libxxhash0 libyaml-0-2 libzstd1 linux-base logsave lsb-base lsb-release lvm2 mdadm media-types mount multipath-tools needrestart netbase netplan-generator netplan.io open-iscsi openssh-client openssl passwd pci.ids pciutils perl perl-base perl-modules-5.38 pollinate procps python-apt-common python3 python3-apport python3-apt python3-attr python3-blinker python3-certifi python3-cffi-backend python3-chardet python3-click python3-colorama python3-configobj python3-cryptography python3-dbus python3-debconf python3-distro python3-distro-info python3-distupgrade python3-gi python3-httplib2 python3-idna python3-jinja2 python3-json-pointer python3-jsonpatch python3-jsonschema python3-jwt python3-launchpadlib python3-lazr.restfulclient python3-lazr.uri python3-markupsafe python3-minimal python3-netplan python3-oauthlib python3-pkg-resources python3-problem-report python3-pyparsing python3-pyrsistent python3-requests python3-serial python3-six python3-update-manager python3-urllib3 python3-wadllib python3-xkit python3-yaml python3.12 python3.12-minimal readline-common sed sensible-utils sg3-utils sg3-utils-udev snapd squashfs-tools sudo systemd systemd-dev systemd-resolved systemd-sysv sysvinit-utils tar tzdata ubuntu-drivers-common ubuntu-keyring ubuntu-release-upgrader-core ubuntu-server-minimal ucf udev unattended-upgrades unminimize usbutils xfsprogs xxd xz-utils zlib1g lxd-installer ; Start-Date: 2025-02-16  20:57:42 ; End-Date: 2025-02-16  20:58:20
+Commandline: apt-get install --reinstall -y gdisk zstd unattended-upgrades xfsprogs multipath-tools kpartx cloud-init squashfs-tools sg3-utils pollinate packagekit-tools polkitd xml-core needrestart mdadm lvm2 libterm-readkey-perl libsort-naturally-perl libproc-processtable-perl:amd64 libmodule-scandeps-perl libmodule-find-perl libldap-common libintl-xs-perl libintl-perl libglib2.0-bin gpg-wks-client gnupg keyboxd gpgsm gpg-agent pinentry-curses gpg gnupg-utils finalrd fdisk eatmydata dmeventd dirmngr gpgconf curl initramfs-tools linux-base initramfs-tools-core cryptsetup cryptsetup-bin btrfs-progs bcache-tools appstream libsasl2-2:amd64 xz-utils xauth ubuntu-release-upgrader-core plymouth openssh-client libx11-data libedit2:amd64 groff-base gettext-base fuse3 cpio apparmor xxd xdg-user-dirs ucf systemd-timesyncd systemd-resolved sudo shared-mime-info python3-pygments networkd-dispatcher netplan.io cloud-guest-utils thin-provisioning-tools software-properties-common snapd iproute2 libcap2-bin libtirpc-common libpam-systemd:amd64 coreutils ncurses-bin mawk libsemanage-common bash base-passwd tar sysvinit-utils sensible-utils sed apt init-system-helpers hostname gzip grep gpgv findutils diffutils debconf debianutils dash adduser kmod usbutils pciutils sgml-base perl libperl5.38t64:amd64 dmsetup dhcpcd-base open-iscsi udev gawk python3-chardet lsb-release dbus-daemon dbus-bin systemd-sysv systemd python3 python3.12 readline-common ethtool netplan-generator libpam-cap:amd64 libnss-systemd:amd64 console-setup keyboard-configuration xkb-data liblocale-gettext-perl kbd ca-certificates openssl libpam-modules:amd64 python3-minimal python3.12-minimal procps passwd libpam-modules-bin logsave libpam-runtime libaudit-common mount e2fsprogs util-linux perl-base bsdutils apport libc-bin base-files login dpkg ; Start-Date: 2025-02-16  20:58:40 ; End-Date: 2025-02-16  20:59:23
+Commandline: apt-get install --reinstall -y cryptsetup-initramfs dbus dbus-session-bus-common dbus-system-bus-common distro-info-data dracut-install gcc-14-base:amd64 gnupg-l10n iso-codes libapt-pkg6.0t64:amd64 libc6:amd64 libcbor0.10:amd64 libcryptsetup12:amd64 libdb5.3t64:amd64 libdbus-1-3:amd64 libexpat1:amd64 libfuse3-3:amd64 libgcrypt20:amd64 libglib2.0-0t64:amd64 libgmp10:amd64 libgnutls30t64:amd64 libgpg-error0:amd64 libidn2-0:amd64 libjson-c5:amd64 libklibc:amd64 libkrb5-3:amd64 libksba8:amd64 libldap2:amd64 liblzma5:amd64 liblzo2-2:amd64 libmpfr6:amd64 libnettle8t64:amd64 libnghttp2-14:amd64 libopeniscsiusr libp11-kit0:amd64 libpam0g:amd64 libpcre2-8-0:amd64 libpng16-16t64:amd64 libpolkit-gobject-1-0:amd64 libpopt0:amd64 libproc2-0:amd64 libpython3-stdlib:amd64 libpython3.12-minimal:amd64 libreadline8t64:amd64 libsigsegv2:amd64 libsqlite3-0:amd64 libssh-4:amd64 libstemmer0d:amd64 libsystemd-shared:amd64 libsystemd0:amd64 libtasn1-6:amd64 libtirpc3t64:amd64 libudev1:amd64 libusb-1.0-0:amd64 libxml2:amd64 libxtables12:amd64 lsb-base ncurses-base packagekit perl-modules-5.38 publicsuffix python3-babel python3-certifi python3-colorama python3-dbus python3-gi python3-httplib2 python3-json-pointer python3-jsonpatch python3-jwt python3-launchpadlib python3-lazr.restfulclient python3-lazr.uri python3-markdown-it python3-oauthlib python3-pkg-resources python3-requests python3-rich python3-serial python3-software-properties python3-tz python3-wadllib python3-yaml systemd-dev tzdata ubuntu-drivers-common ; Start-Date: 2025-02-16  20:59:26 ; End-Date: 2025-02-16  20:59:43
+Commandline: apt-get install -y ubuntu-minimal ubuntu-standard ; Start-Date: 2025-02-16  20:59:50 ; End-Date: 2025-02-16  21:00:01
+Commandline: apt-get -y --fix-policy install ; Start-Date: 2025-02-16  21:00:04 ; End-Date: 2025-02-16  21:00:04
+Commandline: apt-get --yes -oDebug::pkgDepCache::AutoInstall=yes install adduser apparmor apport apport-core-dump-handler apport-symptoms appstream apt apt-utils base-files base-passwd bash bash-completion bc bcache-tools bind9-dnsutils bind9-host bind9-libs bolt bsdextrautils bsdutils btrfs-progs busybox-initramfs busybox-static byobu ca-certificates cloud-guest-utils cloud-initramfs-copymods cloud-initramfs-dyn-netconf command-not-found console-setup console-setup-linux coreutils cpio cron cron-daemon-common cryptsetup cryptsetup-bin cryptsetup-initramfs curl dash dbus dbus-bin dbus-daemon dbus-session-bus-common dbus-system-bus-common dbus-user-session debconf debconf-i18n debianutils dhcpcd-base diffutils dirmngr distro-info distro-info-data dmeventd dmidecode dmsetup dosfstools dpkg dracut-install e2fsprogs ed eject ethtool fdisk file finalrd findutils fonts-ubuntu-console friendly-recovery ftp fuse3 fwupd fwupd-signed gawk gcc-14-base gdisk gettext-base gir1.2-girepository-2.0 gir1.2-glib-2.0 gir1.2-packagekitglib-1.0 git git-man gnupg gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpgconf gpgsm gpgv grep groff-base gzip hdparm hostname htop ibverbs-providers inetutils-telnet info init init-system-helpers initramfs-tools initramfs-tools-bin initramfs-tools-core install-info iproute2 iptables iputils-ping iputils-tracepath iso-codes jq kbd keyboard-configuration keyboxd klibc-utils kmod kpartx krb5-locales landscape-common less libacl1 libaio1t64 libapparmor1 libappstream5 libapt-pkg6.0t64 libarchive13t64 libargon2-1 libassuan0 libatasmart4 libatm1t64 libattr1 libaudit-common libaudit1 libblkid1 libblockdev-crypto3 libblockdev-fs3 libblockdev-loop3 libblockdev-mdraid3 libblockdev-nvme3 libblockdev-part3 libblockdev-swap3 libblockdev-utils3 libblockdev3 libbpf1 libbrotli1 libbsd0 libbytesize-common libbytesize1 libbz2-1.0 libc-bin libc6 libcap-ng0 libcap2 libcap2-bin libcbor0.10 libcom-err2 libcrypt1 libcryptsetup12 libcurl3t64-gnutls libcurl4t64 libdb5.3t64 libdbus-1-3 libdebconfclient0 libdevmapper-event1.02.1 libdevmapper1.02.1 libdrm-common libdrm2 libduktape207 libdw1t64 libedit2 libelf1t64 liberror-perl libestr0 libevdev2 libevent-core-2.1-7t64 libexpat1 libext2fs2t64 libfastjson4 libfdisk1 libffi8 libfido2-1 libflashrom1 libfribidi0 libftdi1-2 libfuse3-3 libfwupd2 libgcc-s1 libgcrypt20 libgdbm-compat4t64 libgdbm6t64 libgirepository-1.0-1 libglib2.0-0t64 libglib2.0-bin libglib2.0-data libgmp10 libgnutls30t64 libgpg-error0 libgpgme11t64 libgpm2 libgssapi-krb5-2 libgstreamer1.0-0 libgudev-1.0-0 libgusb2 libhogweed6t64 libibverbs1 libicu74 libidn2-0 libinih1 libintl-perl libintl-xs-perl libip4tc2 libip6tc2 libisns0t64 libjansson4 libjcat1 libjq1 libjson-c5 libjson-glib-1.0-0 libjson-glib-1.0-common libk5crypto3 libkeyutils1 libklibc libkmod2 libkrb5-3 libkrb5support0 libksba8 libldap-common libldap2 liblmdb0 liblocale-gettext-perl liblvm2cmd2.03 liblz4-1 liblzma5 liblzo2-2 libmagic-mgc libmagic1t64 libmaxminddb0 libmbim-glib4 libmbim-proxy libmbim-utils libmd0 libmm-glib0 libmnl0 libmodule-find-perl libmodule-scandeps-perl libmount1 libmpfr6 libmspack0t64 libncurses6 libncursesw6 libnetfilter-conntrack3 libnetplan1 libnettle8t64 libnewt0.52 libnfnetlink0 libnftables1 libnftnl11 libnghttp2-14 libnl-3-200 libnl-genl-3-200 libnl-route-3-200 libnpth0t64 libnspr4 libnss-systemd libnss3 libntfs-3g89t64 libnuma1 libnvme1t64 libonig5 libopeniscsiusr libp11-kit0 libpackagekit-glib2-18 libpam-cap libpam-modules libpam-modules-bin libpam-runtime libpam-systemd libpam0g libparted2t64 libpcap0.8t64 libpci3 libpcre2-8-0 libperl5.38t64 libpipeline1 libplymouth5 libpng16-16t64 libpolkit-agent-1-0 libpolkit-gobject-1-0 libpopt0 libproc-processtable-perl libproc2-0 libprotobuf-c1 libpsl5t64 libpython3-stdlib libpython3.12-minimal libpython3.12-stdlib libpython3.12t64 libqmi-glib5 libqmi-proxy libqmi-utils libqrtr-glib0 libreadline8t64 libreiserfscore0t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libseccomp2 libselinux1 libsemanage-common libsemanage2 libsensors-config libsensors5 libsepol2 libsgutils2-1.46-2 libsigsegv2 libslang2 libsmartcols1 libsodium23 libsort-naturally-perl libsqlite3-0 libss2 libssh-4 libssl3t64 libstdc++6 libstemmer0d libsystemd-shared libsystemd0 libtasn1-6 libtcl8.6 libterm-readkey-perl libtext-charwidth-perl libtext-iconv-perl libtext-wrapi18n-perl libtinfo6 libtirpc-common libtirpc3t64 libtraceevent1 libtraceevent1-plugin libtracefs1 libtss2-esys-3.0.2-0t64 libtss2-mu-4.0.1-0t64 libtss2-sys1t64 libtss2-tcti-cmd0t64 libtss2-tcti-device0t64 libtss2-tcti-mssim0t64 libtss2-tcti-swtpm0t64 libuchardet0 libudev1 libudisks2-0 libunistring5 libunwind8 liburcu8t64 libusb-1.0-0 libutempter0 libuuid1 libuv1t64 libvolume-key1 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxkbcommon0 libxml2 libxmlb2 libxmlsec1t64 libxmlsec1t64-openssl libxmuu1 libxslt1.1 libxtables12 libxxhash0 libyaml-0-2 libzstd1 linux-base locales login logrotate logsave lsb-release lshw lsof lvm2 lxd-agent-loader lxd-installer man-db manpages mawk mdadm media-types modemmanager motd-news-config mount mtr-tiny multipath-tools nano ncurses-base ncurses-bin needrestart netbase netcat-openbsd netplan-generator netplan.io networkd-dispatcher nftables ntfs-3g numactl open-iscsi open-vm-tools openssh-client openssl overlayroot packagekit packagekit-tools parted passwd pastebinit patch pci.ids pciutils perl perl-base perl-modules-5.38 pinentry-curses plymouth plymouth-theme-ubuntu-text polkitd pollinate powermgmt-base procps psmisc publicsuffix python-apt-common python3 python3-apport python3-apt python3-attr python3-automat python3-bcrypt python3-blinker python3-boto3 python3-botocore python3-certifi python3-cffi-backend python3-chardet python3-click python3-colorama python3-commandnotfound python3-configobj python3-constantly python3-cryptography python3-dateutil python3-dbus python3-debconf python3-debian python3-distro python3-distro-info python3-distupgrade python3-gdbm python3-gi python3-hamcrest python3-httplib2 python3-hyperlink python3-idna python3-incremental python3-jmespath python3-jwt python3-launchpadlib python3-lazr.restfulclient python3-lazr.uri python3-magic python3-markdown-it python3-mdurl python3-minimal python3-netifaces python3-netplan python3-newt python3-oauthlib python3-openssl python3-packaging python3-pexpect python3-pkg-resources python3-problem-report python3-ptyprocess python3-pyasn1 python3-pyasn1-modules python3-pygments python3-pyparsing python3-requests python3-rich python3-s3transfer python3-service-identity python3-setuptools python3-six python3-software-properties python3-systemd python3-twisted python3-update-manager python3-urllib3 python3-wadllib python3-yaml python3-zope.interface python3.12 python3.12-minimal readline-common rsync rsyslog run-one sbsigntool screen secureboot-db sed sensible-utils sg3-utils sg3-utils-udev sgml-base shared-mime-info snapd software-properties-common sosreport squashfs-tools strace sudo sysstat systemd systemd-dev systemd-hwe-hwdb systemd-resolved systemd-sysv systemd-timesyncd sysvinit-utils tar tcl tcl8.6 tcpdump telnet thin-provisioning-tools time tmux tnftp tpm-udev trace-cmd tzdata ubuntu-keyring ubuntu-minimal ubuntu-pro-client ubuntu-pro-client-l10n ubuntu-release-upgrader-core ubuntu-server ubuntu-standard ucf udev udisks2 ufw unattended-upgrades update-manager-core update-notifier-common usb-modeswitch usb-modeswitch-data usb.ids usbutils util-linux uuid-runtime vim vim-common vim-runtime vim-tiny wget whiptail xauth xdg-user-dirs xfsprogs xkb-data xml-core xxd xz-utils zerofree zlib1g zstd cloud-init ; Start-Date: 2025-02-16  21:00:10 ; End-Date: 2025-02-16  21:00:28
+Commandline: apt-get --quiet --assume-yes --option=Dpkg::options::=--force-unsafe-io --option=Dpkg::Options::=--force-confold install grub-pc ; Start-Date: 2025-03-12  18:07:37 ; End-Date: 2025-03-12  18:08:03
+Commandline: apt-get --quiet --assume-yes --option=Dpkg::options::=--force-unsafe-io --option=Dpkg::Options::=--force-confold install linux-generic ; Start-Date: 2025-03-12  18:08:37 ; End-Date: 2025-03-12  18:11:58
+Commandline: apt-get --quiet --assume-yes --option=Dpkg::options::=--force-unsafe-io --option=Dpkg::Options::=--force-confold install openssh-server ; Start-Date: 2025-03-12  18:12:45 ; End-Date: 2025-03-12  18:13:11
+Commandline: /usr/bin/unattended-upgrades -v ; Start-Date: 2025-03-12  18:13:21 ; End-Date: 2025-03-12  18:14:11
+Commandline: apt dist-upgrade ; Start-Date: 2025-03-12  18:19:08 ; End-Date: 2025-03-12  18:21:04
+Commandline: apt install vim qemu-guest-agent ; Start-Date: 2025-03-12  18:21:23 ; End-Date: 2025-03-12  18:21:31
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  07:00:39 ; End-Date: 2026-03-13  07:06:17
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  07:06:45 ; End-Date: 2026-03-13  07:08:06
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  07:08:14 ; End-Date: 2026-03-13  07:09:26
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  07:09:30 ; End-Date: 2026-03-13  07:11:49
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  07:11:57 ; End-Date: 2026-03-13  07:23:57
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  07:24:06 ; End-Date: 2026-03-13  07:27:38
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  07:27:49 ; End-Date: 2026-03-13  07:36:34
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  07:36:38 ; End-Date: 2026-03-13  07:40:34
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  07:40:37 ; End-Date: 2026-03-13  07:46:22
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  07:46:25 ; End-Date: 2026-03-13  07:49:24
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  07:49:28 ; End-Date: 2026-03-13  07:50:37
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  07:50:50 ; End-Date: 2026-03-13  07:58:37
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  07:58:45 ; End-Date: 2026-03-13  08:04:57
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:05:01 ; End-Date: 2026-03-13  08:07:29
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:07:41 ; End-Date: 2026-03-13  08:10:13
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:10:16 ; End-Date: 2026-03-13  08:15:10
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:15:12 ; End-Date: 2026-03-13  08:17:15
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:17:23 ; End-Date: 2026-03-13  08:20:38
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:20:42 ; End-Date: 2026-03-13  08:22:13
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:22:16 ; End-Date: 2026-03-13  08:24:39
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:24:44 ; End-Date: 2026-03-13  08:27:07
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:27:12 ; End-Date: 2026-03-13  08:28:22
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:28:25 ; End-Date: 2026-03-13  08:31:01
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:31:04 ; End-Date: 2026-03-13  08:34:08
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:34:16 ; End-Date: 2026-03-13  08:35:31
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:35:35 ; End-Date: 2026-03-13  08:38:42
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:38:45 ; End-Date: 2026-03-13  08:42:50
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:42:54 ; End-Date: 2026-03-13  08:43:55
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:44:02 ; End-Date: 2026-03-13  08:47:11
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:47:15 ; End-Date: 2026-03-13  08:49:23
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:49:27 ; End-Date: 2026-03-13  08:51:41
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  08:51:44 ; End-Date: 2026-03-13  09:03:40
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:03:46 ; End-Date: 2026-03-13  09:04:39
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:04:51 ; End-Date: 2026-03-13  09:05:46
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:05:52 ; End-Date: 2026-03-13  09:08:38
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:08:44 ; End-Date: 2026-03-13  09:09:33
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:09:38 ; End-Date: 2026-03-13  09:12:13
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:12:23 ; End-Date: 2026-03-13  09:13:11
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:13:16 ; End-Date: 2026-03-13  09:13:57
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:14:02 ; End-Date: 2026-03-13  09:14:23
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:14:26 ; End-Date: 2026-03-13  09:15:04
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:15:12 ; End-Date: 2026-03-13  09:17:17
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:17:22 ; End-Date: 2026-03-13  09:18:29
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:18:33 ; End-Date: 2026-03-13  09:19:16
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:19:29 ; End-Date: 2026-03-13  09:20:23
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:20:29 ; End-Date: 2026-03-13  09:21:15
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:21:18 ; End-Date: 2026-03-13  09:22:28
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:22:31 ; End-Date: 2026-03-13  09:23:54
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:23:59 ; End-Date: 2026-03-13  09:26:05
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:26:08 ; End-Date: 2026-03-13  09:26:28
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:26:33 ; End-Date: 2026-03-13  09:26:51
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:26:53 ; End-Date: 2026-03-13  09:27:27
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:27:29 ; End-Date: 2026-03-13  09:27:42
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:27:44 ; End-Date: 2026-03-13  09:28:04
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:28:07 ; End-Date: 2026-03-13  09:28:34
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:28:36 ; End-Date: 2026-03-13  09:28:49
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:28:55 ; End-Date: 2026-03-13  09:30:22
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-13  09:30:25 ; End-Date: 2026-03-13  09:30:38
+Commandline: apt install bzip2 ; Start-Date: 2026-03-14  04:42:42 ; End-Date: 2026-03-14  04:42:46
+Commandline: apt install p7zip-full ; Start-Date: 2026-03-14  04:45:48 ; End-Date: 2026-03-14  04:45:55
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-14  06:39:03 ; End-Date: 2026-03-14  06:39:09
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-14  06:39:12 ; End-Date: 2026-03-14  06:40:15
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-14  06:40:19 ; End-Date: 2026-03-14  06:40:53
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-14  06:40:55 ; End-Date: 2026-03-14  06:44:24
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-14  06:44:25 ; End-Date: 2026-03-14  06:44:49
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-14  06:44:52 ; End-Date: 2026-03-14  06:44:55
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-14  06:44:57 ; End-Date: 2026-03-14  06:45:08
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-14  06:45:11 ; End-Date: 2026-03-14  06:45:24
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-14  06:45:27 ; End-Date: 2026-03-14  06:45:44
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-14  06:45:46 ; End-Date: 2026-03-14  06:45:56
+Commandline: /usr/bin/unattended-upgrade ; Start-Date: 2026-03-14  06:45:58 ; End-Date: 2026-03-14  06:46:04
+root@eltex-practice2-pg1-v1:~# 
