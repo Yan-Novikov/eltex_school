@@ -1,0 +1,812 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.03.16 16:48:33 =~=~=~=~=~=~=~=~=~=~=~=
+login as: eltex-pg1-v1
+eltex-pg1-v1@217.71.138.1's password: 
+Linux eltex-2026-spring 6.1.0-40-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.153-1 (2025-09-20) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Mar 16 15:52:43 2026 from 5.137.16.98
+eltex-pg1-v1@eltex-2026-spring-16:49> ssh root@172.16.9.175
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-55-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Mar 16 09:49:41 AM UTC 2026
+
+  System load:  0.0                Processes:              111
+  Usage of /:   41.7% of 14.66GB   Users logged in:        1
+  Memory usage: 11%                IPv4 address for ens18: 172.16.9.175
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+87 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+1 additional security update can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+*** System restart required ***
+ 
+14.03.2026 04:50:15
+Last login: Mon Mar 16 08:53:10 2026 from 172.16.8.4
+root@eltex-practice2-pg1-v1:~# pwd
+/root
+root@eltex-practice2-pg1-v1:~# exit
+logout
+Connection to 172.16.9.175 closed.
+eltex-pg1-v1@eltex-2026-spring-16:49> ssh root@172.16.9.175nano ${USER}_part3.logssh root@172.16.9.175pwd
+/home/eltex-pg1-v1
+eltex-pg1-v1@eltex-2026-spring-16:49> ls
+2026-01  2026-08                       eltex-pg1-v1_part3.log
+2026-02  2026-09                       eltex-pg1-v1_part.log
+2026-03  2026-10                       practice2_eltex-pg1-v1_part1.log
+2026-04  2026-11                       practice2_eltex-pg1-v1_part2.log
+2026-05  2026-12                       report_part1.txt
+2026-06  D1                            temp.txt
+2026-07  eltex-pg1-v1_part3_gt50M.log
+eltex-pg1-v1@eltex-2026-spring-16:49> nano eltex-pg1-v1_part.log
+[ Reading... ][ Read 0 lines ]  GNU nano 7.2                  eltex-pg1-v1_part.log                           ^G Help^O Write Out ^W Where Is  ^K Cut^T Execute   ^C Location^X Exit^R Read File ^\ Replace   ^U Paste     ^J Justify   ^/ Go To Lineeltex-pg1-v1@eltex-2026-spring-16:49> nano eltex-pg1-v1_part.log_part.log_part.log_part.log_part.log_part.log_part.log_part.log_part.log_part.log_part.log_part.log_part.log$_part.logU_part.logS_part.logE_part.logR_part.log
+[ Reading... ][ Read 438 lines ]  GNU nano 7.2                          .log                                    ^G Help^O Write Out ^W Where Is  ^K Cut^T Execute   ^C Location^X Exit^R Read File ^\ Replace   ^U Paste     ^J Justify   ^/ Go To LineScript started on 2026-03-09 17:59:44+07:00 [COMMAND="bash" TERM="screen" TTY=">eltex-pg1-v1@eltex-2026-spring:~$ lslslsb_release  lsinitramfs  lslockslsmodlspcilsattrlscpulsipclslogins     lsnslsusblsblklsfdlsirqlsmemlsofeltex-pg1-v1@eltex-2026-spring:~$ $HIST$HISTCMD$HISTCONTROL   $HISTFILE$HISTFILESIZE  $HISTSIZEeltex-pg1-v1@eltex-2026-spring:~$ echo$$HISTFILESIZE2000eltex-pg1-v1@eltex-2026-spring:~$ ls -d ~/.*/home/eltex-pg1-v1/.bash_history  /home/eltex-pg1-v1/.local/home/eltex-pg1-v1/.bash_logout   /home/eltex-pg1-v1/.log/home/eltex-pg1-v1/.bashrc/home/eltex-pg1-v1/.profile/home/eltex-pg1-v1/.config/home/eltex-pg1-v1/.viminfoeltex-pg1-v1@eltex-2026-spring:~$ history1  screen ls2  screen -ls3  screen4  screen -ls5  screen -r 20384eltex-pg1-v1@eltex-2026-spring-16:49> rm cpnano $USER_part.log $USER_part.log $USER_part.log $USER_part.log $USER_part.logc $USER_part.logp $USER_part.log eltex-pg1-v1_part.log
+eltex-pg1-v1@eltex-2026-spring-16:49> cp $USER_part.log eltex-pg1-v1_part.lognano $USER_part.logeltex-pg1-v1_part.log
+[ Reading... ][ Read 438 lines ]  GNU nano 7.2                  eltex-pg1-v1_part.log                           ^G Help^O Write Out ^W Where Is  ^K Cut^T Execute   ^C Location^X Exit^R Read File ^\ Replace   ^U Paste     ^J Justify   ^/ Go To LineScript started on 2026-03-09 17:59:44+07:00 [COMMAND="bash" TERM="screen" TTY=">eltex-pg1-v1@eltex-2026-spring:~$ lslslsb_release  lsinitramfs  lslockslsmodlspcilsattrlscpulsipclslogins     lsnslsusblsblklsfdlsirqlsmemlsofeltex-pg1-v1@eltex-2026-spring:~$ $HIST$HISTCMD$HISTCONTROL   $HISTFILE$HISTFILESIZE  $HISTSIZEeltex-pg1-v1@eltex-2026-spring:~$ echo$$HISTFILESIZE2000eltex-pg1-v1@eltex-2026-spring:~$ ls -d ~/.*/home/eltex-pg1-v1/.bash_history  /home/eltex-pg1-v1/.local/home/eltex-pg1-v1/.bash_logout   /home/eltex-pg1-v1/.log/home/eltex-pg1-v1/.bashrc/home/eltex-pg1-v1/.profile/home/eltex-pg1-v1/.config/home/eltex-pg1-v1/.viminfoeltex-pg1-v1@eltex-2026-spring:~$ history1  screen ls2  screen -ls3  screen4  screen -ls5  screen -r 20384eltex-pg1-v1@eltex-2026-spring-16:49> nano eltex-pg1-v1_part.log3.log
+[ Reading... ][ Read 78 lines ]  GNU nano 7.2                 eltex-pg1-v1_part3.log                           ^G Help^O Write Out ^W Where Is  ^K Cut^T Execute   ^C Location^X Exit^R Read File ^\ Replace   ^U Paste     ^J Justify   ^/ Go To Lineecho $USER_part3.logmkdir -p D1/D2/D3ls2026-01  2026-05  2026-09  D1report_part1.txt2026-02  2026-06  2026-10  eltex-pg1-v1_part3.logtemp.txt2026-03  2026-07  2026-11  eltex-pg1-v1_part.log2026-04  2026-08  2026-12  practice2_eltex-pg1-v1_part1.logtouch ./D1/D2/file.txtcat ./D1/D2/file.txtecho 'Novikov' >> './D1/D2/file.txt'cat ./D1/D2/file.txtNovikovln /home/eltex-pg1-v1/D1/D2/file.txt /home/eltex-pg1-v1/D1/D2/D3/file_hardln -s /home/eltex-pg1-v1/D1/D2/file.txt /home/eltex-pg1-v1/D1/D2/D3/file_symls -l ./D1/D2/D3/file_symlrwxrwxrwx 1 eltex-pg1-v1 eltex-pg1-v1 33 Mar 13 14:04 ./D1/D2/D3/file_sym -> />ls -l ./D1/D2/D3/file_hardeltex-pg1-v1@eltex-2026-spring-16:49> nano eltex-pg1-v1_part3.log_.logg.logr.log.logt.log5.log0.logM.log
+[ Reading... ][ Read 14 lines ]  GNU nano 7.2              eltex-pg1-v1_part3_gt50M.log                        ^G Help^O Write Out ^W Where Is  ^K Cut^T Execute   ^C Location^X Exit^R Read File ^\ Replace   ^U Paste     ^J Justify   ^/ Go To Line31M     /usr/bin/x86_64-linux-gnu-lto-dump-1231M     /usr/lib/gcc/x86_64-linux-gnu/12/lto132M     /usr/lib/gcc/x86_64-linux-gnu/12/cc130M     /usr/lib/x86_64-linux-gnu/libicudata.so.72.10/proc/kcore205M    /home/eltex-pg2-v10/eltex-pg2-v10_part.log33M     /boot/initrd.img-6.1.0-43-amd6433M     /boot/initrd.img-6.1.0-40-amd6443M     /var/log/journal/8247b53b6ae84ae0ad9bb1c96113fd29/system@4f44ef78d53d4c>39M     /var/cache/apt/srcpkgcache.bin39M     /var/cache/apt/pkgcache.bin48M     /var/lib/apt/lists/deb.debian.org_debian_dists_bookworm_main_binary-amd>49M     /var/lib/apt/lists/deb.debian.org_debian_dists_bookworm_main_source_Sou>32M     /var/lib/apt/lists/deb.debian.org_debian_dists_bookworm_main_i18n_Trans>eltex-pg1-v1@eltex-2026-spring-16:49> scp --version
+scp: unknown option -- -
+usage: scp [-346ABCOpqRrsTv] [-c cipher] [-D sftp_server_path] [-F ssh_config]
+           [-i identity_file] [-J destination] [-l limit] [-o ssh_option]
+           [-P port] [-S program] [-X sftp_option] source ... target
+eltex-pg1-v1@eltex-2026-spring-16:49> scp --versionscp --versionscp --version/home/eltex-pg1-v1/^C
+eltex-pg1-v1@eltex-2026-spring-16:49> scp --versionnano eltex-pg1-v1_part3_gt50M.logscp --versionscp /home/eltex-pg1-v1/report_part1.txt ro ot@172.16.9.175:/root
+report_part1.txt                                0%    0     0.0KB/s   --:-- ETAreport_part1.txt                              100%  118   119.9KB/s   00:00    
+eltex-pg1-v1@eltex-2026-spring-16:49> scp /home/eltex-pg1-v1/report_part1.txt root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/rooteltex-pg1-v1_part.log root@172.16.9.175:/root
+eltex-pg1-v1_part.log                           0%    0     0.0KB/s   --:-- ETAeltex-pg1-v1_part.log                         100%   11KB  13.5MB/s   00:00    
+eltex-pg1-v1@eltex-2026-spring-16:49> scp /home/eltex-pg1-v1/eltex-pg1-v1_part.log root@172.16.9.175:/root
+ root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root rot@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/rooteltex-pg1-v1_part3.log root@172.16.9.175:/root
+eltex-pg1-v1_part3.log                          0%    0     0.0KB/s   --:-- ETAeltex-pg1-v1_part3.log                        100% 2799     7.6MB/s   00:00    
+eltex-pg1-v1@eltex-2026-spring-16:49> scp /home/eltex-pg1-v1/eltex-pg1-v1_part3.log root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root rot@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/rooteltex-pg1-v1_part3_gt50M.log root@172.16.9.175:/root
+eltex-pg1-v1_part3_gt50M.log                    0%    0     0.0KB/s   --:-- ETAeltex-pg1-v1_part3_gt50M.log                  100%  763     2.1MB/s   00:00    
+eltex-pg1-v1@eltex-2026-spring-16:49> scp /home/eltex-pg1-v1/eltex-pg1-v1_part3_gt50M.log root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root rot@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/root root@172.16.9.175:/rootpractice2_eltex-pg1-v1_part1.log root@172.16.9.175:/root
+practice2_eltex-pg1-v1_part1.log                0%    0     0.0KB/s   --:-- ETApractice2_eltex-pg1-v1_part1.log              100%  221KB  86.7MB/s   00:00    
+eltex-pg1-v1@eltex-2026-spring-16:49> scp /home/eltex-pg1-v1/practice2_eltex-pg1-v1_part1.log root@172.16.9.175:/root2
+practice2_eltex-pg1-v1_part2.log                0%    0     0.0KB/s   --:-- ETApractice2_eltex-pg1-v1_part2.log              100%  170KB  60.5MB/s   00:00    
+eltex-pg1-v1@eltex-2026-spring-16:49> scp /home/eltex-pg1-v1/practice2_eltex-pg1-v1_part2.log root@172.16.9.175:/root1eltex-pg1-v1_part3_gt50M.l.loreport_part1.txt root@172.16.9.175:/root--version
+nano eltex-pg1-v1_part3_gt50M.log.log.logcp $USER_part.lognano $USER_part.logeltex-pg1-v1_part.loglspwdssh root@172.16.9.175
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-55-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Mar 16 11:02:27 AM UTC 2026
+
+  System load:  0.0                Processes:              112
+  Usage of /:   41.7% of 14.66GB   Users logged in:        1
+  Memory usage: 11%                IPv4 address for ens18: 172.16.9.175
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+87 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+1 additional security update can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+*** System restart required ***
+ 
+14.03.2026 04:50:15
+Last login: Mon Mar 16 09:49:41 2026 from 172.16.8.4
+root@eltex-practice2-pg1-v1:~# ls
+eltex-pg1-v1_part.log         etc_backup.tar.gz
+eltex-pg1-v1_part3.log        etc_backup_7zip
+eltex-pg1-v1_part3_gt50M.log  etc_backup_gzip
+etc_backup                    practice2_eltex-pg1-v1_part1.log
+etc_backup.7z                 practice2_eltex-pg1-v1_part2.log
+etc_backup.tar.bz2            report_part1.txt
+root@eltex-practice2-pg1-v1:~# git config --global user.mname Yan-Novikov
+root@eltex-practice2-pg1-v1:~# git config --global user.name Yan-Novikov Yan-Novikov Yan-Novikov Yan-Novikov Yan-Novikove Yan-Novikovm Yan-Novikova Yan-Novikovi Yan-Novikovl Yan-Novikovfattuna@bk.riu
+root@eltex-practice2-pg1-v1:~# git config --global user.email fattuna@bk.ruinit.defaultBranch main
+root@eltex-practice2-pg1-v1:~# apt update
+0% [Working]            Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+0% [Waiting for headers] [1 InRelease 5482 B/126 kB 4%]                                                       Hit:2 http://ru.archive.ubuntu.com/ubuntu noble InRelease
+                                                       0% [1 InRelease 14.2 kB/126 kB 11%]0% [Waiting for headers] [1 InRelease 22.9 kB/126 kB 18%]                                                         Get:3 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+0% [3 InRelease 4504 B/126 kB 4%] [1 InRelease 37.3 kB/126 kB 30%]                                                                  0% [3 InRelease 84.2 kB/126 kB 67%]0% [3 InRelease 84.2 kB/126 kB 67%]                                   0% [Waiting for headers]0% [Waiting for headers] [Waiting for headers]                                              Get:4 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1538 kB]
+0% [Waiting for headers] [4 Packages 2655 B/1538 kB 0%]                                                       Get:5 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+0% [5 InRelease 4039 B/126 kB 3%] [4 Packages 6999 B/1538 kB 0%]                                                                0% [4 Packages 12.8 kB/1538 kB 1%]32% [Waiting for headers] [4 Packages 80.8 kB/1538 kB 5%]                                                         Get:6 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [177 kB]
+34% [6 Components-amd64 8610 B/177 kB 5%] [4 Packages 142 kB/1538 kB 9%]                                                                        39% [Waiting for headers] [4 Packages 142 kB/1538 kB 9%]                                                        Get:7 http://ru.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+                                                        Get:8 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [386 kB]
+42% [8 Components-amd64 76.5 kB/386 kB 20%] [4 Packages 142 kB/1538 kB 9%]42% [6 Components-amd64 store 0 B] [8 Components-amd64 76.5 kB/386 kB 20%] [4 P                                                                               44% [8 Components-amd64 76.5 kB/386 kB 20%] [4 Packages 214 kB/1538 kB 14%]44% [8 Components-amd64 76.5 kB/386 kB 20%] [4 Packages 214 kB/1538 kB 14%]                                                                           56% [Waiting for headers] [4 Packages 285 kB/1538 kB 19%]                                                         Get:9 http://ru.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+56% [Waiting for headers] [4 Packages 285 kB/1538 kB 19%]56% [8 Components-amd64 store 0 B] [Waiting for headers] [4 Packages 285 kB/153                                                                               Get:10 http://ru.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7384 B]
+57% [8 Components-amd64 store 0 B] [10 Components-amd64 6923 B/7384 B 94%] [4 P                                                                               57% [8 Components-amd64 store 0 B] [4 Packages 302 kB/1538 kB 20%]                                                                  Get:11 http://ru.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [212 B]
+                                                                  Get:12 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [13.2 kB]
+57% [8 Components-amd64 store 0 B] [Waiting for headers] [4 Packages 307 kB/153                                                                               Get:13 http://ru.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+                                                                               66% [8 Components-amd64 store 0 B] [4 Packages 586 kB/1538 kB 38%]                                                                  66% [4 Packages 602 kB/1538 kB 39%]67% [4 Packages 602 kB/1538 kB 39%]67% [10 Components-amd64 store 0 B] [4 Packages 602 kB/1538 kB 39%]                                                                   67% [4 Packages 609 kB/1538 kB 40%]67% [4 Packages 615 kB/1538 kB 40%]67% [12 Components-amd64 store 0 B] [4 Packages 615 kB/1538 kB 40%]                                                                   68% [4 Packages 621 kB/1538 kB 40%]68% [4 Packages 621 kB/1538 kB 40%]                                   96% [Working]96% [4 Packages store 0 B]                          Get:14 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.5 kB]
+97% [4 Packages store 0 B] [14 Components-amd64 15.7 kB/21.5 kB 73%]                                                                    Get:15 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+                                                                    Get:16 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [74.2 kB]
+97% [4 Packages store 0 B] [16 Components-amd64 14.2 kB/74.2 kB 19%]                                                                    99% [4 Packages store 0 B]                          Get:17 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]
+99% [4 Packages store 0 B]                          99% [Working]99% [14 Components-amd64 store 0 B]                                   99% [Working]100% [Working]100% [16 Components-amd64 store 0 B]                                    100% [Working]100% [Working]              Fetched 2598 kB in 1s (2677 kB/s)
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 3%Reading package lists... 3%Reading package lists... 4%Reading package lists... 4%Reading package lists... 4%Reading package lists... 4%Reading package lists... 4%Reading package lists... 4%Reading package lists... 36%Reading package lists... 36%Reading package lists... 50%Reading package lists... 50%Reading package lists... 50%Reading package lists... 50%Reading package lists... 51%Reading package lists... 51%Reading package lists... 55%Reading package lists... 55%Reading package lists... 58%Reading package lists... 58%Reading package lists... 66%Reading package lists... 66%Reading package lists... 71%Reading package lists... 71%Reading package lists... 75%Reading package lists... 75%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 77%Reading package lists... 81%Reading package lists... 81%Reading package lists... 83%Reading package lists... 83%Reading package lists... 90%Reading package lists... 90%Reading package lists... 96%Reading package lists... 96%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+88 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@eltex-practice2-pg1-v1:~# apt install guit gh
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+git set to manually installed.
+The following NEW packages will be installed:
+  gh
+0 upgraded, 1 newly installed, 0 to remove and 88 not upgraded.
+Need to get 8836 kB of archives.
+After this operation, 45.4 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+0% [Working]            Get:1 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 gh amd64 2.45.0-1ubuntu0.3 [8836 kB]
+0% [1 gh 11.8 kB/8836 kB 0%]43% [1 gh 4735 kB/8836 kB 54%]                              100% [Working]              Fetched 8836 kB in 1s (9716 kB/s)
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+LANGUAGE = (unset),
+LC_ALL = (unset),
+LANG = "ru_RU.UTF8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+locale: Cannot set LC_CTYPE to default locale: No such file or directory
+locale: Cannot set LC_MESSAGES to default locale: No such file or directory
+locale: Cannot set LC_ALL to default locale: No such file or directory
+
+Selecting previously unselected package gh.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 125248 files and directories currently installed.)
+Preparing to unpack .../gh_2.45.0-1ubuntu0.3_amd64.deb ...
+Progress: [  0%] [..........................................................] Progress: [ 20%] [###########...............................................] Unpacking gh (2.45.0-1ubuntu0.3) ...
+Progress: [ 40%] [#######################...................................] Setting up gh (2.45.0-1ubuntu0.3) ...
+Progress: [ 60%] [##################################........................] Progress: [ 80%] [##############################################............] Processing triggers for man-db (2.12.0-4build2) ...
+
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+LANGUAGE = (unset),
+LC_ALL = (unset),
+LANG = "ru_RU.UTF8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Scanning processes... [                                                        ]Scanning processes... [                                                        ]Scanning processes... [=                                                       ]Scanning processes... [=                                                       ]Scanning processes... [==                                                      ]Scanning processes... [==                                                      ]Scanning processes... [===                                                     ]Scanning processes... [===                                                     ]Scanning processes... [====                                                    ]Scanning processes... [====                                                    ]Scanning processes... [=====                                                   ]Scanning processes... [=====                                                   ]Scanning processes... [======                                                  ]Scanning processes... [======                                                  ]Scanning processes... [=======                                                 ]Scanning processes... [=======                                                 ]Scanning processes... [========                                                ]Scanning processes... [========                                                ]Scanning processes... [=========                                               ]Scanning processes... [=========                                               ]Scanning processes... [==========                                              ]Scanning processes... [==========                                              ]Scanning processes... [===========                                             ]Scanning processes... [===========                                             ]Scanning processes... [============                                            ]Scanning processes... [============                                            ]Scanning processes... [=============                                           ]Scanning processes... [=============                                           ]Scanning processes... [==============                                          ]Scanning processes... [==============                                          ]Scanning processes... [===============                                         ]Scanning processes... [===============                                         ]Scanning processes... [================                                        ]Scanning processes... [================                                        ]Scanning processes... [=================                                       ]Scanning processes... [=================                                       ]Scanning processes... [==================                                      ]Scanning processes... [==================                                      ]Scanning processes... [===================                                     ]Scanning processes... [===================                                     ]Scanning processes... [====================                                    ]Scanning processes... [====================                                    ]Scanning processes... [=====================                                   ]Scanning processes... [=====================                                   ]Scanning processes... [======================                                  ]Scanning processes... [======================                                  ]Scanning processes... [=======================                                 ]Scanning processes... [=======================                                 ]Scanning processes... [========================                                ]Scanning processes... [========================                                ]Scanning processes... [=========================                               ]Scanning processes... [=========================                               ]Scanning processes... [==========================                              ]Scanning processes... [==========================                              ]Scanning processes... [===========================                             ]Scanning processes... [===========================                             ]Scanning processes... [============================                            ]Scanning processes... [============================                            ]Scanning processes... [=============================                           ]Scanning processes... [=============================                           ]Scanning processes... [==============================                          ]Scanning processes... [==============================                          ]Scanning processes... [===============================                         ]Scanning processes... [===============================                         ]Scanning processes... [================================                        ]Scanning processes... [================================                        ]Scanning processes... [=================================                       ]Scanning processes... [=================================                       ]Scanning processes... [==================================                      ]Scanning processes... [==================================                      ]Scanning processes... [===================================                     ]Scanning processes... [===================================                     ]Scanning processes... [====================================                    ]Scanning processes... [====================================                    ]Scanning processes... [=====================================                   ]Scanning processes... [=====================================                   ]Scanning processes... [======================================                  ]Scanning processes... [======================================                  ]Scanning processes... [=======================================                 ]Scanning processes... [=======================================                 ]Scanning processes... [========================================                ]Scanning processes... [========================================                ]Scanning processes... [=========================================               ]Scanning processes... [=========================================               ]Scanning processes... [==========================================              ]Scanning processes... [==========================================              ]Scanning processes... [===========================================             ]Scanning processes... [===========================================             ]Scanning processes... [============================================            ]Scanning processes... [============================================            ]Scanning processes... [=============================================           ]Scanning processes... [=============================================           ]Scanning processes... [==============================================          ]Scanning processes... [==============================================          ]Scanning processes... [===============================================         ]Scanning processes... [===============================================         ]Scanning processes... [================================================        ]Scanning processes... [================================================        ]Scanning processes... [=================================================       ]Scanning processes... [=================================================       ]Scanning processes... [==================================================      ]Scanning processes... [==================================================      ]Scanning processes... [===================================================     ]Scanning processes... [===================================================     ]Scanning processes... [====================================================    ]Scanning processes... [====================================================    ]Scanning processes... [=====================================================   ]Scanning processes... [=====================================================   ]Scanning processes... [======================================================  ]Scanning processes... [======================================================  ]Scanning processes... [======================================================= ]Scanning processes... [======================================================= ]Scanning processes... [========================================================]Scanning processes...                                                           
+Scanning candidates... [                                                       ]Scanning candidates... [=============                                          ]Scanning candidates... [===========================                            ]Scanning candidates... [=========================================              ]Scanning candidates... [=======================================================]Scanning candidates...                                                          
+Scanning linux images... [                                                     ]Scanning linux images... [=============                                        ]Scanning linux images... [==========================                           ]Scanning linux images... [=======================================              ]Scanning linux images... [=====================================================]Scanning linux images...                                                        
+
+Pending kernel upgrade!
+Running kernel version:
+  6.8.0-55-generic
+Diagnostics:
+  The currently running kernel version is not the expected kernel version
+6.8.0-106-generic.
+
+Restarting the system to load the new kernel will not be handled automatically,
+so you should consider rebooting.
+
+Restarting services...
+
+Service restarts being deferred:
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart getty@tty1.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@eltex-practice2-pg1-v1:~# ssh-keygen -t ed25519 -f ~/.ssh/_Yan-Novikov
+Generating public/private ed25519 key pair.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/Yan-Novikov
+Your public key has been saved in /root/.ssh/Yan-Novikov.pub
+The key fingerprint is:
+SHA256:cy7CombCS0oLdJXcf59QRuahDl5b6GffwcQpp5/MQ9k root@eltex-practice2-pg1-v1
+The key's randomart image is:
++--[ED25519 256]--+
+|             +   |
+|    . o     * o .|
+|     + . . + * = |
+|    .   o = = * o|
+| . .    So.* + =E|
+|. .  .   +. = B +|
+|oo  . o . .  o B.|
+|*.+. . . .      .|
+|.*o              |
++----[SHA256]-----+
+root@eltex-practice2-pg1-v1:~# gh auth login
+? What account do you want to log into?  [Use arrows to move, type to filter]
+> GitHub.com
+  GitHub Enterprise Server
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations on this host?  [Use arrows to move, type to filter]
+> HTTPS
+  SSH
+? What is your preferred protocol for Git operations on this host?  [Use arrows to move, type to filter]
+  HTTPS
+> SSH
+? What is your preferred protocol for Git operations on this host? SSH
+? Upload your SSH public key to your GitHub account?  [Use arrows to move, type to filter]
+> /root/.ssh/Yan-Novikov.pub
+  Skip
+? Upload your SSH public key to your GitHub account? /root/.ssh/Yan-Novikov.pub
+? Title for your SSH key: (GitHub CLI) eltrex-practice2-pg1-v1? Title for your SSH key: eltex-practice2-pg1-v1
+? How would you like to authenticate GitHub CLI?  [Use arrows to move, type to filter]
+> Login with a web browser
+  Paste an authentication token
+? How would you like to authenticate GitHub CLI?  [Use arrows to move, type to filter]
+  Login with a web browser
+> Paste an authentication token
+? How would you like to authenticate GitHub CLI?  [Use arrows to move, type to filter]
+> Login with a web browser
+  Paste an authentication token
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: 9DD2-3E38
+Press Enter to open github.com in your browser... 
+! Failed opening a web browser at https://github.com/login/device
+  exec: "xdg-open,x-www-browser,www-browser,wslview": executable file not found in $PATH
+  Please try entering the URL in your browser manually
+ Authentication complete.
+- gh config set -h github.com git_protocol ssh
+ Configured git protocol
+! Authentication credentials saved in plain text
+ Uploaded the SSH key to your GitHub account: /root/.ssh/Yan-Novikov.pub
+ Logged in as Yan-Novikov
+root@eltex-practice2-pg1-v1:~# gh auth setup-git --hostname github.com
+root@eltex-practice2-pg1-v1:~# gh auth status
+github.com
+   Logged in to github.com account Yan-Novikov (/root/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: ssh
+  - Token: gho_************************************
+  - Token scopes: 'admin:public_key', 'gist', 'read:org', 'repo'
+root@eltex-practice2-pg1-v1:~# gh repo create --public _eltex_school
+ Created repository Yan-Novikov/eltex_school on GitHub
+  https://github.com/Yan-Novikov/eltex_school
+root@eltex-practice2-pg1-v1:~# root@eltex-practice2-pg1-v1:~# mkdir ~/_ && cd ~/_ && cd ~/_eltex_school && cd ~/_eltex_school
+root@eltex-practice2-pg1-v1:~/eltex_school# echo "# __" >> README.md" >> README.md 
+RRhfRepositiry for Eltex School
+root@eltex-practice2-pg1-v1:~/eltex_school# git init
+Initialized empty Git repository in /root/eltex_school/.git/
+root@eltex-practice2-pg1-v1:~/eltex_school# git add README.Mmd
+root@eltex-practice2-pg1-v1:~/eltex_school# git commit -m @@""f"i"r"s"t" "c"o"m"m"e"n"t"t"t"it"
+[main (root-commit) 395f763] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+root@eltex-practice2-pg1-v1:~/eltex_school# git branch -M main
+root@eltex-practice2-pg1-v1:~/eltex_school# git remote add origin https://github.com/__github/_.git/_.git/_.git/_.git/_.git/_.git/_.git/_.git/_.git/_.git/_.git/_.git/_.git/_.git/_.git/_.git/_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# /_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# /_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# /_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# /_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# /_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# /_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# /_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# Y/_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# a/_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# n/_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# -/_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# V/_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# i/_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# v/_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# i/_.gitk/_.gito/_.gitv/_.git/_.git/_.git/_.git/_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# /_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# /_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# /_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# N/_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# o/_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# v/_.gitroot@eltex-practice2-pg1-v1:~/eltex_school# i/_.gitk/_.gito/_.gitv/_.git.git.git.git.git.git.git.git.git.git.git.git.git.git.git.git.git.git.git.git.git.giteltex_school.git
+root@eltex-practice2-pg1-v1:~/eltex_school# git status
+On branch main
+nothing to commit, working tree clean
+root@eltex-practice2-pg1-v1:~/eltex_school# git push -u origin main
+Enumerating objects: 3, done.
+Counting objects:  33% (1/3)Counting objects:  66% (2/3)Counting objects: 100% (3/3)Counting objects: 100% (3/3), done.
+Writing objects:  33% (1/3)Writing objects:  66% (2/3)Writing objects: 100% (3/3)Writing objects: 100% (3/3), 238 bytes | 238.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Yan-Novikov/eltex_school.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+root@eltex-practice2-pg1-v1:~/eltex_school# mkdir -p module1/task1
+root@eltex-practice2-pg1-v1:~/eltex_school# mkdir -p module1/task1 module1/task1 module1/task1module1/task12
+root@eltex-practice2-pg1-v1:~/eltex_school# mkdir module1/task23
+root@eltex-practice2-pg1-v1:~/eltex_school# cp //./..//./ls ..
+eltex-pg1-v1_part.log         etc_backup.7z       practice2_eltex-pg1-v1_part1.log
+eltex-pg1-v1_part3.log        etc_backup.tar.bz2  practice2_eltex-pg1-v1_part2.log
+eltex-pg1-v1_part3_gt50M.log  etc_backup.tar.gz   report_part1.txt
+eltex_school                  etc_backup_7zip
+etc_backup                    etc_backup_gzip
+root@eltex-practice2-pg1-v1:~/eltex_school# pcp ../eltex-pg1-v1_part.log /./module1/task1
+root@eltex-practice2-pg1-v1:~/eltex_school# cp ../eltex-pg1-v1_part.log ./module1/task13
+root@eltex-practice2-pg1-v1:~/eltex_school# cp ../eltex-pg1-v1_part3.log ./module1/task1_gt50.log ./module1/task1 root@eltex-practice2-pg1-v1:~/eltex_school# M.log ./module1/task1root@eltex-practice2-pg1-v1:~/eltex_school# 
+
+root@eltex-practice2-pg1-v1:~/eltex_school# cp ../eltex-pg1-v1_part3_gt50M.log ./module1/task1 ./module1/task1  ./module1/task1
+ ./module1/task1t ./module1/task1x ./module1/task1 root@eltex-practice2-pg1-v1:~/eltex_school# t ./module1/task1root@eltex-practice2-pg1-v1:~/eltex_school# .txt ./module1/task1 
+report_part1
+root@eltex-practice2-pg1-v1:~/eltex_school# cp ../report_part1.txt ./module1/task12git add .git add .
+root@eltex-practice2-pg1-v1:~/eltex_school# git add .status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+new file:   module1/task1/eltex-pg1-v1_part.log
+new file:   module1/task1/eltex-pg1-v1_part3.log
+new file:   module1/task1/eltex-pg1-v1_part3_gt50M.log
+new file:   module1/task1/report_part1.txt
+
+root@eltex-practice2-pg1-v1:~/eltex_school# git commit ""f"i"r"s"t" "p"r"e""a"c"t"i"c"e" "f"i"l"e"s"
+error: pathspec 'first practice files' did not match any file(s) known to git
+root@eltex-practice2-pg1-v1:~/eltex_school# git commit "first practice files"-m 
+[main faf87a1] first practice files
+ 4 files changed, 531 insertions(+)
+ create mode 100644 module1/task1/eltex-pg1-v1_part.log
+ create mode 100644 module1/task1/eltex-pg1-v1_part3.log
+ create mode 100644 module1/task1/eltex-pg1-v1_part3_gt50M.log
+ create mode 100644 module1/task1/report_part1.txt
+root@eltex-practice2-pg1-v1:~/eltex_school# git push
+Enumerating objects: 9, done.
+Counting objects:  11% (1/9)Counting objects:  22% (2/9)Counting objects:  33% (3/9)Counting objects:  44% (4/9)Counting objects:  55% (5/9)Counting objects:  66% (6/9)Counting objects:  77% (7/9)Counting objects:  88% (8/9)Counting objects: 100% (9/9)Counting objects: 100% (9/9), done.
+Delta compression using up to 2 threads
+Compressing objects:  14% (1/7)Compressing objects:  28% (2/7)Compressing objects:  42% (3/7)Compressing objects:  57% (4/7)Compressing objects:  71% (5/7)Compressing objects:  85% (6/7)Compressing objects: 100% (7/7)Compressing objects: 100% (7/7), done.
+Writing objects:  12% (1/8)Writing objects:  25% (2/8)Writing objects:  37% (3/8)Writing objects:  50% (4/8)Writing objects:  62% (5/8)Writing objects:  75% (6/8)Writing objects:  87% (7/8)Writing objects: 100% (8/8)Writing objects: 100% (8/8), 4.12 KiB | 4.13 MiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Yan-Novikov/eltex_school.git
+   395f763..faf87a1  main -> main
+root@eltex-practice2-pg1-v1:~/eltex_school# mkdir ~/__clone && cd ~/__clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_cloneclone_clone_clone_cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _clone _clone root@eltex-practice2-pg1-v1:~/eltex_school# eltex_school_clone_clone && cd ~/eltex_school_cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _clone && cd ~/eltex_school_cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _clone && cd ~/eltex_schol_cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _clone && cd ~/eltex_school_cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _clone && cd ~/eltex_school_cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _clone && cd ~/eltex_school_cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _clone && cd ~/eltex_school_cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _clone && cd ~/eltex_school_cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _clone && cd ~/eltex_school_cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _clone && cd ~/eltex_school_cloneroot@eltex-practice2-pg1-v1:~/eltex_school# _clone && cd ~/eltex_school_cloneroot@eltex-practice2-pg1-v1:~/eltex_school# clone && cd ~/eltex_school_clone 
+_clone && cd ~/eltex_school_cloneeltex_school_clone && cd ~/eltex_school_cloneroot@eltex-practice2-pg1-v1:~/eltex_school# 
+
+root@eltex-practice2-pg1-v1:~/eltex_school_clone# git clone https://github.com/__github/_.git ..git .git clone https://github.com/__github/_.git ..git .git ..git . 
+.groot@eltex-practice2-pg1-v1:~/eltex_school_clone# .giroot@eltex-practice2-pg1-v1:~/eltex_school_clone# .git .root@eltex-practice2-pg1-v1:~/eltex_school_clone# .git .root@eltex-practice2-pg1-v1:~/eltex_school_clone# .git .root@eltex-practice2-pg1-v1:~/eltex_school_clone# .git . 
+git clone https://github.com/__github/_.git .sesltesx_school/eroot@eltex-practice2-pg1-v1:~/eltex_school_clone# /elroot@eltex-practice2-pg1-v1:~/eltex_school_clone# /eltroot@eltex-practice2-pg1-v1:~/eltex_school_clone# /elteroot@eltex-practice2-pg1-v1:~/eltex_school_clone# /eltexroot@eltex-practice2-pg1-v1:~/eltex_school_clone# /eltex_root@eltex-practice2-pg1-v1:~/eltex_school_clone# /eltex_sroot@eltex-practice2-pg1-v1:~/eltex_school_clone# /eltex_scroot@eltex-practice2-pg1-v1:~/eltex_school_clone# /eltex_schroot@eltex-practice2-pg1-v1:~/eltex_school_clone# /eltex_schoroot@eltex-practice2-pg1-v1:~/eltex_school_clone# /eltex_schooroot@eltex-practice2-pg1-v1:~/eltex_school_clone# /eltex_schoolroot@eltex-practice2-pg1-v1:~/eltex_school_clone# /eltex_school.root@eltex-practice2-pg1-v1:~/eltex_school_clone# /eltex_school.groot@eltex-practice2-pg1-v1:~/eltex_school_clone# Y/eltex_school.groot@eltex-practice2-pg1-v1:~/eltex_school_clone# a/eltex_school.root@eltex-practice2-pg1-v1:~/eltex_school_clone# n/eltex_schoolroot@eltex-practice2-pg1-v1:~/eltex_school_clone# -/eltex_schooroot@eltex-practice2-pg1-v1:~/eltex_school_clone# V/eltex_schoroot@eltex-practice2-pg1-v1:~/eltex_school_clone# /eltex_schoroot@eltex-practice2-pg1-v1:~/eltex_school_clone# N/eltex_schoroot@eltex-practice2-pg1-v1:~/eltex_school_clone# o/eltex_schroot@eltex-practice2-pg1-v1:~/eltex_school_clone# v/eltex_scroot@eltex-practice2-pg1-v1:~/eltex_school_clone# i/eltex_sroot@eltex-practice2-pg1-v1:~/eltex_school_clone# k/eltex_root@eltex-practice2-pg1-v1:~/eltex_school_clone# o/eltexroot@eltex-practice2-pg1-v1:~/eltex_school_clone# v/elteroot@eltex-practice2-pg1-v1:~/eltex_school_clone# 
+
+Cloning into '.'...
+remote: Enumerating objects: 11, done.
+remote: Counting objects:   9% (1/11)remote: Counting objects:  18% (2/11)remote: Counting objects:  27% (3/11)remote: Counting objects:  36% (4/11)remote: Counting objects:  45% (5/11)remote: Counting objects:  54% (6/11)remote: Counting objects:  63% (7/11)remote: Counting objects:  72% (8/11)remote: Counting objects:  81% (9/11)remote: Counting objects:  90% (10/11)remote: Counting objects: 100% (11/11)remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects:  12% (1/8)remote: Compressing objects:  25% (2/8)remote: Compressing objects:  37% (3/8)remote: Compressing objects:  50% (4/8)remote: Compressing objects:  62% (5/8)remote: Compressing objects:  75% (6/8)remote: Compressing objects:  87% (7/8)remote: Compressing objects: 100% (8/8)remote: Compressing objects: 100% (8/8), done.
+remote: Total 11 (delta 0), reused 11 (delta 0), pack-reused 0 (from 0)
+Receiving objects:   9% (1/11)Receiving objects:  18% (2/11)Receiving objects:  27% (3/11)Receiving objects:  36% (4/11)Receiving objects:  45% (5/11)Receiving objects:  54% (6/11)Receiving objects:  63% (7/11)Receiving objects:  72% (8/11)Receiving objects:  81% (9/11)Receiving objects:  90% (10/11)Receiving objects: 100% (11/11)Receiving objects: 100% (11/11), 4.33 KiB | 4.33 MiB/s, done.
+root@eltex-practice2-pg1-v1:~/eltex_school_clone# ls
+README.md  module1
+root@eltex-practice2-pg1-v1:~/eltex_school_clone# cd ~`/eltex-_school
+root@eltex-practice2-pg1-v1:~/eltex_school# cd ~/eltex_schoollsgit clone https://github.com/Yan-Novikov/eltex_school.git .root@eltex-practice2-pg1-v1:~/eltex_school# mkdir ~/eltex_school_clone && cd ~/eltex_school_clneroot@eltex-practice2-pg1-v1:~/eltex_school# git push
+commit -m "first practice files"statusadd .cp ../report_part1.txt ./module1/task12 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2practice2_eltex-pg1-v1_part1.log ./module1/task2root@eltex-practice2-pg1-v1:~/eltex_school# 
+
+root@eltex-practice2-pg1-v1:~/eltex_school# cp ../practice2_eltex-pg1-v1_part1.log ./module1/task2.log ./module1/task2root@eltex-practice2-pg1-v1:~/eltex_school# 2.log ./module1/task2root@eltex-practice2-pg1-v1:~/eltex_school# 
+
+root@eltex-practice2-pg1-v1:~/eltex_school# cp ../practice2_eltex-pg1-v1_part2.log ./module1/task2root@eltex-practice2-pg1-v1:~/eltex_school# 1
+root@eltex-practice2-pg1-v1:~/eltex_school# d ~/eltex_school
+p ../practice2_eltex-pg1-v1_part1.log ./module1/task2 ./module1/task2root@eltex-practice2-pg1-v1:~/eltex_school#  ./module1/task2root@eltex-practice2-pg1-v1:~/eltex_school#  ./module1/task2root@eltex-practice2-pg1-v1:~/eltex_school#  ./module1/task2root@eltex-practice2-pg1-v1:~/eltex_school#  ./module1/task2  ./module1/task2
+ ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2 ./module1/task2./module1/task2 ./module1/task2 ./module1/task2l ./module1/task2s ./module1/task2
+practice2_eltex-pg1-v1_part1.log  practice2_eltex-pg1-v1_part2.log
+root@eltex-practice2-pg1-v1:~/eltex_school# cd root@eltex-practice2-pg1-v1:~/eltex_school# git add .
+root@eltex-practice2-pg1-v1:~/eltex_school# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+new file:   module1/task2/practice2_eltex-pg1-v1_part1.log
+new file:   module1/task2/practice2_eltex-pg1-v1_part2.log
+
+root@eltex-practice2-pg1-v1:~/eltex_school# git commit -,m @@""f"i"l"e"s""""""""p"r"a"c"t"i"c"e" "2 "f"i"l"e"s"
+[main cb2a722] practice2 files
+ 2 files changed, 6152 insertions(+)
+ create mode 100644 module1/task2/practice2_eltex-pg1-v1_part1.log
+ create mode 100644 module1/task2/practice2_eltex-pg1-v1_part2.log
+root@eltex-practice2-pg1-v1:~/eltex_school# git push
+Enumerating objects: 8, done.
+Counting objects:  12% (1/8)Counting objects:  25% (2/8)Counting objects:  37% (3/8)Counting objects:  50% (4/8)Counting objects:  62% (5/8)Counting objects:  75% (6/8)Counting objects:  87% (7/8)Counting objects: 100% (8/8)Counting objects: 100% (8/8), done.
+Delta compression using up to 2 threads
+Compressing objects:  16% (1/6)Compressing objects:  33% (2/6)Compressing objects:  50% (3/6)Compressing objects:  66% (4/6)Compressing objects:  83% (5/6)Compressing objects: 100% (6/6)Compressing objects: 100% (6/6), done.
+Writing objects:  16% (1/6)Writing objects:  33% (2/6)Writing objects:  50% (3/6)Writing objects:  66% (4/6)Writing objects:  83% (5/6)Writing objects: 100% (6/6)Writing objects: 100% (6/6), 71.98 KiB | 12.00 MiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Yan-Novikov/eltex_school.git
+   faf87a1..cb2a722  main -> main
+root@eltex-practice2-pg1-v1:~/eltex_school# cd // ../eltex_school_clone
+root@eltex-practice2-pg1-v1:~/eltex_school_clone# git fetch
+remote: Enumerating objects: 8, done.
+remote: Counting objects:  12% (1/8)remote: Counting objects:  25% (2/8)remote: Counting objects:  37% (3/8)remote: Counting objects:  50% (4/8)remote: Counting objects:  62% (5/8)remote: Counting objects:  75% (6/8)remote: Counting objects:  87% (7/8)remote: Counting objects: 100% (8/8)remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects:  16% (1/6)remote: Compressing objects:  33% (2/6)remote: Compressing objects:  50% (3/6)remote: Compressing objects:  66% (4/6)remote: Compressing objects:  83% (5/6)remote: Compressing objects: 100% (6/6)remote: Compressing objects: 100% (6/6), done.
+Unpacking objects:  16% (1/6)Unpacking objects:  33% (2/6)Unpacking objects:  50% (3/6)Unpacking objects:  66% (4/6)Unpacking objects:  83% (5/6)remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (6/6)Unpacking objects: 100% (6/6), 71.96 KiB | 379.00 KiB/s, done.
+From https://github.com/Yan-Novikov/eltex_school
+   faf87a1..cb2a722  main       -> origin/main
+root@eltex-practice2-pg1-v1:~/eltex_school_clone# git log origin/main
+commit cb2a72208ead4a0d6057c73c9034d03af0b5d604 (origin/main, origin/HEAD)
+Author: Yan-Novikov <fattuna@bk.ru>
+Date:   Mon Mar 16 12:53:18 2026 +0000
+
+    practice2 files
+
+commit faf87a1afeaf47c1eaf91f1e24c936eba2168002 (HEAD -> main)
+Author: Yan-Novikov <fattuna@bk.ru>
+Date:   Mon Mar 16 12:44:58 2026 +0000
+
+    first practice files
+
+commit 395f76374d5567c83c56cc61def1e840f16affb0
+Author: Yan-Novikov <fattuna@bk.ru>
+Date:   Mon Mar 16 12:21:38 2026 +0000
+
+    first commit
+root@eltex-practice2-pg1-v1:~/eltex_school_clone# git diff main origin/main
+diff --git a/module1/task2/practice2_eltex-pg1-v1_part1.log b/module1/task2/prac tice2_eltex-pg1-v1_part1.log
+new file mode 100644
+index 0000000..528d0af
+--- /dev/null
++++ b/module1/task2/practice2_eltex-pg1-v1_part1.log
+@@ -0,0 +1,4327 @@
++=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.03.12 19:53:54 =~=~=~=~=~=~=~=~=~=~=~=^M
++login as: eltex-pg1-v1^M
++eltex-pg1-v1@217.71.138.1's password: ^M
++Linux eltex-2026-spring 6.1.0-40-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.153-1  (2025-09-20) x86_64^M
++^M
++The programs included with the Debian GNU/Linux system are free software;^M
++the exact distribution terms for each program are described in the^M
++individual files in /usr/share/doc/*/copyright.^M
++^M
++Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent^M
++permitted by applicable law.^M
++Last login: Thu Mar 12 19:53:50 2026 from 217.71.131.234^M
++eltex-pg1-v1@eltex-2026-spring-19:58> ssh-copy-id root@IP___2ls^M
++^M
++2026-01  2026-08                       eltex-pg1-v1_part3.log^M
+: ESCESCOOBB+2026-02  2026-09                       eltex-pg1-v1_part.log^M
+: ESCESCOOBB+2026-03  2026-10                       practice2_eltex-pg1-v1_part1.log^M
+: ESCESCOOBB+2026-04  2026-11                       report_part1.txt^M
+: ESCESCOOBB+2026-05  2026-12                       temp.txt^M
+: ESCESCOOBB+2026-06  D1^M
+: ESCESCOOBB+2026-07  eltex-pg1-v1_part3_gt50M.log^M
+: ESCESCOOBB+eltex-pg1-v1@eltex-2026-spring-19:58> lsexitlsscript -q -c "bash" "practice2_${ : ESCESCOOBBMYUSER}_part1.log" && sed -i -E 's/\x1b\[[0-9;?]*[a-zA-Z]//g; s/\r//g' "practice : ESCESCOOBB2_${MYUSER}_part1.log"ls^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+ ./ssh^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+ls: cannot access './ssh': No such file or directory^M
+: ESCESCOOBB+eltex-pg1-v1@eltex-2026-spring-19:58> ls ./sshexitlsexitlsexitlsscript -q -c "b : ESCESCOOBBash" "practice2_${MYUSER}_part1.log" && sed -i -E 's/\x1b\[[0-9;?]*[a-zA-Z]//g;  : ESCESCOOBBs/\r//g' "practice2_${MYUSER}_part1.log"exit^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+lsnano temp.txtcol -b< practice2_eltex-pg1-v1_part1.log  > temp.txtrm temp.txt^ : ESCESCOOBB^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+nanolscat practice2_eltex-pg1-v1_part1.log | col -b > temp.txtnano practice2_el : ESCESCOOBBtex-pg1-v1_part1.log^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+catlscat practice2_eltex-pg1-v1_part1.logecho $MYUSERlscat practice2_${MYUSER}_ : ESCESCOOBBpart1.logssh-keygen -t rsa -b 4096lsssh-keygen -t rsa -b 4096^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+Generating public/private rsa key pair.^M
+: ESCESCOOBB+Enter file in which to save the key (/home/eltex-pg1-v1/.ssh/id_rsa): ^M
+: ESCESCOOBB+/home/eltex-pg1-v1/.ssh/id_rsa already exists.^M
+: ESCESCOOBB+Overwrite (y/n)? n^M
+: ESCESCOOBB+eltex-pg1-v1@eltex-2026-spring-19:58> ssh-copy-id root@IP___2172.16.9.(1741745^ : ESCESCOOBB^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/eltex-pg1- : ESCESCOOBBv1/.ssh/id_rsa.pub"^M
+: ESCESCOOBB+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter : ESCESCOOBB out any that are already installed^M
+: ESCESCOOBB+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are promp : ESCESCOOBBted now it is to install the new keys^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@172.16.9.175's password: ^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+Number of key(s) added: 1^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+Now try logging into the machine, with:   "ssh 'root@172.16.9.175'"^M
+: ESCESCOOBB+and check to make sure that only the key(s) you wanted were added.^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+eltex-pg1-v1@eltex-2026-spring-19:58> cat ~/.ssh/*.pub^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDMDUNLkSsDOZb7EWobKS7/DViTJ9WGMA/BQicgnwV : ESCESCOOBB5PDw/CIs3tgejj9IHHdHWzgg+f3AzyQHFY9GJNoRqkU8bfDyDZsU5bos9sgjUjyikySq5NtLnSjePy2m : ESCESCOOBB2RIiJ6IoO/0R6I+ksQlD1aZc0zG+c3TzselGuEZ6C5rBG1EvTSv4WmPgYa1DLZ5IZZtZOec95MOehv8P : ESCESCOOBBrKHbDH2J5UfMhbB8XF9ubIuqhgke/DN9cqci1hgDfApXZkitZ/k7uYPw4ycajiZnMGVqcwt0n8ZHJ73e : ESCESCOOBB+m5kZtFU/YnyocB2F9nxS+/h7J0TPZHN0rC7LyUhRvcItVqwTjNiUdbpU8Y8HK34EQ+7OpxKDrXJAvcB : ESCESCOOBBYXjJIQJgKLSQGKXu6lunF1huzuXUeKoIFRsgK9G+arNLFcFOa45+4AEHyI737tP74PAnh+9jQeNdm9+z : ESCESCOOBB70NFPvq77TTJUvc5LYSG5TEHhw/zOStIRNb7SV/JCSeV0QaJGWvM4aS+jC3WxbACMgBKgi6tRdMxzbmW : ESCESCOOBBE2NOKm6YAjibZtQPwXNLTHNj8WbXi1+BZohZSnTOX9IjzdnJz0ziQcBkNMNXu4CLNQ9KWn30pmUSgjPD : ESCESCOOBBa2PVAcRLPtierW1r+i1pV0b6MCCHG/IGUOJjymMKUjKQGODbjkDWhMqZ7DtLuG8ThXCD0k2LXvfBTAtD : ESCESCOOBB0Cw== eltex-pg1-v1@eltex-2026-spring^M
+: ESCESCOOBB+eltex-pg1-v1@eltex-2026-spring-19:58> ls -l ~/.ssh/*.pub^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+-rw-r--r-- 1 eltex-pg1-v1 eltex-pg1-v1 756 Mar 12 19:31 /home/eltex-pg1-v1/.ssh : ESCESCOOBB/id_rsa.pub^M
+: ESCESCOOBB+eltex-pg1-v1@eltex-2026-spring-19:58> ssh root@^C^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+eltex-pg1-v1@eltex-2026-spring-19:58> ls -l ~/.ssh/*.pubcatssh root@172.16.9.17 : ESCESCOOBB5^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.8.0-55-generic x86_64)^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+ * Documentation:  https://help.ubuntu.com^M
+: ESCESCOOBB+ * Management:     https://landscape.canonical.com^M
+: ESCESCOOBB+ * Support:        https://ubuntu.com/pro^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+ System information as of Thu Mar 12 01:04:54 PM UTC 2026^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+  System load:  0.0                Processes:              111^M
+: ESCESCOOBB+  Usage of /:   43.6% of 14.66GB   Users logged in:        0^M
+: ESCESCOOBB+  Memory usage: 6%                 IPv4 address for ens18: 172.16.9.175^M
+: ESCESCOOBB+  Swap usage:   0%^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s^M
+: ESCESCOOBB+   just raised the bar for easy, resilient and secure K8s cluster deployment.^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+Expanded Security Maintenance for Applications is not enabled.^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+233 updates can be applied immediately.^M
+: ESCESCOOBB+149 of these updates are standard security updates.^M
+: ESCESCOOBB+To see these additional updates run: apt list --upgradable^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+Enable ESM Apps to receive additional future security updates.^M
+: ESCESCOOBB+See https://ubuntu.com/esm or run: sudo pro status^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+Last login: Thu Mar 12 12:11:07 2026 from 172.16.8.4^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# cat ~/.ssh/authorized_keys^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDMDUNLkSsDOZb7EWobKS7/DViTJ9WGMA/BQicgnwV : ESCESCOOBB5PDw/CIs3tgejj9IHHdHWzgg+f3AzyQHFY9GJNoRqkU8bfDyDZsU5bos9sgjUjyikySq5NtLnSjePy2m : ESCESCOOBB2RIiJ6IoO/0R6I+ksQlD1aZc0zG+c3TzselGuEZ6C5rBG1EvTSv4WmPgYa1DLZ5IZZtZOec95MOehv8P : ESCESCOOBBrKHbDH2J5UfMhbB8XF9ubIuqhgke/DN9cqci1hgDfApXZkitZ/k7uYPw4ycajiZnMGVqcwt0n8ZHJ73e : ESCESCOOBB+m5kZtFU/YnyocB2F9nxS+/h7J0TPZHN0rC7LyUhRvcItVqwTjNiUdbpU8Y8HK34EQ+7OpxKDrXJAvcB : ESCESCOOBBYXjJIQJgKLSQGKXu6lunF1huzuXUeKoIFRsgK9G+arNLFcFOa45+4AEHyI737tP74PAnh+9jQeNdm9+z : ESCESCOOBB70NFPvq77TTJUvc5LYSG5TEHhw/zOStIRNb7SV/JCSeV0QaJGWvM4aS+jC3WxbACMgBKgi6tRdMxzbmW : ESCESCOOBBE2NOKm6YAjibZtQPwXNLTHNj8WbXi1+BZohZSnTOX9IjzdnJz0ziQcBkNMNXu4CLNQ9KWn30pmUSgjPD : ESCESCOOBBa2PVAcRLPtierW1r+i1pV0b6MCCHG/IGUOJjymMKUjKQGODbjkDWhMqZ7DtLuG8ThXCD0k2LXvfBTAtD : ESCESCOOBB0Cw== eltex-pg1-v1@eltex-2026-spring^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# cat ~/.ssh/authorized_keysls -l ~/.ssh/authorize : ESCESCOOBBd_keys^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+-rw------- 1 root root 756 Mar 12 13:02 /root/.ssh/authorized_keys^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# useradd -m -s /bin/bash user1^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# passwd user1^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+New password: ^M
+: ESCESCOOBB+Retype new password: ^M
+: ESCESCOOBB+passwd: password updated successfully^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# adduserv user2^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+info: Adding user `user2' ...^M
+: ESCESCOOBB+info: Selecting UID/GID from range 1000 to 59999 ...^M
+: ESCESCOOBB+info: Adding new group `user2' (1002) ...^M
+: ESCESCOOBB+info: Adding new user `user2' (1002) with group `user2 (1002)' ...^M
+: ESCESCOOBB+info: Creating home directory `/home/user2' ...^M
+: ESCESCOOBB+info: Copying files from `/etc/skel' ...^M
+: ESCESCOOBB+New password: ^M
+: ESCESCOOBB+Retype new password: ^M
+: ESCESCOOBB+passwd: password updated successfully^M
+: ESCESCOOBB+Changing the user information for user2^M
+: ESCESCOOBB+Enter the new value, or press ENTER for the default^M
+: ESCESCOOBB+Full Name []: ^M
+: ESCESCOOBB+Room Number []: ^M
+: ESCESCOOBB+Work Phone []: ^M
+: ESCESCOOBB+Home Phone []: ^M
+: ESCESCOOBB+Other []: ^M
+: ESCESCOOBB+Is the information correct? [Y/n] y^M
+: ESCESCOOBB+info: Adding new user `user2' to supplemental / extra groups `users' ...^M
+: ESCESCOOBB+info: Adding user `user2' to group `users' ...^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# adduser user23^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+info: Adding user `user3' ...^M
+: ESCESCOOBB+info: Selecting UID/GID from range 1000 to 59999 ...^M
+: ESCESCOOBB+info: Adding new group `user3' (1003) ...^M
+: ESCESCOOBB+info: Adding new user `user3' (1003) with group `user3 (1003)' ...^M
+: ESCESCOOBB+info: Creating home directory `/home/user3' ...^M
+: ESCESCOOBB+info: Copying files from `/etc/skel' ...^M
+: ESCESCOOBB+New password: ^M
+: ESCESCOOBB+Retype new password: ^M
+: ESCESCOOBB+passwd: password updated successfully^M
+: ESCESCOOBB+Changing the user information for user3^M
+: ESCESCOOBB+Enter the new value, or press ENTER for the default^M
+: ESCESCOOBB+Full Name []: ^M
+: ESCESCOOBB+Room Number []: ^M
+: ESCESCOOBB+Work Phone []: ^M
+: ESCESCOOBB+Home Phone []: ^M
+: ESCESCOOBB+Other []: ^M
+: ESCESCOOBB+Is the information correct? [Y/n] y^M
+: ESCESCOOBB+info: Adding new user `user3' to supplemental / extra groups `users' ...^M
+: ESCESCOOBB+info: Adding user `user3' to group `users' ...^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# usermod -s /usr/sbin/nologin user3^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# su user3^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+This account is currently not available.^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# su -s /bin/bash user3^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+user3@eltex-practice2-pg1-v1:/root$ logoutexit^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+exit^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# grioupadd pmod1pr2^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# usermod -aG students user1 user1 user1 user1 use : ESCESCOOBBr1 user1 user1 user1 user1m user1o user1d user11 user1p user1r user12 user1^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# usermod -aG mod1pr2 user12^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# usermod -aG mod1pr2 user23^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# id uaser1^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+uid=1001(user1) gid=1001(user1) groups=1001(user1),1004(mod1pr2)^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# id user12^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+uid=1002(user2) gid=1002(user2) groups=1002(user2),100(users),1004(mod1pr2)^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# id user23^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+uid=1003(user3) gid=1003(user3) groups=1003(user3),100(users),1004(mod1pr2)^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# mkdir /opt/share^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ls^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ls /opt^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+share^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# chgrp students /opt/share /opt/share /opt/share  : ESCESCOOBB/opt/share /opt/share /opt/share /opt/share /opt/share /opt/sharep /opt/sharer / : ESCESCOOBBopt/share /opt/share /opt/sharem /opt/shareo /opt/shared /opt/share1 /opt/sharep : ESCESCOOBB /opt/sharer /opt/share2 /opt/share^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# chmod 2770 /opt/share^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ls -ld /opt/hshare^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+drwxrws--- 2 root mod1pr2 4096 Mar 12 13:18 /opt/share^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# echo "umask 027" >> /home/user1/.bashrc^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# su - user1 -c "touch /opt/share/file_user1"1"1"1 : ESCESCOOBB"1"1"1"1"1"1"u1"r1"1"s1"r1"."t"x"t"^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# lssu - user1 -c "touch /opt/share/usr1.txt"^M
+: ESCESCOOBB+echo "umask 027" >> /home/user1/.bashrc^M
+: ESCESCOOBB+ls -ld /opt/share /opt/share^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+total 0^M
+: ESCESCOOBB+-rw-rw-r-- 1 user1 mod1pr2 0 Mar 12 13:26 usr1.txt^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ls -l /opt/sharesu - user1 -c "touch /opt/share/ : ESCESCOOBBusr1.txt"2.txt"2.txt"^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# su - user2 -c "rm /opt/share/file_user1""""""""" : ESCESCOOBB""u"s"t""r"2""1"."t"x"t"^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# su - user2 -c "rm /opt/share/usr1.txt"touch /opt : ESCESCOOBB/share/usr2.txt"^M
+: ESCESCOOBB+ls -l /opt/share^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+total 0^M
+: ESCESCOOBB+-rw-rw-r-- 1 user2 mod1pr2 0 Mar 12 13:26 usr2.txt^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ls -l /opt/sharesu - user2 -c "rm /opt/share/usr : ESCESCOOBB1.txt"touch /opt/share/usr2.txt".txt"3.txt"3s  user3 -c "touch /opt/share/usr3.t : ESCESCOOBBxt"/bin/bash user3 -c "touch /opt/share/usr3.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ^M
+: ESCESCOOBB+^M
+: ^X^X^?^?:+root@eltex-practice2-pg1-v1:~# lssu - user1 -c "touch /opt/share/usr1.txt"^M
++echo "umask 027" >> /home/user1/.bashrc^M
++ls -ld /opt/share /opt/share^M
++^M
++total 0^M
++-rw-rw-r-- 1 user1 mod1pr2 0 Mar 12 13:26 usr1.txt^M
++root@eltex-practice2-pg1-v1:~# ls -l /opt/sharesu - user1 -c "touch /opt/share/ usr1.txt"2.txt"2.txt"^M
++^M
++root@eltex-practice2-pg1-v1:~# su - user2 -c "rm /opt/share/file_user1""""""""" ""u"s"t""r"2""1"."t"x"t"^M
++^M
++root@eltex-practice2-pg1-v1:~# su - user2 -c "rm /opt/share/usr1.txt"touch /opt /share/usr2.txt"^M
++ls -l /opt/share^M
++^M
++total 0^M
++-rw-rw-r-- 1 user2 mod1pr2 0 Mar 12 13:26 usr2.txt^M
++root@eltex-practice2-pg1-v1:~# ls -l /opt/sharesu - user2 -c "rm /opt/share/usr 1.txt"touch /opt/share/usr2.txt".txt"3.txt"3s  user3 -c "touch /opt/share/usr3.t xt"/bin/bash user3 -c "touch /opt/share/usr3.txt"^M
++root@eltex-practice2-pg1-v1:~# ^M
++^M
+:+root@eltex-practice2-pg1-v1:~# lssu - user1 -c "touch /opt/share/usr1.txt"^M
++echo "umask 027" >> /home/user1/.bashrc^M
++ls -ld /opt/share /opt/share^M
++^M
++total 0^M
++-rw-rw-r-- 1 user1 mod1pr2 0 Mar 12 13:26 usr1.txt^M
++root@eltex-practice2-pg1-v1:~# ls -l /opt/sharesu - user1 -c "touch /opt/share/ usr1.txt"2.txt"2.txt"^M
++^M
++root@eltex-practice2-pg1-v1:~# su - user2 -c "rm /opt/share/file_user1""""""""" ""u"s"t""r"2""1"."t"x"t"^M
++^M
++root@eltex-practice2-pg1-v1:~# su - user2 -c "rm /opt/share/usr1.txt"touch /opt /share/usr2.txt"^M
++ls -l /opt/share^M
++^M
++total 0^M
++-rw-rw-r-- 1 user2 mod1pr2 0 Mar 12 13:26 usr2.txt^M
++root@eltex-practice2-pg1-v1:~# ls -l /opt/sharesu - user2 -c "rm /opt/share/usr 1.txt"touch /opt/share/usr2.txt".txt"3.txt"3s  user3 -c "touch /opt/share/usr3.t xt"/bin/bash user3 -c "touch /opt/share/usr3.txt"^M
++root@eltex-practice2-pg1-v1:~# ^M
++^M
+:+root@eltex-practice2-pg1-v1:~# lssu - user1 -c "touch /opt/share/usr1.txt"^M
++echo "umask 027" >> /home/user1/.bashrc^M
++ls -ld /opt/share /opt/share^M
++^M
++total 0^M
++-rw-rw-r-- 1 user1 mod1pr2 0 Mar 12 13:26 usr1.txt^M
++root@eltex-practice2-pg1-v1:~# ls -l /opt/sharesu - user1 -c "touch /opt/share/ usr1.txt"2.txt"2.txt"^M
++^M
++root@eltex-practice2-pg1-v1:~# su - user2 -c "rm /opt/share/file_user1""""""""" ""u"s"t""r"2""1"."t"x"t"^M
++^M
++root@eltex-practice2-pg1-v1:~# su - user2 -c "rm /opt/share/usr1.txt"touch /opt /share/usr2.txt"^M
++ls -l /opt/share^M
++^M
++total 0^M
++-rw-rw-r-- 1 user2 mod1pr2 0 Mar 12 13:26 usr2.txt^M
++root@eltex-practice2-pg1-v1:~# ls -l /opt/sharesu - user2 -c "rm /opt/share/usr 1.txt"touch /opt/share/usr2.txt".txt"3.txt"3s  user3 -c "touch /opt/share/usr3.t xt"/bin/bash user3 -c "touch /opt/share/usr3.txt"^M
++root@eltex-practice2-pg1-v1:~# ^M
++^M
+: ^X^X^?^?: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# su -s /bin/bash user3 -c "touch /opt/share/usr3. : ESCESCOOBBtxt"^M
+: ESCESCOOBB+ /opt/share/usr3.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~#  /opt/share/usr3.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~#  /opt/share/usr3.txt" ^M
+: ESCESCOOBB+ /opt/share/usr3.txt"^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+ /opt/share/usr3.txt"r /opt/share/usr3.txt"m /opt/share/usr3.txt" ^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# .txt"^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+2.txt" ^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+"^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# su -s /bin/bash user3 -c "rm /opt/share/usr2.txt : ESCESCOOBB" ^M
+: ESCESCOOBB+touch /opt/share/usr3.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ls -l /opt/share^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+total 0^M
+: ESCESCOOBB+-rw-rw-r-- 1 user3 mod1pr2 0 Mar 12 13:27 usr3.txt^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# chmod 1770 /opt/share^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# chmod 1770 /opt/sharels -lsu -s /bin/bash user3  : ESCESCOOBB-c "rm /opt/share/usr2.txt" ^M
+: ESCESCOOBB+touch /opt/share/usr3.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ls -l /opt/share^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+ /opt/share /opt/share/opt/share /opt/share /opt/sharer /opt/sharem /opt/share/ : ESCESCOOBBusr3.txt^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# su - user1 -c "touch /opt/share/test_user1"1"1"1 : ESCESCOOBB"1"1"1"1"1"1"u1"s1"r1"."t"x"t"^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# su - user1 -c "touch /opt/share/usr1.txt"^M
+: ESCESCOOBB+su - user1 -c "touch /opt/share/usr1.txt"^M
+: ESCESCOOBB+rm /opt/share/usr3.txtchmod 1770 /opt/sharels -l^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+total 0^M
+: ESCESCOOBB+-rw-rw-r-- 1 user1 mod1pr2 0 Mar 12 13:29 usr1.txt^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ls -l /opt/sharesu - user1 -c "touch /opt/share/ : ESCESCOOBBusr1.txt".txt"2.txt"2^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# su - user2 -c "touch /opt/share/usr2.txt" /opt/s : ESCESCOOBBhare/usr2.txt" /opt/share/usr2.txt" /opt/share/usr2.txt" /opt/share/usr2.txt" /o : ESCESCOOBBpt/share/usr2.txt"r /opt/share/usr2.txt"m /opt/share/usr2.txt".txt"1.txt"^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+rm: cannot remove '/opt/share/usr1.txt': Operation not permitted^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# su - user2 -c "rm /opt/share/usr1.txt"touch /opt : ESCESCOOBB/share/usr2.txt"^M
+: ESCESCOOBB+ls -l /opt/share^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+total 0^M
+: ESCESCOOBB+-rw-rw-r-- 1 user1 mod1pr2 0 Mar 12 13:29 usr1.txt^M
+: ESCESCOOBB+-rw-rw-r-- 1 user2 mod1pr2 0 Mar 12 13:30 usr2.txt^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ls -l /opt/sharesu - user2 -c "rm /opt/share/usr : ESCESCOOBB1.txt"touch /opt/share/usr2.txt"^M
+: ESCESCOOBB+ls -l /opt/sharesu - user1 -c "touch /opt/share/usr1.txt"^M
+: ESCESCOOBB+rm /opt/share/usr3.txtchmod 1770 /opt/sharels -lsu -s /bin/bash user3 -c "rm /o : ESCESCOOBBpt/share/usr2.txt" ^M
+: ESCESCOOBB+ /opt/share/usr2.txt"^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+ /opt/share/usr2.txt"t /opt/share/usr2.txt"o /opt/share/usr2.txt" ^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# u /opt/share/usr2.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# h /opt/share/usr2.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~#  /opt/share/usr2.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# c /opt/share/usr2.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# h /opt/share/usr2.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# .txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# 3.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# su -s /bin/bash user3 -c "touch /opt/share/usr3. : ESCESCOOBBtxt"^M
+: ESCESCOOBB+ /opt/share/usr3.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~#  /opt/share/usr3.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~#  /opt/share/usr3.txt" ^M
+: ESCESCOOBB+ /opt/share/usr3.txt"^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+ /opt/share/usr3.txt"r /opt/share/usr3.txt"m /opt/share/usr3.txt" ^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# .txt"^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+2.txt" ^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+rm: cannot remove '/opt/share/usr2.txt': Operation not permitted^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# su -s /bin/bash user3 -c "rm /opt/share/usr2.txt : ESCESCOOBB" ^M
+: ESCESCOOBB+touch /opt/share/usr3.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ls -l /opt/share^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+total 0^M
+: ESCESCOOBB+-rw-rw-r-- 1 user1 mod1pr2 0 Mar 12 13:29 usr1.txt^M
+: ESCESCOOBB+-rw-rw-r-- 1 user2 mod1pr2 0 Mar 12 13:30 usr2.txt^M
+: ESCESCOOBB+-rw-rw-r-- 1 user3 mod1pr2 0 Mar 12 13:30 usr3.txt^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# echo "user1 ALL=(ALL) NOPASSWD: /usr/bin/dmesg"  : ESCESCOOBB> /etc/sudoers.d/user1_dmesg^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# echo "user1 ALL=(ALL) NOPASSWD: /usr/bin/dmesg"  : ESCESCOOBB> /etc/sudoers.d/user1_dmesg^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ls -l /opt/share^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+su -s /bin/bash user3 -c "rm /opt/share/usr2.txt" ^M
+: ESCESCOOBB+touch /opt/share/usr3.txt"^M
+: ESCESCOOBB+root@eltex-practice2-pg1-v1:~# ls -l /opt/share^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+su - user2 -c "rm /opt/share/usr1.txt"1""""""""""""""""""""""su"d"o" "d"m"e"s"g : ESCESCOOBB"^M
+: ESCESCOOBB+^M
+: ESCESCOOBB+[    0.000000] Linux version 6.8.0-55-generic (buildd@lcy02-amd64-095) (x86_64- :::
+root@eltex-practice2-pg1-v1:~/eltex_school_clone# git merge
+Updating faf87a1..cb2a722
+Fast-forward
+ module1/task2/practice2_eltex-pg1-v1_part1.log | 4327 ++++++++++++++++++++++++
+ module1/task2/practice2_eltex-pg1-v1_part2.log | 1825 ++++++++++
+ 2 files changed, 6152 insertions(+)
+ create mode 100644 module1/task2/practice2_eltex-pg1-v1_part1.log
+ create mode 100644 module1/task2/practice2_eltex-pg1-v1_part2.log
+root@eltex-practice2-pg1-v1:~/eltex_school_clone# 
