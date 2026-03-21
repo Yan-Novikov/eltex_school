@@ -1,2 +1,2 @@
 all:
-	gcc main.c calculator.c -o calcul
+	gcc main.c phonebook.c -o phonebook
