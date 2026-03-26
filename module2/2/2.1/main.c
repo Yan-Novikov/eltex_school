@@ -8,7 +8,6 @@ static void clear_input() {
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-// Ввод строки с возможностью пропуска (для редактирования)
 static void input_string_with_default(const char *prompt, char *dest, int size, const char *default_value) {
     char buffer[100];
     printf("%s [%s]: ", prompt, default_value);
@@ -16,20 +15,16 @@ static void input_string_with_default(const char *prompt, char *dest, int size, 
         size_t len = strlen(buffer);
         if (len > 0 && buffer[len-1] == '\n')
             buffer[len-1] = '\0';
-        // Если введено что-то непустое, копируем, иначе оставляем старое
         if (buffer[0] != '\0')
             strcpy(dest, buffer);
     }
 }
 
-// Ввод нового контакта (все поля запрашиваются заново)
 static Contact input_new_contact() {
     Contact c;
-    // Для нового контакта ID будет присвоен позже в add_contact
-    c.id = 0; // временное значение
+    c.id = 0;
     char buffer[100];
 
-    // Обязательные поля: фамилия и имя
     do {
         printf("Введите фамилию (обязательно): ");
         if (fgets(c.name.last_name, sizeof(c.name.last_name), stdin) != NULL) {
@@ -104,7 +99,6 @@ static Contact input_new_contact() {
     return c;
 }
 
-// Вывод одного контакта
 static void print_contact(const Contact *c) {
     printf("--- ID: %d ---\n", c->id);
     printf("Фамилия: %s\n", c->name.last_name);
@@ -126,7 +120,6 @@ static void print_contact(const Contact *c) {
     printf("\n");
 }
 
-// Вывод всех контактов
 static void list_all_contacts(const Contact contacts[], int count) {
     if (count == 0) {
         printf("Телефонная книга пуста.\n");
@@ -138,7 +131,6 @@ static void list_all_contacts(const Contact contacts[], int count) {
     }
 }
 
-// Меню
 static void print_menu() {
     printf("\n--- Телефонная книга ---\n");
     printf("1. Добавить контакт\n");
@@ -154,7 +146,7 @@ static void print_menu() {
 int main() {
     Contact contacts[10];
     int count = 0;
-    int next_id = 1;          // следующий свободный ID
+    int next_id = 1;
     int choice;
 
     do {
@@ -205,9 +197,8 @@ int main() {
                 print_contact(old);
                 printf("Введите новые данные (Enter - оставить без изменений).\n");
 
-                Contact new_data = *old;  // копия для редактирования
+                Contact new_data = *old;
 
-                // Редактирование полей с возможностью оставить прежнее
                 input_string_with_default("Фамилия", new_data.name.last_name,
                                          sizeof(new_data.name.last_name), old->name.last_name);
                 input_string_with_default("Имя", new_data.name.first_name,
