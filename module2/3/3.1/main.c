@@ -51,7 +51,7 @@ int main() {
                     char binary[10];
                     format_binary(mode, binary, sizeof(binary));
                     printf("Битовое представление: %s\n", binary);
-                    // Дополнительно выведем буквенное и цифровое для наглядности
+                    // Дополнительно буквенное и цифровое
                     char symbolic[10], numeric[4];
                     format_symbolic(mode, symbolic, sizeof(symbolic));
                     format_numeric(mode, numeric, sizeof(numeric));
@@ -77,7 +77,7 @@ int main() {
                     printf("Права доступа к файлу %s:\n", input);
                     print_permissions(file_mode);
 
-                    // Формируем строку, аналогичную первой колонке ls -l
+                    // Формируем строку, аналогичную ls -l
                     char type_char = '?';
                     if (S_ISREG(st.st_mode)) type_char = '-';
                     else if (S_ISDIR(st.st_mode)) type_char = 'd';
