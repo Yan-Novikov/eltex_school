@@ -1,1 +1,1 @@
-Repositiry for Eltex School
+Repository for Eltex School
