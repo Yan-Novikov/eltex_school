@@ -37,7 +37,7 @@ void cleanup_client(client_t *cli) {
     }
 }
 
-// Отправка строки клиенту (безопасная обёртка над write)
+// Отправка строки клиенту
 int send_msg(int sock, const char *msg) {
     if (!msg) return -1;
     size_t len = strlen(msg);
@@ -73,7 +73,7 @@ int handle_client(client_t *cli) {
                 return 0;
             }
 
-            // Команда FILE <имя_файла> – переходим к приёму файла
+            // Команда FILE
             if (strncasecmp(line, "FILE ", 5) == 0) {
                 if (sscanf(line, "FILE %255s", cli->filename) == 1) {
                     send_msg(cli->sockfd, "READY\r\n");
@@ -83,7 +83,7 @@ int handle_client(client_t *cli) {
                     return 0;
                 }
             }
-            // Арифметические команды – запоминаем оператор и ждём первый параметр
+            // Арифметические команды
             else if (strcasecmp(line, "ADD") == 0) {
                 cli->op = '+';
                 send_msg(cli->sockfd, "Enter 1 parameter\r\n");
@@ -139,7 +139,7 @@ int handle_client(client_t *cli) {
             return 0; // завершаем сессию
 
         case STATE_FILE_SIZE:
-            // Получаем размер файла (строка)
+            // Получаем размер файла
             if (!read_line(cli->stream, line, sizeof(line))) return 0;
             cli->filesize = atol(line);
             cli->fp = fopen(cli->filename, "wb");
@@ -149,7 +149,6 @@ int handle_client(client_t *cli) {
             }
             cli->bytes_received = 0;
             cli->state = STATE_FILE_DATA;
-            // fallthrough – если размер пришёл вместе с началом данных, намеренно переходим к приёму данных
 
         case STATE_FILE_DATA:
             // Принимаем содержимое файла блоками по 8 Кбайт
