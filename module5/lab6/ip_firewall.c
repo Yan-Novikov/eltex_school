@@ -15,24 +15,24 @@ MODULE_LICENSE("GPL");
 
 #define MAX_ENTRIES 5
 
-static struct nf_hook_ops nf_in;
+static struct nf_hook_ops nf_out;
 static struct kobject *blacklist_kobj;
 static char blacklist_ip[MAX_ENTRIES][16] = {0};
 
 // На основе hook из примера
-static unsigned int hook_func_in(void *priv, struct sk_buff *skb,
+static unsigned int hook_func_out(void *priv, struct sk_buff *skb,
                                  const struct nf_hook_state *state)
 {
     struct iphdr *ip_header;
-    char src_ip[16];
+    char dst_ip[16];
     int i;
 
     ip_header = (struct iphdr *)skb_network_header(skb);
-    snprintf(src_ip, sizeof(src_ip), "%pI4", &ip_header->saddr); // сохраняем адрес отправителя в src_ip
+    snprintf(dst_ip, sizeof(dst_ip), "%pI4", &ip_header->daddr); // сохраняем адрес отправителя в dst_ip
     // Цикл для отбрасывания пакетов с ip из blacklist
     for (i = 0; i < MAX_ENTRIES; i++) {
-        if (strcmp(blacklist_ip[i], src_ip) == 0) {
-            printk(KERN_INFO "blacklist: dropped packet from %s\n", src_ip);
+        if (strcmp(blacklist_ip[i], dst_ip) == 0) {
+            printk(KERN_INFO "blacklist: dropped packet from %s\n", dst_ip);
             return NF_DROP;
         }
     }
@@ -81,23 +81,23 @@ static int __init blacklist_init(void)
     int error;
 
     // Настройка netfilter из примера
-    nf_in.hook     = hook_func_in;
-    nf_in.hooknum  = NF_INET_PRE_ROUTING;
-    nf_in.pf       = PF_INET;
-    nf_in.priority = NF_IP_PRI_FIRST;
-    nf_register_net_hook(&init_net, &nf_in);
+    nf_out.hook     = hook_func_out;
+    nf_out.hooknum  = NF_INET_LOCAL_OUT;
+    nf_out.pf       = PF_INET;
+    nf_out.priority = NF_IP_PRI_FIRST;
+    nf_register_net_hook(&init_net, &nf_out);
 
     // Создание sysfs из примера ЛР3
     blacklist_kobj = kobject_create_and_add("blacklist", kernel_kobj);
     if (!blacklist_kobj) {
-        nf_unregister_net_hook(&init_net, &nf_in);
+        nf_unregister_net_hook(&init_net, &nf_out);
         return -ENOMEM;
     }
     // Создание группы однотипных файлов
     error = sysfs_create_group(blacklist_kobj, &blacklist_attr_group);
     if (error) {
         kobject_put(blacklist_kobj);
-        nf_unregister_net_hook(&init_net, &nf_in);
+        nf_unregister_net_hook(&init_net, &nf_out);
         return error;
     }
 
@@ -107,7 +107,7 @@ static int __init blacklist_init(void)
 
 static void __exit blacklist_exit(void)
 {
-    nf_unregister_net_hook(&init_net, &nf_in);
+    nf_unregister_net_hook(&init_net, &nf_out);
     sysfs_remove_group(blacklist_kobj, &blacklist_attr_group);
     kobject_put(blacklist_kobj);
     printk(KERN_INFO "blacklist: module unloaded\n");
